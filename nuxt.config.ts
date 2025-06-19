@@ -187,7 +187,7 @@ export default defineNuxtConfig({
   robots: { robotsTxt: false },
 
   site: {
-    url: "https://neil-lin.github.io/",
+    url: process.env.NUXT_PUBLIC_BASE_URL,
   },
 
   sitemap: {
