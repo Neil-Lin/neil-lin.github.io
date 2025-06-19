@@ -78,7 +78,7 @@
                   <div class="portfolio-content">
                     <img
                       v-if="product.heroImage[$i18n.locale]?.[0]?.src"
-                      :src="`${runtimeConfig.public.baseUrl}${product.heroImage[$i18n.locale][0].src}`"
+                      :src="`${product.heroImage[$i18n.locale][0].src}`"
                       :alt="`${product.name[$i18n.locale]}`"
                       class="portfolio-img"
                     />
