@@ -533,131 +533,6 @@ export const productsData = [
     },
   },
   {
-    id: 12,
-    slug: "workether",
-    clickable: true,
-    heroImage: {
-      "zh-Hant-TW": [
-        {
-          src: "/images/workether-thumbnail.webp",
-          figcaption: "workether",
-        },
-      ],
-      en: [
-        {
-          src: "/images/workether-thumbnail.webp",
-          figcaption: "workether",
-        },
-      ],
-    },
-    name: {
-      "zh-Hant-TW": "[Side Project] Workether",
-      en: "[Side Project] Workether",
-    },
-    intro: {
-      "zh-Hant-TW":
-        "企業內部以即時通訊為主視角，融合專案管理、檔案與資訊分享集於一體的服務。 ",
-      en: "A real-time communication software for internal corporate use, integrating project management, file sharing, and information sharing into one service.",
-    },
-    summary: {
-      "zh-Hant-TW":
-        "企業內部以即時通訊為主視角，融合專案管理、檔案與資訊分享集於一體的服務。",
-      en: "A real-time communication software for internal corporate use, integrating project management, file sharing, and information sharing into one service.",
-    },
-    platform: ["web"],
-    yearRange: { start: 2018, end: 2018 },
-    target: {
-      "zh-Hant-TW": ["企業內部即時通訊", "任務管理", "資訊分享", "專案管理"],
-      en: [
-        "Internal corporate communication",
-        "Task management",
-        "Information sharing",
-        "Project management",
-      ],
-    },
-    roles: {
-      "zh-Hant-TW": ["UI", "UX", "切版", "專案管理"],
-      en: ["UI", "UX", "Layout", "PM"],
-    },
-    tools: {
-      "zh-Hant-TW": ["Sketch app", "Vue 2", "VS Code"],
-      en: ["Sketch app", "Vue 2", "VS Code"],
-    },
-    observe: {
-      "zh-Hant-TW": ["Slack", "Google Drive", "Dropbox", "Trello", "Asana"],
-      en: ["Slack", "Google Drive", "Dropbox", "Trello", "Asana"],
-    },
-    research: {
-      "zh-Hant-TW": [
-        "研究 Slack 聊天時行為",
-        "研究企業內部在溝通時最常出現的情形",
-        "研究企業內部資源分享時檔案是否容易取用與尋找",
-      ],
-      en: [
-        "Study user behavior when chatting on Slack.",
-        "Research common scenarios in internal corporate communication.",
-        "Investigate whether files are easily accessible and searchable during resource sharing within the company.",
-      ],
-    },
-    images: {
-      "zh-Hant-TW": [
-        {
-          src: "/images/workether-wireframe-chat-list.webp",
-          figcaption: "最愛聊天列表，可透過自訂分群，一次瀏覽所有對話。",
-        },
-        {
-          src: "/images/workether-wireframe-chat-single-expand.webp",
-          figcaption:
-            "展開單人對話，可尋找過往訊息、檔案、釘選項目而不影響對話視窗。",
-        },
-        {
-          src: "/images/workether-wireframe-group-chat-setting.webp",
-          figcaption: "設定群組成員",
-        },
-        {
-          src: "/images/workether-wireframe-task.webp",
-          figcaption: "成員行事曆",
-        },
-        {
-          src: "/images/workether-mockup-chat-light.webp",
-          figcaption: "對話首頁 - 明亮模式",
-        },
-        {
-          src: "/images/workether-mockup-chat-dark.webp",
-          figcaption: "對話首頁 - 黑暗模式",
-        },
-      ],
-      en: [
-        {
-          src: "/images/workether-wireframe-chat-list.webp",
-          figcaption:
-            "Favorite chat list, allowing users to view all conversations at once.",
-        },
-        {
-          src: "/images/workether-wireframe-chat-single-expand.webp",
-          figcaption:
-            "Expanded single chat view, enabling users to search past messages, files, and pinned items without affecting the chat window.",
-        },
-        {
-          src: "/images/workether-wireframe-group-chat-setting.webp",
-          figcaption: "Setting group members",
-        },
-        {
-          src: "/images/workether-wireframe-task.webp",
-          figcaption: "Member calendar",
-        },
-        {
-          src: "/images/workether-mockup-chat-light.webp",
-          figcaption: "Chat Home - Light Mode",
-        },
-        {
-          src: "/images/workether-mockup-chat-dark.webp",
-          figcaption: "Chat Home - Dark Mode",
-        },
-      ],
-    },
-  },
-  {
     id: 5,
     slug: "vital-crm-new",
     clickable: false,
@@ -1519,6 +1394,354 @@ export const productsData = [
         {
           title: "Accesserty Product Hunt",
           link: "https://www.producthunt.com/posts/accesserty",
+        },
+      ],
+    },
+  },
+  {
+    id: 12,
+    slug: "workether",
+    clickable: true,
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/workether-thumbnail.webp",
+          figcaption: "workether",
+        },
+      ],
+      en: [
+        {
+          src: "/images/workether-thumbnail.webp",
+          figcaption: "workether",
+        },
+      ],
+    },
+    name: {
+      "zh-Hant-TW": "[Side Project] Workether",
+      en: "[Side Project] Workether",
+    },
+    intro: {
+      "zh-Hant-TW":
+        "企業內部以即時通訊為主視角，融合專案管理、檔案與資訊分享集於一體的服務。 ",
+      en: "A real-time communication software for internal corporate use, integrating project management, file sharing, and information sharing into one service.",
+    },
+    summary: {
+      "zh-Hant-TW":
+        "企業內部以即時通訊為主視角，融合專案管理、檔案與資訊分享集於一體的服務。",
+      en: "A real-time communication software for internal corporate use, integrating project management, file sharing, and information sharing into one service.",
+    },
+    platform: ["web"],
+    yearRange: { start: 2018, end: 2018 },
+    target: {
+      "zh-Hant-TW": [
+        "以企業內部即時通訊為中心",
+        "任務管理",
+        "資訊分享",
+        "專案管理",
+      ],
+      en: [
+        "Internal corporate communication",
+        "Task management",
+        "Information sharing",
+        "Project management",
+      ],
+    },
+    roles: {
+      "zh-Hant-TW": ["UI", "UX", "切版", "專案管理"],
+      en: ["UI", "UX", "Layout", "PM"],
+    },
+    tools: {
+      "zh-Hant-TW": ["Sketch app", "Vue 2", "VS Code"],
+      en: ["Sketch app", "Vue 2", "VS Code"],
+    },
+    observe: {
+      "zh-Hant-TW": ["Slack", "Google Drive", "Dropbox", "Trello", "Asana"],
+      en: ["Slack", "Google Drive", "Dropbox", "Trello", "Asana"],
+    },
+    research: {
+      "zh-Hant-TW": [
+        "研究 Slack 聊天時行為",
+        "研究企業內部在溝通時最常出現的情形",
+        "研究企業內部資源分享時檔案是否容易取用與尋找",
+      ],
+      en: [
+        "Study user behavior when chatting on Slack.",
+        "Research common scenarios in internal corporate communication.",
+        "Investigate whether files are easily accessible and searchable during resource sharing within the company.",
+      ],
+    },
+    images: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/workether-wireframe-chat-list.webp",
+          figcaption: "最愛聊天列表，可透過自訂分群，一次瀏覽所有對話。",
+        },
+        {
+          src: "/images/workether-wireframe-chat-single-expand.webp",
+          figcaption:
+            "展開單人對話，可尋找過往訊息、檔案、釘選項目而不影響對話視窗。",
+        },
+        {
+          src: "/images/workether-wireframe-group-chat-setting.webp",
+          figcaption: "設定群組成員",
+        },
+        {
+          src: "/images/workether-wireframe-task.webp",
+          figcaption: "成員行事曆",
+        },
+        {
+          src: "/images/workether-mockup-chat-light.webp",
+          figcaption: "對話首頁 - 明亮模式",
+        },
+        {
+          src: "/images/workether-mockup-chat-dark.webp",
+          figcaption: "對話首頁 - 黑暗模式",
+        },
+      ],
+      en: [
+        {
+          src: "/images/workether-wireframe-chat-list.webp",
+          figcaption:
+            "Favorite chat list, allowing users to view all conversations at once.",
+        },
+        {
+          src: "/images/workether-wireframe-chat-single-expand.webp",
+          figcaption:
+            "Expanded single chat view, enabling users to search past messages, files, and pinned items without affecting the chat window.",
+        },
+        {
+          src: "/images/workether-wireframe-group-chat-setting.webp",
+          figcaption: "Setting group members",
+        },
+        {
+          src: "/images/workether-wireframe-task.webp",
+          figcaption: "Member calendar",
+        },
+        {
+          src: "/images/workether-mockup-chat-light.webp",
+          figcaption: "Chat Home - Light Mode",
+        },
+        {
+          src: "/images/workether-mockup-chat-dark.webp",
+          figcaption: "Chat Home - Dark Mode",
+        },
+      ],
+    },
+  },
+  {
+    id: 13,
+    slug: "poinfo",
+    clickable: true,
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/poinfo-thumbnail.webp",
+          figcaption: "Poinfo",
+        },
+      ],
+      en: [
+        {
+          src: "/images/poinfo-thumbnail.webp",
+          figcaption: "Poinfo",
+        },
+      ],
+    },
+    name: {
+      "zh-Hant-TW": "[Side Project] Poinfo",
+      en: "[Side Project] Poinfo",
+    },
+    intro: {
+      "zh-Hant-TW": "收集台灣印花集點活動平台",
+      en: "A platform for collecting stamp reward programs in Taiwan.",
+    },
+    summary: {
+      "zh-Hant-TW":
+        "在台灣，印花集點活動已經成為一種常見的行銷手法，Poinfo 將這些活動整合在一起，讓使用者可以輕鬆找到並參與。",
+      en: "In Taiwan, stamp reward programs have become a common marketing strategy. Poinfo integrates these activities, allowing users to easily find and participate in them.",
+    },
+    platform: ["web"],
+    yearRange: { start: 2019, end: 2019 },
+    target: {
+      "zh-Hant-TW": ["收集印花活動", "鎖定目標商品出現在哪些活動"],
+      en: [
+        "Stamp activities",
+        "Digital stamps",
+        "Physical stamps",
+        "Stamp marketing",
+      ],
+    },
+    roles: {
+      "zh-Hant-TW": ["專案管理", "UI", "UX", "切版"],
+      en: ["PM", "UI", "UX", "Layout"],
+    },
+    tools: {
+      "zh-Hant-TW": ["Sketch app", "Wordpress", "VS Code"],
+      en: ["Sketch app", "Wordpress", "VS Code"],
+    },
+    research: {
+      "zh-Hant-TW": [
+        "每個商店或賣場的印花推出策略",
+        "使用者如何知道印花活動的管道",
+        "實體印花和數位印花的差異",
+      ],
+      en: [
+        "The stamp promotion strategies of each store or market.",
+        "How users learn about stamp activities.",
+        "The differences between physical and digital stamps.",
+      ],
+    },
+    images: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/poinfo-all-concept.webp",
+          figcaption:
+            "包含活動列表、行事曆、分類、會員管理、同商品在不同活動中是否出現等功能。",
+        },
+      ],
+      en: [
+        {
+          src: "/images/poinfo-all-concept.webp",
+          figcaption:
+            "Includes features such as activity lists, calendars, categories, member management, and whether the same product appears in different activities.",
+        },
+      ],
+    },
+    relatedLinks: {
+      "zh-Hant-TW": [
+        {
+          title: "Poinfo - Product Hunt",
+          link: "https://www.producthunt.com/products/poinfo",
+        },
+      ],
+      en: [
+        {
+          title: "Poinfo - Product Hunt",
+          link: "https://www.producthunt.com/products/poinfo",
+        },
+      ],
+    },
+  },
+  {
+    id: 14,
+    slug: "2pick1",
+    clickable: true,
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/2pick1-thumbnail.webp",
+          figcaption: "2Pick1",
+        },
+      ],
+      en: [
+        {
+          src: "/images/2pick1-thumbnail.webp",
+          figcaption: "2Pick1",
+        },
+      ],
+    },
+    name: {
+      "zh-Hant-TW": "[Side Project] 2Pick1",
+      en: "[Side Project] 2Pick1",
+    },
+    intro: {
+      "zh-Hant-TW": "平台提供以 2 選 1 的方式，讓網友幫使用者做出選擇。",
+      en: "A platform that allows users to make choices through a 2-pick-1 format.",
+    },
+    summary: {
+      "zh-Hant-TW":
+        "2Pick1 是一個讓使用者可以透過 2 選 1 的方式，讓網友幫使用者做出選擇的平台。使用者可以在平台上發起投票，並邀請朋友或網友參與投票，最終根據投票結果做出決策。",
+      en: "2Pick1 is a platform that allows users to make choices through a 2-pick-1 format. Users can initiate polls on the platform and invite friends or netizens to participate, ultimately making decisions based on the voting results.",
+    },
+    platform: ["web"],
+    yearRange: { start: 2018, end: 2019 },
+    target: {
+      "zh-Hant-TW": ["幫助使用者下定決心", "問卷調查"],
+      en: ["Help users make decisions", "Surveys", "Decision-making", "Polls"],
+    },
+    roles: {
+      "zh-Hant-TW": ["專案管理", "UI", "UX", "切版"],
+      en: ["PM", "UI", "UX", "Layout"],
+    },
+    tools: {
+      "zh-Hant-TW": ["Sketch app", "CodePen", "VS Code", "inVision"],
+      en: ["Sketch app", "CodePen", "VS Code", "inVision"],
+    },
+    research: {
+      "zh-Hant-TW": [
+        "使用者怎麼比較東西",
+        "猶豫不決時經常使用什麼管道求助",
+        "網友的意見是否影響使用者的決定",
+        "使用者是否會因為網友的意見而改變原本的決定",
+      ],
+      en: [
+        "How users compare items.",
+        "What channels do users often seek help from when indecisive.",
+        "Whether netizens' opinions influence users' decisions.",
+        "Do users change their original decisions based on netizens' opinions.",
+      ],
+    },
+    images: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/2pick1-home.webp",
+          figcaption: "首頁，每張卡片代表一個投票項目，左右滑動直接投票。",
+        },
+        {
+          src: "/images/2pick1-profile.webp",
+          figcaption: "個人檔案頁面，顯示使用者的個人的貼文、回覆等。",
+        },
+        {
+          src: "/images/2pick1-comment.webp",
+          figcaption: "在投票頁面留言，可上傳多媒體。",
+        },
+        {
+          src: "/images/2pick1-search.webp",
+          figcaption: "搜尋相關資訊，包含最新貼文、圖片、使用者等。",
+        },
+        {
+          src: "/images/2pick1-categories.webp",
+          figcaption: "貼文分類頁面，使用者可依照興趣瀏覽不同類別。",
+        },
+      ],
+      en: [
+        {
+          src: "/images/2pick1-home.webp",
+          figcaption:
+            "Home page, where each card represents a voting item. Users can swipe left or right to vote directly.",
+        },
+        {
+          src: "/images/2pick1-profile.webp",
+          figcaption:
+            "User profile page displaying personal posts, replies, and more.",
+        },
+        {
+          src: "/images/2pick1-comment.webp",
+          figcaption:
+            "Comment section on the voting page, allowing multimedia uploads.",
+        },
+        {
+          src: "/images/2pick1-search.webp",
+          figcaption:
+            "Search for related information, including latest posts, images, and users.",
+        },
+        {
+          src: "/images/2pick1-categories.webp",
+          figcaption:
+            "Post category page where users can browse different categories based on their interests.",
+        },
+      ],
+    },
+    relatedLinks: {
+      "zh-Hant-TW": [
+        {
+          title: "2Pick1 - UI Kit",
+          link: "https://codepen.io/neillin1023/full/NrKBbO",
+        },
+      ],
+      en: [
+        {
+          title: "2Pick1 - UI Kit",
+          link: "https://codepen.io/neillin1023/full/NrKBbO",
         },
       ],
     },

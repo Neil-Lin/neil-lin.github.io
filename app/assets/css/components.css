@@ -202,6 +202,17 @@
     &:after {
       display: none;
     }
+    &:hover {
+      opacity: 1;
+      .portfolio-img {
+        transform: scale(1.01);
+        transition: transform 0.3s ease-in-out
+      }
+    }
+     .portfolio-img {
+      transition: transform 0.3s ease-in-out;
+      will-change: transform;
+     }
     &.portfolio-link--disabled {
       pointer-events: none;
       opacity: 0.4;

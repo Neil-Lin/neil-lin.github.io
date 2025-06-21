@@ -127,40 +127,6 @@ export const projectsData = [
   },
   {
     id: 6,
-    slug: "poinfo",
-    clickable: true,
-    link: "https://www.producthunt.com/products/poinfo",
-    heroImage: {
-      "zh-Hant-TW": [
-        {
-          src: "/images/poinfo-thumbnail.webp",
-          figcaption: "Poinfo",
-        },
-      ],
-      en: [
-        {
-          src: "/images/poinfo-thumbnail.webp",
-          figcaption: "Poinfo",
-        },
-      ],
-    },
-    name: {
-      "zh-Hant-TW": "[Side Project] Poinfo",
-      en: "[Side Project] Poinfo",
-    },
-    intro: {
-      "zh-Hant-TW": "收集有集點活動的網站收集台灣印花集點活動平台",
-      en: "A platform for collecting stamp reward programs in Taiwan.",
-    },
-    platform: ["web"],
-    yearRange: { start: 2019, end: 2019 },
-    roles: {
-      "zh-Hant-TW": ["專案管理", "UI", "UX", "切版"],
-      en: ["PM", "UI", "UX", "Layout"],
-    },
-  },
-  {
-    id: 7,
     slug: "mrt100",
     clickable: false,
     name: {
@@ -179,7 +145,7 @@ export const projectsData = [
     },
   },
   {
-    id: 8,
+    id: 7,
     slug: "taipeiod",
     clickable: false,
     name: {
@@ -198,12 +164,12 @@ export const projectsData = [
     },
   },
   {
-    id: 9,
+    id: 8,
     slug: "storystudio",
     clickable: false,
     name: {
-      "zh-Hant-TW": "[Wordpress] 故事",
-      en: "[Wordpress] StoryStudio",
+      "zh-Hant-TW": "故事",
+      en: "StoryStudio",
     },
     intro: {
       "zh-Hant-TW": "使用 Wordpress 打造網站，並自行從頭到尾建置樣式範本",
@@ -217,7 +183,7 @@ export const projectsData = [
     },
   },
   {
-    id: 10,
+    id: 9,
     slug: "luodongarchives",
     clickable: true,
     link: "https://luodongarchives.forest.gov.tw/",
@@ -251,7 +217,7 @@ export const projectsData = [
     },
   },
   {
-    id: 11,
+    id: 10,
     slug: "tpp",
     clickable: false,
     name: {
@@ -270,7 +236,7 @@ export const projectsData = [
     },
   },
   {
-    id: 12,
+    id: 11,
     slug: "KMtaipei",
     clickable: false,
     name: {
@@ -289,7 +255,7 @@ export const projectsData = [
     },
   },
   {
-    id: 13,
+    id: 12,
     slug: "nhrm",
     clickable: false,
     name: {
@@ -308,7 +274,7 @@ export const projectsData = [
     },
   },
   {
-    id: 14,
+    id: 13,
     slug: "hccg",
     clickable: true,
     link: "http://140.112.105.19/workspace/culture_tmp/index.html",
@@ -342,7 +308,7 @@ export const projectsData = [
     },
   },
   {
-    id: 15,
+    id: 14,
     slug: "228",
     clickable: true,
     link: "https://228.drnh.gov.tw/",
@@ -376,7 +342,7 @@ export const projectsData = [
     },
   },
   {
-    id: 16,
+    id: 15,
     slug: "nmth-portal",
     clickable: true,
     link: "https://taiwanindex.nmth.gov.tw/",
@@ -410,7 +376,7 @@ export const projectsData = [
     },
   },
   {
-    id: 17,
+    id: 16,
     slug: "schema",
     clickable: true,
     link: "https://schema.gov.tw/",
@@ -445,7 +411,7 @@ export const projectsData = [
     },
   },
   {
-    id: 18,
+    id: 17,
     slug: "nmth-school",
     clickable: true,
     link: "https://school.nmth.gov.tw/",
@@ -479,7 +445,7 @@ export const projectsData = [
     },
   },
   {
-    id: 19,
+    id: 18,
     slug: "nmth-foreign",
     clickable: false,
     name: {
@@ -498,7 +464,7 @@ export const projectsData = [
     },
   },
   {
-    id: 20,
+    id: 19,
     slug: "moenv-opendata",
     clickable: true,
     link: "https://data.moenv.gov.tw/",
@@ -532,7 +498,7 @@ export const projectsData = [
     },
   },
   {
-    id: 21,
+    id: 20,
     slug: "daxiculture",
     clickable: true,
     link: "https://daxiculture.tycg.gov.tw/",
@@ -566,7 +532,7 @@ export const projectsData = [
     },
   },
   {
-    id: 22,
+    id: 21,
     slug: "taipei-dashboard",
     clickable: true,
     link: "https://dashboard.gov.taipei/",
@@ -600,7 +566,7 @@ export const projectsData = [
     },
   },
   {
-    id: 23,
+    id: 22,
     slug: "iofficeplus",
     clickable: true,
     link: "https://iofficeplus.land.gov.taipei/",
@@ -634,7 +600,7 @@ export const projectsData = [
     },
   },
   {
-    id: 24,
+    id: 23,
     slug: "taichung-od",
     clickable: true,
     link: "https://opendata.taichung.gov.tw/",
@@ -668,42 +634,7 @@ export const projectsData = [
     },
   },
   {
-    id: 25,
-    slug: "report-website-issues",
-    clickable: true,
-    link: "https://chromewebstore.google.com/detail/report-website-issues/ligflmchialjgapdcgadgibgkabckglh?pli=1",
-    heroImage: {
-      "zh-Hant-TW": [
-        {
-          src: "/images/report-website-issues-thumbnail.webp",
-          figcaption: "無障礙回報擴充功能首頁示意圖",
-        },
-      ],
-      en: [
-        {
-          src: "/images/report-website-issues-thumbnail.webp",
-          figcaption: "home page screenshot",
-        },
-      ],
-    },
-    name: {
-      "zh-Hant-TW": "[Side Project] 無障礙回報擴充功能 (Chrome Extension)",
-      en: "[Side Project] Report Website Issues (Chrome Extension)",
-    },
-    intro: {
-      "zh-Hant-TW":
-        "利用擴充功能，回報正在瀏覽的網站，有什麼無障礙方面的問題。",
-      en: "Report website issues of accessibility",
-    },
-    platform: ["web"],
-    yearRange: { start: 2023, end: null },
-    roles: {
-      "zh-Hant-TW": ["UI", "切版"],
-      en: ["UI", "Layout"],
-    },
-  },
-  {
-    id: 26,
+    id: 24,
     slug: "tycg-od",
     clickable: true,
     link: "https://opendata.tycg.gov.tw/",
@@ -731,6 +662,41 @@ export const projectsData = [
     },
     platform: ["web"],
     yearRange: { start: 2024, end: null },
+    roles: {
+      "zh-Hant-TW": ["UI", "切版"],
+      en: ["UI", "Layout"],
+    },
+  },
+  {
+    id: 25,
+    slug: "ntl-exbook",
+    clickable: true,
+    link: "https://exbook.ntl.edu.tw/",
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/ntl-exbook-thumbnail.webp",
+          figcaption: "首頁截圖",
+        },
+      ],
+      en: [
+        {
+          src: "/images/ntl-exbook-thumbnail.webp",
+          figcaption: "home page screenshot",
+        },
+      ],
+    },
+    name: {
+      "zh-Hant-TW": "國立臺灣圖書館-臺灣人文學者珍藏圖書媒合平臺",
+      en: "National Taiwan Library - Rare Books Matching Platform",
+    },
+    intro: {
+      "zh-Hant-TW":
+        "為避免年代久遠的圖書遺失，國立臺灣圖書館建置提供全國人文學者查核藏書是否為珍藏圖書，並且透過媒合，將珍貴資料轉典藏與流通。",
+      en: "To prevent the loss of ancient books, the National Taiwan Library has established a platform for scholars across the country to verify whether their collections are rare books. Through matching, precious materials can be preserved and circulated.",
+    },
+    platform: ["web"],
+    yearRange: { start: 2025, end: null },
     roles: {
       "zh-Hant-TW": ["UI", "切版"],
       en: ["UI", "Layout"],
