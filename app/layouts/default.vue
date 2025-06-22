@@ -65,7 +65,7 @@
     <Meta name="apple-mobile-web-app-title" :content="$t('website.name')" />
     <Meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-    <Link rel="canonical" :href="runtimeConfig.public.baseUrl" />
+    <Link rel="canonical" :href="runtimeConfig.public.baseUrl + $route.path" />
     <Link
       rel="shortcut icon"
       type="image/x-icon"
