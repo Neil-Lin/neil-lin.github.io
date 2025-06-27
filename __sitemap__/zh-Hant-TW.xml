@@ -38,19 +38,13 @@
             <image:loc>https://neil-lin.github.io/images/bpgcms-thumbnail.webp</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://neil-lin.github.io/images/poinfo-thumbnail.webp</image:loc>
+            <image:loc>https://neil-lin.github.io/images/workether-thumbnail.webp</image:loc>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/vital-crm-new-thumbnail.webp</image:loc>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/ttc-thumbnail.webp</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://neil-lin.github.io/images/workether-thumbnail.webp</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://neil-lin.github.io/images/2pick1-thumbnail.webp</image:loc>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/vitalsespsurvey-thumbnail.webp</image:loc>
@@ -73,9 +67,6 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://neil-lin.github.io/projects" />
         <xhtml:link rel="alternate" hreflang="en" href="https://neil-lin.github.io/en/projects" />
         <image:image>
-            <image:loc>https://neil-lin.github.io/images/ntl-exbook-thumbnail.webp</image:loc>
-        </image:image>
-        <image:image>
             <image:loc>https://neil-lin.github.io/images/tycg-od-thumbnail.webp</image:loc>
         </image:image>
         <image:image>
@@ -83,6 +74,9 @@
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/taichung-od-thumbnail.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://neil-lin.github.io/images/report-website-issues-thumbnail.webp</image:loc>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/taipei-dashboard-thumbnail.webp</image:loc>
@@ -98,6 +92,9 @@
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/data-gov-tw-thumbnail.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://neil-lin.github.io/images/poinfo-thumbnail.webp</image:loc>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/luodongarchives-thumbnail.webp</image:loc>
@@ -127,17 +124,8 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://neil-lin.github.io/en/sitemap" />
     </url>
     <url>
-        <loc>https://neil-lin.github.io/products/2pick1</loc>
-        <lastmod>2025-06-22T16:17:11Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/2pick1" />
-        <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://neil-lin.github.io/products/2pick1" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://neil-lin.github.io/en/products/2pick1" />
-    </url>
-    <url>
         <loc>https://neil-lin.github.io/products/accesserty</loc>
-        <lastmod>2025-06-22T16:17:11Z</lastmod>
+        <lastmod>2025-06-27T06:20:28Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/accesserty" />
@@ -163,7 +151,7 @@
     </url>
     <url>
         <loc>https://neil-lin.github.io/products/bpgcms</loc>
-        <lastmod>2025-06-22T16:17:11Z</lastmod>
+        <lastmod>2025-06-27T06:20:28Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/bpgcms" />
@@ -172,7 +160,7 @@
     </url>
     <url>
         <loc>https://neil-lin.github.io/products/choose-chart</loc>
-        <lastmod>2025-06-22T16:17:11Z</lastmod>
+        <lastmod>2025-06-27T06:20:28Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/choose-chart" />
@@ -198,7 +186,7 @@
     </url>
     <url>
         <loc>https://neil-lin.github.io/products/mpos</loc>
-        <lastmod>2025-06-22T16:17:11Z</lastmod>
+        <lastmod>2025-06-27T06:20:28Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/mpos" />
@@ -227,7 +215,7 @@
     </url>
     <url>
         <loc>https://neil-lin.github.io/products/piman</loc>
-        <lastmod>2025-06-22T16:17:11Z</lastmod>
+        <lastmod>2025-06-27T06:20:28Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/piman" />
@@ -249,17 +237,8 @@
         </image:image>
     </url>
     <url>
-        <loc>https://neil-lin.github.io/products/poinfo</loc>
-        <lastmod>2025-06-22T16:17:11Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/poinfo" />
-        <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://neil-lin.github.io/products/poinfo" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://neil-lin.github.io/en/products/poinfo" />
-    </url>
-    <url>
         <loc>https://neil-lin.github.io/products/scout</loc>
-        <lastmod>2025-06-22T16:17:11Z</lastmod>
+        <lastmod>2025-06-27T06:20:28Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/scout" />
@@ -282,7 +261,7 @@
     </url>
     <url>
         <loc>https://neil-lin.github.io/products/vital-crm-app</loc>
-        <lastmod>2025-06-22T16:17:11Z</lastmod>
+        <lastmod>2025-06-27T06:20:28Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/vital-crm-app" />
@@ -305,7 +284,7 @@
     </url>
     <url>
         <loc>https://neil-lin.github.io/products/vital-crm-new</loc>
-        <lastmod>2025-06-22T16:17:11Z</lastmod>
+        <lastmod>2025-06-27T06:20:28Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/vital-crm-new" />
@@ -314,7 +293,7 @@
     </url>
     <url>
         <loc>https://neil-lin.github.io/products/vital-ttc</loc>
-        <lastmod>2025-06-22T16:17:11Z</lastmod>
+        <lastmod>2025-06-27T06:20:28Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/vital-ttc" />
@@ -323,7 +302,7 @@
     </url>
     <url>
         <loc>https://neil-lin.github.io/products/vital-ui-kit</loc>
-        <lastmod>2025-06-22T16:17:11Z</lastmod>
+        <lastmod>2025-06-27T06:20:28Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/vital-ui-kit" />
@@ -343,7 +322,7 @@
     </url>
     <url>
         <loc>https://neil-lin.github.io/products/vitals-esp-survey</loc>
-        <lastmod>2025-06-22T16:17:11Z</lastmod>
+        <lastmod>2025-06-27T06:20:28Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/vitals-esp-survey" />
@@ -375,7 +354,7 @@
     </url>
     <url>
         <loc>https://neil-lin.github.io/products/workether</loc>
-        <lastmod>2025-06-22T16:17:11Z</lastmod>
+        <lastmod>2025-06-27T06:20:28Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/workether" />
@@ -383,4 +362,4 @@
         <xhtml:link rel="alternate" hreflang="en-US" href="https://neil-lin.github.io/en/products/workether" />
     </url>
 </urlset>
-<!-- XML Sitemap generated by @nuxtjs/sitemap v7.2.8 at 2025-06-22T16:17:11.589Z -->
+<!-- XML Sitemap generated by @nuxtjs/sitemap v7.2.8 at 2025-06-27T06:20:28.497Z -->
