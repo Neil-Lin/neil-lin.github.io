@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "3.0.28",
+  "version": "3.0.29",
   "description": "Neil's Portfolio",
   "author": "Neil Lin",
   "private": true,
@@ -17,7 +17,7 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,vue,html,css,scss,json,md}\""
   },
   "dependencies": {
-    "@nuxtjs/seo": "^3.0.0-beta.3",
+    "@nuxtjs/seo": "^3.1.0",
     "nuxt": "^4.0.1",
     "nuxt-gtag": "^3.0.2",
     "vue": "latest",
