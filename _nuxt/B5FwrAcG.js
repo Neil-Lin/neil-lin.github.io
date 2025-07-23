@@ -1,1 +1,0 @@
-import{_ as t,x as c,Z as n,D as o}from"./Bs5hS5jq.js";const s={},_={class:"empty-block"};function a(e,r){return o(),c("div",_,[n(e.$slots,"default",{},void 0,!0)])}const l=Object.assign(t(s,[["render",a],["__scopeId","data-v-786c53aa"]]),{__name:"EmptyBlock"});export{l as _};
