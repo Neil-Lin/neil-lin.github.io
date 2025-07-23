@@ -211,13 +211,21 @@ const product = computed(() => {
 //   );
 // });
 
-useHead({
+// 將 meta 設定包裝在 computed 中，讓數據更新時 head 自動更新
+const headData = computed(() => ({
   title: product.value ? product.value.name[locale.value] : t("error.notFound"),
   meta: [
     {
       hid: "description",
       name: "description",
-      content: product.value.intro[locale.value],
+      content: product.value ? product.value.intro[locale.value] : "",
+    },
+    {
+      hid: "keywords",
+      name: "keywords",
+      content: product.value
+        ? product.value.keywords[locale.value].join(", ")
+        : "",
     },
     {
       hid: "og:url",
@@ -227,12 +235,12 @@ useHead({
     {
       hid: "og:title",
       property: "og:title",
-      content: product.value.name[locale.value],
+      content: product.value ? product.value.name[locale.value] : "",
     },
     {
       hid: "og:description",
       property: "og:description",
-      content: product.value.intro[locale.value],
+      content: product.value ? product.value.intro[locale.value] : "",
     },
     {
       hid: "twitter:url",
@@ -242,15 +250,17 @@ useHead({
     {
       hid: "twitter:title",
       name: "twitter:title",
-      content: product.value.name[locale.value],
+      content: product.value ? product.value.name[locale.value] : "",
     },
     {
       hid: "twitter:description",
       name: "twitter:description",
-      content: product.value.intro[locale.value],
+      content: product.value ? product.value.intro[locale.value] : "",
     },
   ],
-});
+}));
+
+useHead(headData);
 </script>
 
 <style scoped>

@@ -26,6 +26,10 @@ export const productsData = [
         "Piman 是一款聚焦於無障礙網頁設計、基於 Vue 的開源 UI Frameworework。",
       en: "Piman is an open-source UI framework based on Vue, with a focus on accessible web design",
     },
+    keywords: {
+      "zh-Hant-TW": ["無障礙", "UI Kit", "UI 框架", "Vue", "Nuxt"],
+      en: ["Accessibility", "UI Kit", "UI Framework", "Vue", "Nuxt"],
+    },
     summary: {
       "zh-Hant-TW":
         "近年來「以使用者為中心」的概念已深植人心，而這股力量也開始擴散至無障礙網頁設計領域，藉由不斷改善網頁的親和力，期望能達成通用設計的核心概念：Design for All。Piman 正是為此而生，從人們日常生活常頻繁接觸的網頁開始著手改善，所以首要任務便是推廣開發者使用 Piman 開發政府機關網站，進而應用在產品、官網等地方，如此企業可善盡社會責任，也可與國際趨勢接軌。",
@@ -249,6 +253,10 @@ export const productsData = [
       "zh-Hant-TW": "藍星球資訊獨家開發圖表 - Choose 蛛思：資料視覺化",
       en: "Choose: Data Visualization",
     },
+    keywords: {
+      "zh-Hant-TW": ["輿情分析", "資料視覺化", "蛛思"],
+      en: ["Sentiment Analysis", "Data Visualization", "Choose"],
+    },
     summary: {
       "zh-Hant-TW":
         "蛛思輿情分析平台，網羅海量新聞、社群資料，成為您最貼心的小助手，協助您：觀測特定主題的關鍵趨勢、進行活動與企劃的概念發想，以及即時處理公關危機。可供公關、行銷、品牌顧問、媒體代理商、廣告代理商等相關業者使用。本篇僅介紹 Choose 蛛思輿情分析的資料視覺化",
@@ -395,6 +403,10 @@ export const productsData = [
       "zh-Hant-TW": "ΣCOUT 實告為國內首創第一個商業履歷查詢服務。",
       en: "The first commercial resume search service in Taiwan.",
     },
+    keywords: {
+      "zh-Hant-TW": ["商業履歷", "工商徵信", "商業授信", "資料視覺化", "OPENDATA"],
+      en: ["Commercial Resume", "Business Credit Inquiry", "Commercial Credit Assessment", "Data Visualization", "OPENDATA"],
+    },
     summary: {
       "zh-Hant-TW":
         "國內首創第一個商業履歷查詢服務，結合多樣化的 OPENDATA 並綜整各種網路非結構化商業資料，能夠迅速掌握全臺灣公司行號的商業實績。可廣泛用於工商徵信、商業授信等業務，大幅提升資料蒐集、驗證等工作流程的效率，更降低所需耗費的時間及人力成本。協助迅速偵測商業合作夥伴、競業對手或借貸對象之資訊，透過具有公信力的資料集，將商業營運事實揭露相告。",
@@ -525,6 +537,10 @@ export const productsData = [
       "zh-Hant-TW": "公私專用後台內容管理系統",
       en: "Content Management System",
     },
+    keywords: {
+      "zh-Hant-TW": ["內容管理系統", "CMS", "模板"],
+      en: ["Content Management System", "CMS", "Template"],
+    },
     platform: ["web"],
     yearRange: { start: 2019, end: 2020 },
     roles: {
@@ -557,6 +573,10 @@ export const productsData = [
     intro: {
       "zh-Hant-TW": "設計新版",
       en: "New Version",
+    },
+    keywords: {
+      "zh-Hant-TW": ["CRM", "客戶關係管理系統"],
+      en: ["CRM", "Customer Relationship Management"],
     },
     platform: ["web"],
     yearRange: { start: 2018, end: 2018 },
@@ -592,6 +612,10 @@ export const productsData = [
         "以不同回饋、獎勵與會員分級機制，達到刺激消費並留住忠誠顧客。 ",
       en: "By utilizing different feedback, rewards, and membership tier mechanisms, we stimulate consumption and retain loyal customers.",
     },
+    keywords: {
+      "zh-Hant-TW": ["物聯客", "CRM", "客戶關係管理系統"],
+      en: ["物聯客", "CRM", "Customer Relationship Management"],
+    },
     platform: ["web"],
     yearRange: { start: 2018, end: 2018 },
     roles: {
@@ -625,6 +649,10 @@ export const productsData = [
       "zh-Hant-TW":
         "提供多樣化、有效率的線上問卷調查工具，提供內部滿意度、課後問卷、意見徵求，以及外部活動滿意度調查問卷。",
       en: "Provide a diverse and efficient online survey tool for internal satisfaction assessments, post-course evaluations, feedback collection, and external event satisfaction surveys.",
+    },
+    keywords: {
+      "zh-Hant-TW": ["問卷系統", "資料視覺化", "問卷統計結果"],
+      en: ["Survey System", "Data Visualization", "Survey Statistics"],
     },
     summary: {
       "zh-Hant-TW":
@@ -800,6 +828,10 @@ export const productsData = [
       "zh-Hant-TW": "一個優雅且容易客製化的前端 UI 框架。",
       en: "An elegant and easily customizable front-end UI framework.",
     },
+    keywords: {
+      "zh-Hant-TW": ["UI Kit", "UI 框架", "設計系統"],
+      en: ["UI Kit", "UI Framework", "Design System"],
+    },
     summary: {
       "zh-Hant-TW": "一個優雅且容易客製化的前端 UI 框架。",
       en: "An elegant and easily customizable front-end UI framework.",
@@ -939,6 +971,10 @@ export const productsData = [
       "zh-Hant-TW":
         "行動版餐飲 POS 系統，無論你人在哪裡，都能不受限的利用平板為顧客服務。",
       en: "A mobile restaurant POS system featuring multi-tablet order distribution, electronic invoice issuance, fast ordering, and customizable product content.",
+    },
+    keywords: {
+      "zh-Hant-TW": ["餐飲 POS", "行動版 POS", "平板點餐"],
+      en: ["Restaurant POS", "Mobile POS", "Tablet Ordering"],
     },
     summary: {
       "zh-Hant-TW":
@@ -1124,6 +1160,10 @@ export const productsData = [
       "zh-Hant-TW": "業績提升、增加回購率及熟客經營最佳首選。",
       en: "The best choice for boosting sales, increasing repurchase rates, and managing loyal customers.",
     },
+    keywords: {
+      "zh-Hant-TW": ["CRM", "客戶關係管理系統"],
+      en: ["CRM", "Customer Relationship Management"],
+    },
     summary: {
       "zh-Hant-TW":
         "Vital CRM 是一款專為中小企業量身打造的雲端顧客關係管理系統。2014 年推出新版 App，設計首重於使用者在戶外跑業務時，如何迅速找到客戶、記錄拜訪重點、行事曆管理以及處理後續任務。",
@@ -1276,6 +1316,10 @@ export const productsData = [
       "zh-Hant-TW": "讓每個人都能容易且自由地取得網頁資訊",
       en: "Enable everyone to access information freely.",
     },
+    keywords: {
+      "zh-Hant-TW": ["無障礙網頁", "Chrome 擴充功能", "網頁體驗透明化", "Web Components"],
+      en: ["Web Accessibility", "Chrome Extension", "Web Experience Transparency", "Web Components"],
+    },
     summary: {
       "zh-Hant-TW":
         "Accesserty 是一個為資訊公平性設計的網頁體驗透明化層。它讓使用者在日常的搜尋與瀏覽過程中，清楚看見哪些網站願意傾聽、準備改進、並積極採取行動。",
@@ -1425,6 +1469,10 @@ export const productsData = [
         "企業內部以即時通訊為主視角，融合專案管理、檔案與資訊分享集於一體的服務。 ",
       en: "A real-time communication software for internal corporate use, integrating project management, file sharing, and information sharing into one service.",
     },
+    keywords: {
+      "zh-Hant-TW": ["即時通訊", "專案管理", "檔案分享"],
+      en: ["Real-time Communication", "Project Management", "File Sharing"],
+    },
     summary: {
       "zh-Hant-TW":
         "企業內部以即時通訊為主視角，融合專案管理、檔案與資訊分享集於一體的服務。",
@@ -1554,6 +1602,10 @@ export const productsData = [
       "zh-Hant-TW": "收集台灣印花集點活動平台",
       en: "A platform for collecting stamp reward programs in Taiwan.",
     },
+    keywords: {
+      "zh-Hant-TW": ["印花集點", "行銷活動", "消費者行為"],
+      en: ["Stamp Rewards", "Marketing Campaigns", "Consumer Behavior"],
+    },
     summary: {
       "zh-Hant-TW":
         "在台灣，印花集點活動已經成為一種常見的行銷手法，Poinfo 將這些活動整合在一起，讓使用者可以輕鬆找到並參與。",
@@ -1646,6 +1698,10 @@ export const productsData = [
     intro: {
       "zh-Hant-TW": "平台提供以 2 選 1 的方式，讓網友幫使用者做出選擇。",
       en: "A platform that allows users to make choices through a 2-pick-1 format.",
+    },
+    keywords: {
+      "zh-Hant-TW": ["2 選 1", "投票", "決策"],
+      en: ["2pick1", "Voting", "Decision-making"],
     },
     summary: {
       "zh-Hant-TW":
