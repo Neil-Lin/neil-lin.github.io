@@ -1,0 +1,8 @@
+# START nuxt-robots (indexable)
+User-agent: *
+Allow: /
+Allow: /en/
+
+Sitemap: https://neil-lin.github.io/sitemap.xml
+Sitemap: https://neil-lin.github.io/sitemap_index.xml
+# END nuxt-robots
