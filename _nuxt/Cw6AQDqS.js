@@ -1,1 +1,0 @@
-const e=()=>({legacy:!1,locale:"zh-Hant-TW",fallbackLocale:["en","zh-Hant-TW"],messages:(()=>{const a=Object.assign({});return{"zh-Hant-TW":a["/lang/zh-Hant-TW.json"]?.default??{},en:a["/lang/en-US.json"]?.default??{}}})()});export{e as default};
