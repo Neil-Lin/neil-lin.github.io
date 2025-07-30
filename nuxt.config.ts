@@ -181,7 +181,10 @@ export default defineNuxtConfig({
     },
   },
 
-  robots: { robotsTxt: false },
+  robots: {
+    robotsTxt: true,
+    sitemap: `${process.env.NUXT_PUBLIC_BASE_URL}/sitemap.xml`,
+  },
 
   site: {
     url: process.env.NUXT_PUBLIC_BASE_URL,
