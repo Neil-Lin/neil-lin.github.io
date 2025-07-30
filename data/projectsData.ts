@@ -702,6 +702,41 @@ export const projectsData = [
       en: ["UI", "Layout"],
     },
   },
+  {
+    id: 26,
+    slug: "youth-taipei",
+    clickable: true,
+    link: "https://youth.gov.taipei/",
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/youth-taipei-thumbnail.webp",
+          figcaption: "臺北市政府青年局首頁截圖",
+        },
+      ],
+      en: [
+        {
+          src: "/images/youth-taipei-thumbnail.webp",
+          figcaption: "youth of taipei - home page screenshot",
+        },
+      ],
+    },
+    name: {
+      "zh-Hant-TW": "臺北市政府青年局",
+      en: "Youth of Taipei",
+    },
+    intro: {
+      "zh-Hant-TW":
+        "臺北市政府青年局於 113 年 6 月 1 日成立以協助青年多元參與、職涯發展、國際接軌為目標，陪伴青年實現自我。",
+      en: "Youth of Taipei was established on June 1, 2024, with the goal of assisting youth in diverse participation, career development, and international integration.",
+    },
+    platform: ["web"],
+    yearRange: { start: 2025, end: null },
+    roles: {
+      "zh-Hant-TW": ["UI", "切版"],
+      en: ["UI", "Layout"],
+    },
+  },
 ];
 
 export default projectsData;

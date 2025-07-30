@@ -107,7 +107,7 @@ export default {
   page: {
     about: {
       p1: 'I started my journey in web design in 2013, working on a variety of projects, including government initiatives, corporate projects, and product development and maintenance for companies. {0}{0}My expertise lies in UI/UX design, Vue/Nuxt frontend development, accessible web design, data visualization, and design management.{0}{0}In recent years, I’ve grown increasingly aware of the importance of accessible web design, leading me to focus on implementing the "Design for All" universal design concept in my work.{0}{0}My goal is to create balanced solutions that achieve a true win-win for all stakeholders.',
-      p2: "This website is built using Nuxt4 and hosted on Netlify. You can view the source code on {link}.",
+      p2: "This website is built using Nuxt4. You can view the source code on {link}.",
     },
     sitemap: {
       p1: "This website is built based on the principles of accessible web design. The main content of the website is divided into three major sections.{0}{0}1. The Header Section 2.The Main Content 3.The Footer Section{0}{0}The Accesskey settings for this website are as follows:：",
