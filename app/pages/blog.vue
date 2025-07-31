@@ -93,4 +93,25 @@ const breadCrumbsList = computed(() => [
     title: t("mainMenu.blog"),
   },
 ]);
+
+useSchemaOrg([
+  {
+    "@type": "CollectionPage",
+    name: pageTitle.value,
+    description: pageDescription.value,
+    url: runtimeConfig.public.baseUrl + route.path,
+    inLanguage: locale.value === "zh-Hant-TW" ? "zh-Hant-TW" : "en",
+    isPartOf: {
+      "@type": "WebSite",
+      name: t("website.name"),
+      url: runtimeConfig.public.baseUrl,
+    },
+  },
+]);
+
+watchEffect(() => {
+  if (breadCrumbsList.value.length > 0) {
+    useBreadcrumbSchema(breadCrumbsList.value);
+  }
+});
 </script>

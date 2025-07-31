@@ -458,20 +458,27 @@ useHead({
   ],
 });
 
+const slug = route.params.name;
+const product = productsData.find((p) => p.slug === slug);
+
 const breadcrumbs = computed(() => {
-  const slug = route.params.name;
-  const product = productsData.find((p) => p.slug === slug);
   if (slug && product) {
     return [
-      { link: "/", title: t("action.goToHomePage") },
-      { link: "/products", title: t("mainMenu.products") },
-      { title: product.name[locale.value] || slug },
+      { link: "/", title: String(t("action.goToHomePage")) },
+      { link: "/products", title: String(t("mainMenu.products")) },
+      { title: String(product.name[locale.value] || slug) },
     ];
   } else {
     return [
-      { link: "/", title: t("action.goToHomePage") },
-      { link: "", title: t("mainMenu.products") },
+      { link: "/", title: String(t("action.goToHomePage")) },
+      { title: String(t("mainMenu.products")) },
     ];
+  }
+});
+
+watchEffect(() => {
+  if (breadcrumbs.value.length > 0) {
+    useBreadcrumbSchema(breadcrumbs.value);
   }
 });
 </script>

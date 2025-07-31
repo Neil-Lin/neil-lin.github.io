@@ -391,18 +391,20 @@ useHead({
   ],
 });
 
-const breadcrumbs = computed(() => {
-  if (route.params.name) {
-    return [
-      { link: "/", title: t("action.goToHomePage") },
-      { link: "/projects", title: t("mainMenu.projects") },
-      { title: route.params.name },
-    ];
-  } else {
-    return [
-      { link: "/", title: t("action.goToHomePage") },
-      { link: "", title: t("mainMenu.projects") },
-    ];
+const breadCrumbsList = computed(() => [
+  {
+    link: "/",
+    title: t("action.goToHomePage"),
+  },
+  {
+    link: "",
+    title: t("mainMenu.projects"),
+  },
+]);
+
+watchEffect(() => {
+  if (breadCrumbsList.value.length > 0) {
+    useBreadcrumbSchema(breadCrumbsList.value);
   }
 });
 </script>

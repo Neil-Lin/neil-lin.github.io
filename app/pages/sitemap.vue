@@ -258,6 +258,12 @@ onMounted(() => {
   checkTabAble();
   window.addEventListener("resize", checkTabAble);
 });
+
+watchEffect(() => {
+  if (breadCrumbsList.value.length > 0) {
+    useBreadcrumbSchema(breadCrumbsList.value);
+  }
+});
 </script>
 
 <style scoped>
