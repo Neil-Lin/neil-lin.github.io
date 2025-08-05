@@ -10,6 +10,7 @@ export default defineSitemapEventHandler(async () => {
 
   return clickableProducts.map((p) => ({
     loc: `/products/${p.slug}`,
+    lastmod: p.updatedAt,
     _i18nTransform: true,
   }));
 });

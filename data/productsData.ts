@@ -226,6 +226,7 @@ export const productsData = [
         },
       ],
     },
+    updatedAt: "2025-08-06T00:00:00.000Z",
   },
   {
     id: 2,
@@ -376,6 +377,7 @@ export const productsData = [
         },
       ],
     },
+    updatedAt: "2025-08-06T00:00:00.000Z",
   },
   {
     id: 3,
@@ -522,6 +524,7 @@ export const productsData = [
         },
       ],
     },
+    updatedAt: "2025-08-06T00:00:00.000Z",
   },
   {
     id: 4,
@@ -559,6 +562,7 @@ export const productsData = [
       "zh-Hant-TW": ["UI", "UX", "切版"],
       en: ["UI", "UX", "Layout"],
     },
+    updatedAt: "2025-08-06T00:00:00.000Z",
   },
   {
     id: 5,
@@ -596,6 +600,7 @@ export const productsData = [
       "zh-Hant-TW": ["UX"],
       en: ["UX"],
     },
+    updatedAt: "2025-08-06T00:00:00.000Z",
   },
   {
     id: 6,
@@ -634,6 +639,7 @@ export const productsData = [
       "zh-Hant-TW": ["UI", "UX", "切版"],
       en: ["UI", "UX", "Layout"],
     },
+    updatedAt: "2025-08-06T00:00:00.000Z",
   },
   {
     id: 7,
@@ -813,6 +819,7 @@ export const productsData = [
         },
       ],
     },
+    updatedAt: "2025-08-06T00:00:00.000Z",
   },
   {
     id: 8,
@@ -956,6 +963,7 @@ export const productsData = [
         },
       ],
     },
+    updatedAt: "2025-08-06T00:00:00.000Z",
   },
   {
     id: 9,
@@ -1145,6 +1153,7 @@ export const productsData = [
         },
       ],
     },
+    updatedAt: "2025-08-06T00:00:00.000Z",
   },
   {
     id: 10,
@@ -1301,6 +1310,7 @@ export const productsData = [
         },
       ],
     },
+    updatedAt: "2025-08-06T00:00:00.000Z",
   },
   {
     id: 11,
@@ -1463,6 +1473,7 @@ export const productsData = [
         },
       ],
     },
+    updatedAt: "2025-08-06T00:00:00.000Z",
   },
   {
     id: 12,
@@ -1597,6 +1608,7 @@ export const productsData = [
         },
       ],
     },
+    updatedAt: "2025-08-06T00:00:00.000Z",
   },
   {
     id: 13,
@@ -1694,6 +1706,7 @@ export const productsData = [
         },
       ],
     },
+    updatedAt: "2025-08-06T00:00:00.000Z",
   },
   {
     id: 14,
@@ -1823,6 +1836,7 @@ export const productsData = [
         },
       ],
     },
+    updatedAt: "2025-08-06T00:00:00.000Z",
   },
 ];
 
