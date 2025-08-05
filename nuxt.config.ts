@@ -1,28 +1,21 @@
 import enUS from "./i18n/lang/en-US";
 import zhHantTW from "./i18n/lang/zh-Hant-TW";
+import { productsData } from "./data/productsData";
+
+const dynamicRoutes = productsData
+  .filter((p) => p.clickable)
+  .map((p) => `/products/${p.slug}`);
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
     baseURL: "/",
   },
-  compatibilityDate: "2024-11-01",
+  compatibilityDate: "2024-04-03",
   devtools: { enabled: false },
   nitro: {
     prerender: {
-      routes: [
-        "/products/piman",
-        "/products/choose-chart",
-        "/products/scout",
-        // "/products/bpgcms",
-        // "/products/vital-crm-new",
-        // "/products/vital-ttc",
-        "/products/vitals-esp-survey",
-        "/products/vital-ui-kit",
-        "/products/mpos",
-        "/products/vital-crm-app",
-        "/products/accesserty",
-      ],
+      routes: ["/", "/products", ...dynamicRoutes],
     },
   },
   modules: [

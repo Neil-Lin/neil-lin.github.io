@@ -404,8 +404,20 @@ export const productsData = [
       en: "The first commercial resume search service in Taiwan.",
     },
     keywords: {
-      "zh-Hant-TW": ["商業履歷", "工商徵信", "商業授信", "資料視覺化", "OPENDATA"],
-      en: ["Commercial Resume", "Business Credit Inquiry", "Commercial Credit Assessment", "Data Visualization", "OPENDATA"],
+      "zh-Hant-TW": [
+        "商業履歷",
+        "工商徵信",
+        "商業授信",
+        "資料視覺化",
+        "OPENDATA",
+      ],
+      en: [
+        "Commercial Resume",
+        "Business Credit Inquiry",
+        "Commercial Credit Assessment",
+        "Data Visualization",
+        "OPENDATA",
+      ],
     },
     summary: {
       "zh-Hant-TW":
@@ -1317,8 +1329,18 @@ export const productsData = [
       en: "Enable everyone to access information freely.",
     },
     keywords: {
-      "zh-Hant-TW": ["無障礙網頁", "Chrome 擴充功能", "網頁體驗透明化", "Web Components"],
-      en: ["Web Accessibility", "Chrome Extension", "Web Experience Transparency", "Web Components"],
+      "zh-Hant-TW": [
+        "無障礙網頁",
+        "Chrome 擴充功能",
+        "網頁體驗透明化",
+        "Web Components",
+      ],
+      en: [
+        "Web Accessibility",
+        "Chrome Extension",
+        "Web Experience Transparency",
+        "Web Components",
+      ],
     },
     summary: {
       "zh-Hant-TW":
