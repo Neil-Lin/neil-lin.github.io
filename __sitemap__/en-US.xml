@@ -131,32 +131,57 @@
     </url>
     <url>
         <loc>https://neil-lin.github.io/en/products/2pick1</loc>
-        <lastmod>2025-07-31T16:19:19Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2025-08-06T00:00:01Z</lastmod>
+        <image:image>
+            <image:loc>https://neil-lin.github.io/images/2pick1-thumbnail.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://neil-lin.github.io/images/2pick1-home.webp</image:loc>
+            <image:title>首頁，每張卡片代表一個投票項目，左右滑動直接投票。</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://neil-lin.github.io/images/2pick1-profile.webp</image:loc>
+            <image:title>個人檔案頁面，顯示使用者的個人的貼文、回覆等。</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://neil-lin.github.io/images/2pick1-comment.webp</image:loc>
+            <image:title>在投票頁面留言，可上傳多媒體。</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://neil-lin.github.io/images/2pick1-search.webp</image:loc>
+            <image:title>搜尋相關資訊，包含最新貼文、圖片、使用者等。</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://neil-lin.github.io/images/2pick1-categories.webp</image:loc>
+            <image:title>貼文分類頁面，使用者可依照興趣瀏覽不同類別。</image:title>
+        </image:image>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://neil-lin.github.io/products/2pick1" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://neil-lin.github.io/en/products/2pick1" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://neil-lin.github.io/en/products/2pick1" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/2pick1" />
         <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://neil-lin.github.io/products/2pick1" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://neil-lin.github.io/en/products/2pick1" />
     </url>
     <url>
         <loc>https://neil-lin.github.io/en/products/accesserty</loc>
-        <lastmod>2025-07-31T16:19:19Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2025-08-06T00:00:01Z</lastmod>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/accesserty-thumbnail.webp</image:loc>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/accesserty-flow.webp</image:loc>
+            <image:title>在瀏覽網頁之前到開發者修復的過程，Accesserty 都能提供幫助，打造永續改善無障礙的良好循環。</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/accesserty-signal.webp</image:loc>
+            <image:title>Accesserty Signal 是一款輕量級 Chrome 擴充功能，可幫助使用者辨識哪些網站正積極提升其使用者體驗——從 Google 搜尋結果頁面就能看出端倪。它不對網站進行排名、評分或評判，而是透過在搜尋結果旁顯示一個微妙的標記（徽章），指示該網站是否參與了持續透明化與改進的計畫。這不是關於「通過」或「失敗」，而是關於誰正在努力改進。</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/accesserty-devcheck.webp</image:loc>
+            <image:title>Accesserty DevCheck 是一款輕量級的無障礙輔助工具，專為開發者與設計師設計。它能幫助你模擬真實使用者的限制，並在開發初期或審核過程中及早識別可及性問題——即使你並非 WCAG 標準的專家。DevCheck 不僅關注合規性，還致力於彌合抽象規範與具體使用體驗之間的落差，讓你能夠親眼見證使用者在實際操作網站時所遇到的困難。</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/accesserty-ui-kit.webp</image:loc>
+            <image:title>Accesserty UI Kit 是一個以 Web Components 技術構建的網頁元件庫，內建無障礙語意、結構及互動支持，確保可及性為標準配置。即使不了解 WCAG 的技術細節，它依然能幫助你打造符合資訊公平性原則的介面，讓更多使用者能順利使用你的網站。</image:title>
         </image:image>
         <xhtml:link rel="alternate" hreflang="zh" href="https://neil-lin.github.io/products/accesserty" />
         <xhtml:link rel="alternate" hreflang="en" href="https://neil-lin.github.io/en/products/accesserty" />
@@ -165,33 +190,26 @@
         <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://neil-lin.github.io/products/accesserty" />
     </url>
     <url>
-        <loc>https://neil-lin.github.io/en/products/bpgcms</loc>
-        <lastmod>2025-07-31T16:19:19Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/bpgcms" />
-        <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://neil-lin.github.io/products/bpgcms" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://neil-lin.github.io/en/products/bpgcms" />
-    </url>
-    <url>
         <loc>https://neil-lin.github.io/en/products/choose-chart</loc>
-        <lastmod>2025-07-31T16:19:19Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2025-08-06T00:00:01Z</lastmod>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/choose-chart-thumbnail.webp</image:loc>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/choose-chart-hotkeywords.webp</image:loc>
+            <image:title>熱詞影響力診斷圖</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/choose-chart-hotkeywords-hover.webp</image:loc>
+            <image:title>熱詞影響力診斷圖-目標相關性</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/choose-chart-hotkeywords-detail.webp</image:loc>
+            <image:title>熱詞影響力診斷圖-分類</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/choose-chart-hotkeywords-detail-hover.webp</image:loc>
+            <image:title>熱詞影響力診斷圖-分類項目相關性</image:title>
         </image:image>
         <xhtml:link rel="alternate" hreflang="zh" href="https://neil-lin.github.io/products/choose-chart" />
         <xhtml:link rel="alternate" hreflang="en" href="https://neil-lin.github.io/en/products/choose-chart" />
@@ -201,49 +219,65 @@
     </url>
     <url>
         <loc>https://neil-lin.github.io/en/products/mpos</loc>
-        <lastmod>2025-07-31T16:19:19Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2025-08-06T00:00:01Z</lastmod>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/mpos-thumbnail.webp</image:loc>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/device-situation-tablet.webp</image:loc>
+            <image:title>裝置與手勢</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/mpos-discuss.webp</image:loc>
+            <image:title>發想新操作模式</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/mpos-wireframe.webp</image:loc>
+            <image:title>藉由 Wireframe 密集討論，找出最符合情境、最有效率的方案。</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/mpos.webp</image:loc>
+            <image:title>設計稿</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/mpos-all.webp</image:loc>
+            <image:title>所有過程</image:title>
         </image:image>
         <xhtml:link rel="alternate" hreflang="zh" href="https://neil-lin.github.io/products/mpos" />
         <xhtml:link rel="alternate" hreflang="en" href="https://neil-lin.github.io/en/products/mpos" />
         <xhtml:link rel="alternate" hreflang="en-US" href="https://neil-lin.github.io/en/products/mpos" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/mpos" />
         <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://neil-lin.github.io/products/mpos" />
+        <video:video>
+            <video:title>登入</video:title>
+            <video:thumbnail_loc>/images/mpos-thumbnail.webp</video:thumbnail_loc>
+            <video:description>MPOS 登入畫面操作影片</video:description>
+            <video:content_loc>https://neil-lin.github.io/video/mpos-login.mp4</video:content_loc>
+        </video:video>
+        <video:video>
+            <video:title>點餐系統</video:title>
+            <video:thumbnail_loc>/images/mpos-thumbnail.webp</video:thumbnail_loc>
+            <video:description>MPOS 點餐系統操作影片</video:description>
+            <video:content_loc>https://neil-lin.github.io/video/mpos-main.mp4</video:content_loc>
+        </video:video>
     </url>
     <url>
         <loc>https://neil-lin.github.io/en/products/piman</loc>
-        <lastmod>2025-07-31T16:19:19Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2025-08-06T00:00:01Z</lastmod>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/piman-thumbnail.webp</image:loc>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/piman-v3-design-system.webp</image:loc>
+            <image:title>Piman V3 後台範本</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/piman-v3-button.webp</image:loc>
+            <image:title>Piman V3 按鈕元件</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/piman-v3-backstage-template.webp</image:loc>
+            <image:title>Piman V3 設計系統</image:title>
         </image:image>
         <xhtml:link rel="alternate" hreflang="zh" href="https://neil-lin.github.io/products/piman" />
         <xhtml:link rel="alternate" hreflang="en" href="https://neil-lin.github.io/en/products/piman" />
@@ -253,29 +287,37 @@
     </url>
     <url>
         <loc>https://neil-lin.github.io/en/products/poinfo</loc>
-        <lastmod>2025-07-31T16:19:19Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2025-08-06T00:00:01Z</lastmod>
+        <image:image>
+            <image:loc>https://neil-lin.github.io/images/poinfo-thumbnail.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://neil-lin.github.io/images/poinfo-all-concept.webp</image:loc>
+            <image:title>包含活動列表、行事曆、分類、會員管理、同商品在不同活動中是否出現等功能。</image:title>
+        </image:image>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://neil-lin.github.io/products/poinfo" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://neil-lin.github.io/en/products/poinfo" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://neil-lin.github.io/en/products/poinfo" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/poinfo" />
         <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://neil-lin.github.io/products/poinfo" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://neil-lin.github.io/en/products/poinfo" />
     </url>
     <url>
         <loc>https://neil-lin.github.io/en/products/scout</loc>
-        <lastmod>2025-07-31T16:19:19Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2025-08-06T00:00:01Z</lastmod>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/scout-thumbnail.webp</image:loc>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/scout-landingpage-light.webp</image:loc>
+            <image:title>Landing Page(明亮模式)</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/scout-landingpage-dark.webp</image:loc>
+            <image:title>Landing Page(黑暗模式)</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/scout-404.webp</image:loc>
+            <image:title>404 page</image:title>
         </image:image>
         <xhtml:link rel="alternate" hreflang="zh" href="https://neil-lin.github.io/products/scout" />
         <xhtml:link rel="alternate" hreflang="en" href="https://neil-lin.github.io/en/products/scout" />
@@ -285,20 +327,21 @@
     </url>
     <url>
         <loc>https://neil-lin.github.io/en/products/vital-crm-app</loc>
-        <lastmod>2025-07-31T16:19:19Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2025-08-06T00:00:01Z</lastmod>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/vitalcrm-app-thumbnail.webp</image:loc>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/vitalcrm-app-wireframe.webp</image:loc>
+            <image:title>functional map 和 wireframe</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/vitalcrm-design-mobile.webp</image:loc>
+            <image:title>Vital CRM APP 重點截圖，使用手機通常使用單手/握，所以重要操作置於中央與下方（列表、功能按鈕以及快捷按鈕），次要操作（搜尋、選單以及修改）放置於較上方，且均符合當時作業系統版本的 Guideline。針對左右手操作距離都相等，只有快捷按鈕偏右側（但符合作業系統 Guideline）。</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/vitalcrm-design-tablet.webp</image:loc>
+            <image:title>Vital CRM APP (Tablet) 重點截圖，平板打橫可操作範圍較直式的區域廣。另外，因為中央區域會變得比較難按到，所以會把需要專注且較花時間的操作，放在靠近中央區域（因為此時操作情境偏向較常使用單手/點/放置平穩的模式），例如：編輯客戶資料。如果只是瀏覽資訊，情境會變成雙手/握/拇指滑動，會盡量靠近兩側可滑動區域。</image:title>
         </image:image>
         <xhtml:link rel="alternate" hreflang="zh" href="https://neil-lin.github.io/products/vital-crm-app" />
         <xhtml:link rel="alternate" hreflang="en" href="https://neil-lin.github.io/en/products/vital-crm-app" />
@@ -307,36 +350,18 @@
         <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://neil-lin.github.io/products/vital-crm-app" />
     </url>
     <url>
-        <loc>https://neil-lin.github.io/en/products/vital-crm-new</loc>
-        <lastmod>2025-07-31T16:19:19Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/vital-crm-new" />
-        <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://neil-lin.github.io/products/vital-crm-new" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://neil-lin.github.io/en/products/vital-crm-new" />
-    </url>
-    <url>
-        <loc>https://neil-lin.github.io/en/products/vital-ttc</loc>
-        <lastmod>2025-07-31T16:19:19Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/vital-ttc" />
-        <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://neil-lin.github.io/products/vital-ttc" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://neil-lin.github.io/en/products/vital-ttc" />
-    </url>
-    <url>
         <loc>https://neil-lin.github.io/en/products/vital-ui-kit</loc>
-        <lastmod>2025-07-31T16:19:19Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2025-08-06T00:00:01Z</lastmod>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/vitaluikit-thumbnail.webp</image:loc>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/vitaluikit-docs.webp</image:loc>
+            <image:title>使用 Fabricator 建立文件</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/vitaluikit-sketch.webp</image:loc>
+            <image:title>Sketch App 檔案 Button 元件示意圖</image:title>
         </image:image>
         <xhtml:link rel="alternate" hreflang="zh" href="https://neil-lin.github.io/products/vital-ui-kit" />
         <xhtml:link rel="alternate" hreflang="en" href="https://neil-lin.github.io/en/products/vital-ui-kit" />
@@ -346,29 +371,33 @@
     </url>
     <url>
         <loc>https://neil-lin.github.io/en/products/vitals-esp-survey</loc>
-        <lastmod>2025-07-31T16:19:19Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2025-08-06T00:00:01Z</lastmod>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/vitalsespsurvey-thumbnail.webp</image:loc>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/vitalsespsurvey-wireframe-dashboard.webp</image:loc>
+            <image:title>Vitals ESP Survey Dashboard，設計重點：不同身份登入者，會看到不同資料。</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/vitalsespsurvey-wireframe-edit.webp</image:loc>
+            <image:title>Vitals ESP Survey 問卷編輯，設計重點：符合大多數人使用習慣，兼且具備跳題、必填、相片、各種類型、題組、多國語言、預覽、設定以及自動產生錨點快捷等專業功能。</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/vitalsespsurvey-wireframe-list1.webp</image:loc>
+            <image:title>Vitals ESP Survey 格狀瀏覽</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/vitalsespsurvey-wireframe-list2.webp</image:loc>
+            <image:title>Vitals ESP Survey 列表瀏覽</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/vitalsespsurvey-wireframe-result1.webp</image:loc>
+            <image:title>Vitals ESP Survey 資料視覺化總覽</image:title>
         </image:image>
         <image:image>
             <image:loc>https://neil-lin.github.io/images/vitalsespsurvey-wireframe-result2.webp</image:loc>
+            <image:title>Vitals ESP Survey 資料視覺化問卷細部統計</image:title>
         </image:image>
         <xhtml:link rel="alternate" hreflang="zh" href="https://neil-lin.github.io/products/vitals-esp-survey" />
         <xhtml:link rel="alternate" hreflang="en" href="https://neil-lin.github.io/en/products/vitals-esp-survey" />
@@ -378,12 +407,39 @@
     </url>
     <url>
         <loc>https://neil-lin.github.io/en/products/workether</loc>
-        <lastmod>2025-07-31T16:19:19Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <lastmod>2025-08-06T00:00:01Z</lastmod>
+        <image:image>
+            <image:loc>https://neil-lin.github.io/images/workether-thumbnail.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://neil-lin.github.io/images/workether-wireframe-chat-list.webp</image:loc>
+            <image:title>最愛聊天列表，可透過自訂分群，一次瀏覽所有對話。</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://neil-lin.github.io/images/workether-wireframe-chat-single-expand.webp</image:loc>
+            <image:title>展開單人對話，可尋找過往訊息、檔案、釘選項目而不影響對話視窗。</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://neil-lin.github.io/images/workether-wireframe-group-chat-setting.webp</image:loc>
+            <image:title>設定群組成員</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://neil-lin.github.io/images/workether-wireframe-task.webp</image:loc>
+            <image:title>成員行事曆</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://neil-lin.github.io/images/workether-mockup-chat-light.webp</image:loc>
+            <image:title>對話首頁 - 明亮模式</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://neil-lin.github.io/images/workether-mockup-chat-dark.webp</image:loc>
+            <image:title>對話首頁 - 黑暗模式</image:title>
+        </image:image>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://neil-lin.github.io/products/workether" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://neil-lin.github.io/en/products/workether" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://neil-lin.github.io/en/products/workether" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://neil-lin.github.io/products/workether" />
         <xhtml:link rel="alternate" hreflang="zh-Hant-TW" href="https://neil-lin.github.io/products/workether" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://neil-lin.github.io/en/products/workether" />
     </url>
 </urlset>
-<!-- XML Sitemap generated by @nuxtjs/sitemap v7.4.3 at 2025-07-31T16:19:19.992Z -->
+<!-- XML Sitemap generated by @nuxtjs/sitemap v7.4.3 at 2025-08-05T18:41:19.543Z -->
