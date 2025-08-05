@@ -226,7 +226,7 @@ export const productsData = [
         },
       ],
     },
-    updatedAt: "2025-08-06T00:00:00.000Z",
+    updatedAt: "2025-08-06T00:00:01.000Z", // 只需將時間微調一秒
   },
   {
     id: 2,
@@ -377,7 +377,7 @@ export const productsData = [
         },
       ],
     },
-    updatedAt: "2025-08-06T00:00:00.000Z",
+    updatedAt: "2025-08-06T00:00:01.000Z",
   },
   {
     id: 3,
@@ -524,7 +524,7 @@ export const productsData = [
         },
       ],
     },
-    updatedAt: "2025-08-06T00:00:00.000Z",
+    updatedAt: "2025-08-06T00:00:01.000Z",
   },
   {
     id: 4,
@@ -562,7 +562,7 @@ export const productsData = [
       "zh-Hant-TW": ["UI", "UX", "切版"],
       en: ["UI", "UX", "Layout"],
     },
-    updatedAt: "2025-08-06T00:00:00.000Z",
+    updatedAt: "2025-08-06T00:00:01.000Z",
   },
   {
     id: 5,
@@ -600,7 +600,7 @@ export const productsData = [
       "zh-Hant-TW": ["UX"],
       en: ["UX"],
     },
-    updatedAt: "2025-08-06T00:00:00.000Z",
+    updatedAt: "2025-08-06T00:00:01.000Z",
   },
   {
     id: 6,
@@ -639,7 +639,7 @@ export const productsData = [
       "zh-Hant-TW": ["UI", "UX", "切版"],
       en: ["UI", "UX", "Layout"],
     },
-    updatedAt: "2025-08-06T00:00:00.000Z",
+    updatedAt: "2025-08-06T00:00:01.000Z",
   },
   {
     id: 7,
@@ -819,7 +819,7 @@ export const productsData = [
         },
       ],
     },
-    updatedAt: "2025-08-06T00:00:00.000Z",
+    updatedAt: "2025-08-06T00:00:01.000Z",
   },
   {
     id: 8,
@@ -963,7 +963,7 @@ export const productsData = [
         },
       ],
     },
-    updatedAt: "2025-08-06T00:00:00.000Z",
+    updatedAt: "2025-08-06T00:00:01.000Z",
   },
   {
     id: 9,
@@ -1136,24 +1136,32 @@ export const productsData = [
         {
           src: "/video/mpos-login.mp4",
           title: "登入",
+          thumbnail_loc: "/images/mpos-thumbnail.webp",
+          description: "MPOS 登入畫面操作影片",
         },
         {
           src: "/video/mpos-main.mp4",
           title: "點餐系統",
+          thumbnail_loc: "/images/mpos-thumbnail.webp",
+          description: "MPOS 點餐系統操作影片",
         },
       ],
       en: [
         {
           src: "/video/mpos-login.mp4",
           title: "Login",
+          thumbnail_loc: "/images/mpos-thumbnail.webp",
+          description: "MPOS login screen operation video.",
         },
         {
           src: "/video/mpos-main.mp4",
           title: "Order",
+          thumbnail_loc: "/images/mpos-thumbnail.webp",
+          description: "MPOS ordering system operation video.",
         },
       ],
     },
-    updatedAt: "2025-08-06T00:00:00.000Z",
+    updatedAt: "2025-08-06T00:00:01.000Z",
   },
   {
     id: 10,
@@ -1310,7 +1318,7 @@ export const productsData = [
         },
       ],
     },
-    updatedAt: "2025-08-06T00:00:00.000Z",
+    updatedAt: "2025-08-06T00:00:01.000Z",
   },
   {
     id: 11,
@@ -1473,7 +1481,7 @@ export const productsData = [
         },
       ],
     },
-    updatedAt: "2025-08-06T00:00:00.000Z",
+    updatedAt: "2025-08-06T00:00:01.000Z",
   },
   {
     id: 12,
@@ -1608,7 +1616,7 @@ export const productsData = [
         },
       ],
     },
-    updatedAt: "2025-08-06T00:00:00.000Z",
+    updatedAt: "2025-08-06T00:00:01.000Z",
   },
   {
     id: 13,
@@ -1706,7 +1714,7 @@ export const productsData = [
         },
       ],
     },
-    updatedAt: "2025-08-06T00:00:00.000Z",
+    updatedAt: "2025-08-06T00:00:01.000Z",
   },
   {
     id: 14,
@@ -1836,7 +1844,7 @@ export const productsData = [
         },
       ],
     },
-    updatedAt: "2025-08-06T00:00:00.000Z",
+    updatedAt: "2025-08-06T00:00:01.000Z",
   },
 ];
 
