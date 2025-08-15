@@ -188,9 +188,9 @@ export default defineNuxtConfig({
     sources: ["/api/__sitemap__/urls"],
   },
 
-  // ogImage: {
-  //   defaults: {
-  //     renderer: "chromium",
-  //   },
-  // },
+  ogImage: {
+    defaults: {
+      renderer: "chromium",
+    },
+  },
 });
