@@ -14,11 +14,11 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: false },
   // ssr: true,
-  // nitro: {
-  //   prerender: {
-  //     routes: ["/", "/products", ...dynamicRoutes, "projects", "blog"],
-  //   },
-  // },
+  nitro: {
+    prerender: {
+      routes: ["/", "/products", ...dynamicRoutes, "projects", "blog"],
+    },
+  },
   modules: [
     "@nuxt/eslint",
     "nuxt-gtag",

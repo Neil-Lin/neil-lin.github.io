@@ -4,6 +4,31 @@
       <h2 class="visually-hidden">{{ pageTitle }}</h2>
       <div class="card animation-fade-out podcast">
         <akContainer />
+        <div
+          class="custom-screenshot"
+          style="
+            width: 2000px;
+            height: 1000px;
+            display: flex;
+            background-color: #0047e1;
+            color: white;
+            padding: 200px;
+            font-size: 5rem;
+            align-items: center;
+          "
+        >
+          <OgImageScreenshot
+            :selector="'.custom-screenshot'"
+            :mask="'.hidden-element'"
+            :width="2000"
+            :height="1000"
+            :delay="300"
+          />
+          <div>
+            <div>Custom screenshot</div>
+            <div class="hidden-element">this should be hidden</div>
+          </div>
+        </div>
         <div class="podcast-container">
           <div>
             <i18n-t
