@@ -34,11 +34,11 @@
       property="og:description"
       :content="$t('intro.des2')"
     />
-    <Meta
+    <!-- <Meta
       hid="og:image"
       property="og:image"
       :content="runtimeConfig.public.baseUrl + '/images/social-media.png'"
-    />
+    /> -->
     <Meta name="twitter:card" content="summary_large_image" />
     <Meta
       hid="twitter:url"
@@ -55,11 +55,11 @@
       name="twitter:description"
       :content="$t('intro.des2')"
     />
-    <Meta
+    <!-- <Meta
       hid="twitter:image"
       name="twitter:image"
       :content="runtimeConfig.public.baseUrl + '/images/social-media.png'"
-    />
+    /> -->
     <Meta name="mobile-web-app-capable" content="yes" />
     <Meta name="apple-touch-fullscreen" content="yes" />
     <Meta name="apple-mobile-web-app-title" :content="$t('website.name')" />
@@ -122,6 +122,8 @@ useHead({
 });
 
 const { scrollToTop, scrollDistance } = useScrollToTop();
+
+defineOgImageScreenshot();
 </script>
 
 <style>

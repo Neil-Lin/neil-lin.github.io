@@ -261,6 +261,14 @@ const headData = computed(() => ({
 }));
 
 useHead(headData);
+
+defineOgImageComponent("OgImageCustomTemplate", {
+  title: product.value ? product.value.name[locale.value] : "",
+  imagePath: product.value
+    ? runtimeConfig.public.baseUrl +
+      product.value.heroImage[locale.value][0]?.src
+    : runtimeConfig.public.baseUrl + "/images/social-media.png",
+});
 </script>
 
 <style scoped>

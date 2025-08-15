@@ -6,13 +6,13 @@ export const productsData = [
     heroImage: {
       "zh-Hant-TW": [
         {
-          src: "/images/piman-thumbnail.webp",
+          src: "/images/piman-thumbnail.png",
           figcaption: "Piman 無障礙 UI 框架 簡介",
         },
       ],
       en: [
         {
-          src: "/images/piman-thumbnail.webp",
+          src: "/images/piman-thumbnail.png",
           figcaption: "Piman A11Y UI Framework",
         },
       ],
@@ -235,13 +235,13 @@ export const productsData = [
     heroImage: {
       "zh-Hant-TW": [
         {
-          src: "/images/choose-chart-thumbnail.webp",
+          src: "/images/choose-chart-thumbnail.png",
           figcaption: "Choose 蛛思：資料視覺化 簡介",
         },
       ],
       en: [
         {
-          src: "/images/choose-chart-thumbnail.webp",
+          src: "/images/choose-chart-thumbnail.png",
           figcaption: "Choose: Data Visualization intro",
         },
       ],
@@ -386,13 +386,13 @@ export const productsData = [
     heroImage: {
       "zh-Hant-TW": [
         {
-          src: "/images/scout-thumbnail.webp",
+          src: "/images/scout-thumbnail.png",
           figcaption: "ΣCOUT 實告 簡介",
         },
       ],
       en: [
         {
-          src: "/images/scout-thumbnail.webp",
+          src: "/images/scout-thumbnail.png",
           figcaption: "ΣCOUT intro",
         },
       ],
@@ -533,13 +533,13 @@ export const productsData = [
     heroImage: {
       "zh-Hant-TW": [
         {
-          src: "/images/bpgcms-thumbnail.webp",
+          src: "/images/bpgcms-thumbnail.png",
           figcaption: "通用後台系統模板",
         },
       ],
       en: [
         {
-          src: "/images/bpgcms-thumbnail.webp",
+          src: "/images/bpgcms-thumbnail.png",
           figcaption: "Content Management System Template",
         },
       ],
@@ -571,13 +571,13 @@ export const productsData = [
     heroImage: {
       "zh-Hant-TW": [
         {
-          src: "/images/vital-crm-new-thumbnail.webp",
+          src: "/images/vital-crm-new-thumbnail.png",
           figcaption: "Vital CRM 客戶關係管理系統客戶列表設計",
         },
       ],
       en: [
         {
-          src: "/images/vital-crm-new-thumbnail.webp",
+          src: "/images/vital-crm-new-thumbnail.png",
           figcaption: "Vital CRM - Customer List",
         },
       ],
@@ -609,13 +609,13 @@ export const productsData = [
     heroImage: {
       "zh-Hant-TW": [
         {
-          src: "/images/ttc-thumbnail.webp",
+          src: "/images/ttc-thumbnail.png",
           figcaption: "Vital TTC 物聯客",
         },
       ],
       en: [
         {
-          src: "/images/ttc-thumbnail.webp",
+          src: "/images/ttc-thumbnail.png",
           figcaption: "Vital TTC",
         },
       ],
@@ -648,13 +648,13 @@ export const productsData = [
     heroImage: {
       "zh-Hant-TW": [
         {
-          src: "/images/vitalsespsurvey-thumbnail.webp",
+          src: "/images/vitalsespsurvey-thumbnail.png",
           figcaption: "",
         },
       ],
       en: [
         {
-          src: "/images/vitalsespsurvey-thumbnail.webp",
+          src: "/images/vitalsespsurvey-thumbnail.png",
           figcaption: "",
         },
       ],
@@ -828,13 +828,13 @@ export const productsData = [
     heroImage: {
       "zh-Hant-TW": [
         {
-          src: "/images/vitaluikit-thumbnail.webp",
+          src: "/images/vitaluikit-thumbnail.png",
           figcaption: "Vital UI Kit",
         },
       ],
       en: [
         {
-          src: "/images/vitaluikit-thumbnail.webp",
+          src: "/images/vitaluikit-thumbnail.png",
           figcaption: "Vital UI Kit",
         },
       ],
@@ -972,13 +972,13 @@ export const productsData = [
     heroImage: {
       "zh-Hant-TW": [
         {
-          src: "/images/mpos-thumbnail.webp",
+          src: "/images/mpos-thumbnail.png",
           figcaption: "POS 系統示意圖",
         },
       ],
       en: [
         {
-          src: "/images/mpos-thumbnail.webp",
+          src: "/images/mpos-thumbnail.png",
           figcaption: "POS System",
         },
       ],
@@ -1136,13 +1136,13 @@ export const productsData = [
         {
           src: "/video/mpos-login.mp4",
           title: "登入",
-          thumbnail_loc: "/images/mpos-thumbnail.webp",
+          thumbnail_loc: "/images/mpos-thumbnail.png",
           description: "MPOS 登入畫面操作影片",
         },
         {
           src: "/video/mpos-main.mp4",
           title: "點餐系統",
-          thumbnail_loc: "/images/mpos-thumbnail.webp",
+          thumbnail_loc: "/images/mpos-thumbnail.png",
           description: "MPOS 點餐系統操作影片",
         },
       ],
@@ -1150,13 +1150,13 @@ export const productsData = [
         {
           src: "/video/mpos-login.mp4",
           title: "Login",
-          thumbnail_loc: "/images/mpos-thumbnail.webp",
+          thumbnail_loc: "/images/mpos-thumbnail.png",
           description: "MPOS login screen operation video.",
         },
         {
           src: "/video/mpos-main.mp4",
           title: "Order",
-          thumbnail_loc: "/images/mpos-thumbnail.webp",
+          thumbnail_loc: "/images/mpos-thumbnail.png",
           description: "MPOS ordering system operation video.",
         },
       ],
@@ -1170,13 +1170,13 @@ export const productsData = [
     heroImage: {
       "zh-Hant-TW": [
         {
-          src: "/images/vitalcrm-app-thumbnail.webp",
+          src: "/images/vitalcrm-app-thumbnail.png",
           figcaption: "Vital CRM 客戶關係管理系統 App",
         },
       ],
       en: [
         {
-          src: "/images/vitalcrm-app-thumbnail.webp",
+          src: "/images/vitalcrm-app-thumbnail.png",
           figcaption: "Vital CRM App",
         },
       ],
@@ -1327,13 +1327,13 @@ export const productsData = [
     heroImage: {
       "zh-Hant-TW": [
         {
-          src: "/images/accesserty-thumbnail.webp",
+          src: "/images/accesserty-thumbnail.png",
           figcaption: "Accesserty 無障礙網頁解決方案",
         },
       ],
       en: [
         {
-          src: "/images/accesserty-thumbnail.webp",
+          src: "/images/accesserty-thumbnail.png",
           figcaption: "Accesserty website a11y solutions",
         },
       ],
@@ -1490,13 +1490,13 @@ export const productsData = [
     heroImage: {
       "zh-Hant-TW": [
         {
-          src: "/images/workether-thumbnail.webp",
+          src: "/images/workether-thumbnail.png",
           figcaption: "workether",
         },
       ],
       en: [
         {
-          src: "/images/workether-thumbnail.webp",
+          src: "/images/workether-thumbnail.png",
           figcaption: "workether",
         },
       ],
@@ -1625,13 +1625,13 @@ export const productsData = [
     heroImage: {
       "zh-Hant-TW": [
         {
-          src: "/images/poinfo-thumbnail.webp",
+          src: "/images/poinfo-thumbnail.png",
           figcaption: "Poinfo",
         },
       ],
       en: [
         {
-          src: "/images/poinfo-thumbnail.webp",
+          src: "/images/poinfo-thumbnail.png",
           figcaption: "Poinfo",
         },
       ],
@@ -1723,13 +1723,13 @@ export const productsData = [
     heroImage: {
       "zh-Hant-TW": [
         {
-          src: "/images/2pick1-thumbnail.webp",
+          src: "/images/2pick1-thumbnail.png",
           figcaption: "2Pick1",
         },
       ],
       en: [
         {
-          src: "/images/2pick1-thumbnail.webp",
+          src: "/images/2pick1-thumbnail.png",
           figcaption: "2Pick1",
         },
       ],
