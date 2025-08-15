@@ -123,7 +123,7 @@ useHead({
 
 const { scrollToTop, scrollDistance } = useScrollToTop();
 
-// defineOgImageScreenshot();
+defineOgImageScreenshot();
 </script>
 
 <style>
