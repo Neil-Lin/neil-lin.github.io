@@ -182,6 +182,9 @@ export default defineNuxtConfig({
 
   site: {
     url: process.env.NUXT_PUBLIC_BASE_URL,
+    name: "Neil's portfolio",
+    autoLastmod: true,
+    cacheMaxAgeSecond: 3600,
   },
 
   sitemap: {
