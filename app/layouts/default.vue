@@ -123,7 +123,9 @@ useHead({
 
 const { scrollToTop, scrollDistance } = useScrollToTop();
 
-defineOgImageScreenshot();
+defineOgImageComponent("OgImageCustomTemplate", {
+  imagePath: runtimeConfig.public.baseUrl + "/images/social-media.png",
+});
 </script>
 
 <style>
