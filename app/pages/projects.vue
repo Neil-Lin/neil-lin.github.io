@@ -1,7 +1,7 @@
 <template>
   <main class="page page--grid">
     <div class="page-container">
-      <theBreadcrumbs :list="breadcrumbs" />
+      <theBreadcrumbs :list="breadCrumbsList" />
       <akContainer />
       <!-- 無選擇產品時，顯示完整列表 -->
 
