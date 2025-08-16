@@ -3,7 +3,10 @@
     <h2 v-if="product.name">{{ product.name[$i18n.locale] }}</h2>
 
     <figure v-if="product.heroImage[$i18n.locale][0]!.src" class="hero-img">
-      <img :src="`${product.heroImage[$i18n.locale][0]!.src}`" alt="" />
+      <img
+        :src="`${product.heroImage[$i18n.locale][0]!.src}`"
+        :alt="product.heroImage[$i18n.locale][0]!.figcaption"
+      />
       <figcaption>
         {{ product.heroImage[$i18n.locale][0]!.figcaption }}
       </figcaption>
@@ -139,7 +142,7 @@
           v-for="(item, index) in product.images[$i18n.locale]"
           :key="index"
         >
-          <img :src="`${item.src}`" alt="" />
+          <img :src="`${item.src}`" :alt="item.figcaption" />
           <figcaption>
             {{ item.figcaption }}
           </figcaption>
