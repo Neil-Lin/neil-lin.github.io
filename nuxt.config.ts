@@ -190,4 +190,8 @@ export default defineNuxtConfig({
   sitemap: {
     sources: ["/api/__sitemap__/urls"],
   },
+
+  ogImage: {
+    fonts: ["Noto+Sans+TC:700"],
+  },
 });

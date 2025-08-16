@@ -737,6 +737,41 @@ export const projectsData = [
       en: ["UI", "Layout"],
     },
   },
+  {
+    id: 27,
+    slug: "wra-opendata",
+    clickable: true,
+    link: "https://opendata.wra.gov.tw/",
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/wra-opendata-tumbnail.webp",
+          figcaption: "水利資料開放平臺截圖",
+        },
+      ],
+      en: [
+        {
+          src: "/images/wra-opendata-tumbnail.webp",
+          figcaption: "Water Resources Agency Open Data - home page screenshot",
+        },
+      ],
+    },
+    name: {
+      "zh-Hant-TW": "水利資料開放平臺",
+      en: "Water Resources Agency Open Data",
+    },
+    intro: {
+      "zh-Hant-TW":
+        "藉由本平臺(水利署水利資料開放平台)推動整合本署及所署各單位開放資料於單一入口網站，供民眾瀏覽及程式開發者加值應用(水利OpenAPI、水利開放資料)",
+      en: "This platform (the Water Resources Agency's Open Data Platform) promotes the integration of open data from the Water Resources Agency and its subordinate units into a single portal.",
+    },
+    platform: ["web"],
+    yearRange: { start: 2025, end: null },
+    roles: {
+      "zh-Hant-TW": ["UI", "切版"],
+      en: ["UI", "Layout"],
+    },
+  },
 ];
 
 export default projectsData;
