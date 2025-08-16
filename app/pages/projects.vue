@@ -130,7 +130,7 @@
                       project.heroImage[$i18n.locale].length > 0
                     "
                     :src="`${runtimeConfig.public.baseUrl}${project.heroImage[$i18n.locale][0]!.src}`"
-                    alt=""
+                    :alt="project.name[$i18n.locale]"
                     class="portfolio-img"
                   />
                   <div

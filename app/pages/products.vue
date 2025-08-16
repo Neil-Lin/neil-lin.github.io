@@ -132,7 +132,7 @@
                   <div class="portfolio-content">
                     <img
                       :src="`${runtimeConfig.public.baseUrl}${product.heroImage[$i18n.locale][0]!.src}`"
-                      alt=""
+                      :alt="product.name[$i18n.locale]"
                       class="portfolio-img"
                     />
                     <div
