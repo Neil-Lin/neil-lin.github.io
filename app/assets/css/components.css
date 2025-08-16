@@ -108,7 +108,7 @@
     height: calc(100% - 0.5rem);
     width: 1px;
     background-color: oklch(var(--border-color));
-    right: -2rem;
+    right: calc(-2rem - 0.5px);
     @media screen and (width <= 768px) {
       right: -1rem;
     }

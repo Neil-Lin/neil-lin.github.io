@@ -272,7 +272,7 @@ onMounted(() => {
       background-color: oklch(var(--border-color));
       position: absolute;
       top: 1.4rem;
-      left: -1.3725rem;
+      left: calc(-1.3725rem - 1px);
     }
     &:after {
       content: "";
