@@ -649,13 +649,13 @@ export const productsData = [
       "zh-Hant-TW": [
         {
           src: "/images/vitalsespsurvey-thumbnail.png",
-          figcaption: "",
+          figcaption: "Vitals ESP 問卷模組",
         },
       ],
       en: [
         {
           src: "/images/vitalsespsurvey-thumbnail.png",
-          figcaption: "",
+          figcaption: "Vitals ESP Survey",
         },
       ],
     },
