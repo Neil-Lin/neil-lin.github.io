@@ -50,6 +50,7 @@ export default {
     today: "今天",
     years: "年",
     current: "現職",
+    canNotWatchVideo: "您的瀏覽器不支援此影片",
   },
   des: {
     noData: "目前沒有資料。",
@@ -136,6 +137,9 @@ export default {
     },
     podcast: {
       p1: "使用 Podcast 方式聆聽作品集內容(BY NotebookLM)",
+    },
+    videoAbstract: {
+      p1: "使用影片方式觀看作品集內容(BY NotebookLM)",
     },
   },
   data: {

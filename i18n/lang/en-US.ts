@@ -50,6 +50,7 @@ export default {
     today: "today",
     years: "years",
     current: "current",
+    canNotWatchVideo: "Your browser does not support the video tag",
   },
   des: {
     noData: "There is no data now.",
@@ -135,6 +136,9 @@ export default {
     },
     podcast: {
       p1: "Listen to portfolio content via Podcast (BY NotebookLM).",
+    },
+    vedioAbstract: {
+      p1: "Watch portfolio content via Video (BY NotebookLM).",
     },
   },
   data: {

@@ -2,38 +2,6 @@
   <main class="page page--index">
     <div class="page-container">
       <h2 class="visually-hidden">{{ pageTitle }}</h2>
-      <div class="card animation-fade-out podcast">
-        <akContainer />
-        <div class="podcast-container">
-          <div>
-            <i18n-t
-              keypath="page.podcast.p1"
-              tag="span"
-              scope="global"
-            ></i18n-t>
-          </div>
-          <figure>
-            <figcaption class="visually-hidden">
-              <i18n-t
-                keypath="page.podcast.p1"
-                tag="span"
-                scope="global"
-              ></i18n-t>
-            </figcaption>
-            <div class="audio-container">
-              <audio
-                ref="audioRef"
-                controls
-                :src="
-                  locale === 'en'
-                    ? '/audio/podcast-portfolio-en.wav'
-                    : '/audio/podcast-portfolio-zh.wav'
-                "
-              ></audio>
-            </div>
-          </figure>
-        </div>
-      </div>
       <div class="card animation-fade-out intro">
         <h3>{{ t("words.intro") }}</h3>
         <i18n-t keypath="page.about.p1" tag="p" scope="global"><br /></i18n-t>
@@ -103,6 +71,67 @@
           </li>
         </ul>
       </div>
+      <div class="card animation-fade-out media">
+        <akContainer />
+        <div class="media-container">
+          <div>
+            <div>
+              <i18n-t
+                keypath="page.videoAbstract.p1"
+                tag="span"
+                scope="global"
+              ></i18n-t>
+            </div>
+            <figure>
+              <figcaption class="visually-hidden">
+                <i18n-t
+                  keypath="page.videoAbstract.p1"
+                  tag="span"
+                  scope="global"
+                ></i18n-t>
+              </figcaption>
+              <div class="vedio-container">
+                <video ref="videoRef" controls>
+                  <source
+                    src="/video/portfolio-by-notebooklm.mp4"
+                    type="video/mp4"
+                  />
+                  {{ $t("words.canNotWatchVideo") }}
+                </video>
+              </div>
+            </figure>
+          </div>
+          <div>
+            <div>
+              <i18n-t
+                keypath="page.podcast.p1"
+                tag="span"
+                scope="global"
+              ></i18n-t>
+            </div>
+            <figure>
+              <figcaption class="visually-hidden">
+                <i18n-t
+                  keypath="page.podcast.p1"
+                  tag="span"
+                  scope="global"
+                ></i18n-t>
+              </figcaption>
+              <div class="audio-container">
+                <audio
+                  ref="audioRef"
+                  controls
+                  :src="
+                    locale === 'en'
+                      ? '/audio/podcast-portfolio-en.wav'
+                      : '/audio/podcast-portfolio-zh.wav'
+                  "
+                ></audio>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 </template>
@@ -166,24 +195,24 @@ onMounted(() => {
   display: grid;
   gap: 1.5rem;
   grid-template:
-    "l5 l5 l5 l5"
     "l1 l1 r1 r2"
-    "l1 l1 r3 r4";
+    "l1 l1 r3 r4"
+    "l5 l5 l5 l5";
   @media screen and (width <= 1280px) {
     grid-template:
-      "l5 l5 l5 l5"
       "l1 l1 l1 l1"
       "r1 r1 r2 r2"
-      "r3 r3 r4 r4";
+      "r3 r3 r4 r4"
+      "l5 l5 l5 l5";
   }
   @media screen and (width <= 768px) {
     grid-template:
-      "l5"
       "l1"
       "r1"
       "r2"
       "r3"
-      "r4";
+      "r4"
+      "l5";
   }
 }
 
@@ -258,21 +287,20 @@ onMounted(() => {
   }
 }
 
-.podcast {
+.media {
   position: relative;
   grid-area: l5;
-  .podcast-container {
+  .media-container {
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    gap: 3rem;
     @media screen and (width <= 768px) {
       flex-direction: column;
+      gap: 1rem;
     }
   }
+  .video-container,
   .audio-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 1rem;
   }
   .icon {
