@@ -79,7 +79,7 @@
                     <img
                       v-if="product.heroImage[$i18n.locale]?.[0]?.src"
                       :src="`${product.heroImage[$i18n.locale][0].src}`"
-                      :alt="`${product.name[$i18n.locale]}`"
+                      alt=""
                       class="portfolio-img"
                     />
                     <div
