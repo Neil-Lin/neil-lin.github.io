@@ -1136,13 +1136,13 @@ export const productsData = [
         {
           src: "/video/mpos-login.mp4",
           title: "登入",
-          thumbnail_loc: "https://neillin.com//images/mpos-thumbnail.png",
+          thumbnail_loc: "https://neillin.com/images/mpos-thumbnail.png",
           description: "MPOS 登入畫面操作影片",
         },
         {
           src: "/video/mpos-main.mp4",
           title: "點餐系統",
-          thumbnail_loc: "https://neillin.com//images/mpos-thumbnail.png",
+          thumbnail_loc: "https://neillin.com/images/mpos-thumbnail.png",
           description: "MPOS 點餐系統操作影片",
         },
       ],
@@ -1150,13 +1150,13 @@ export const productsData = [
         {
           src: "/video/mpos-login.mp4",
           title: "Login",
-          thumbnail_loc: "https://neillin.com//images/mpos-thumbnail.png",
+          thumbnail_loc: "https://neillin.com/images/mpos-thumbnail.png",
           description: "MPOS login screen operation video.",
         },
         {
           src: "/video/mpos-main.mp4",
           title: "Order",
-          thumbnail_loc: "https://neillin.com//images/mpos-thumbnail.png",
+          thumbnail_loc: "https://neillin.com/images/mpos-thumbnail.png",
           description: "MPOS ordering system operation video.",
         },
       ],
