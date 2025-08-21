@@ -41,7 +41,7 @@ export default {
     products: "產品",
     present: "現在",
     careerWorks: "職涯作品",
-    sort: "開始年份排序",
+    sort: "排序",
     newToOld: "新到舊",
     oldToNew: "舊到新",
     pm: "專案管理",
@@ -51,8 +51,7 @@ export default {
     years: "年",
     current: "現職",
     canNotWatchVideo: "您的瀏覽器不支援此影片",
-    changeByFilter:
-      "三個下拉式選單變更後，內容會馬上改變成新的排序和篩選條件。",
+    changeByFilter: "下拉式選單變更後，內容會馬上改變成新的排序和篩選條件。",
     updateDay: "更新日期",
   },
   des: {

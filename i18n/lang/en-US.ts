@@ -52,7 +52,7 @@ export default {
     current: "current",
     canNotWatchVideo: "Your browser does not support the video tag",
     changeByFilter:
-      "The content will change immediately to the new sorting and filtering criteria after the three dropdowns are changed.",
+      "The content will change immediately to the new sorting and filtering criteria after the select are changed.",
     updateDay: "Update Date",
   },
   des: {

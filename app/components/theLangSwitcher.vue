@@ -4,7 +4,8 @@
       <span id="lang-text" class="visually-hidden">
         {{ $t("words.language") }}
       </span>
-      🌐
+      <span aria-hidden="true">🌐</span>
+      <span class="visually-hidden">{{ $t("words.changeByFilter") }}</span>
     </span>
     <select aria-labelledby="lang-text" @change="onLocaleChanged">
       <option

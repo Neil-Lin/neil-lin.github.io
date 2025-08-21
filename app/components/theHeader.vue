@@ -236,7 +236,7 @@ header {
             border: 2px solid oklch(var(--border-color));
           }
           &:before {
-            content: "正在此頁👀";
+            content: "👀";
             position: absolute;
             top: -0.875rem;
             left: -0.875rem;
