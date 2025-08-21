@@ -8,6 +8,7 @@
         <h2>{{ pageTitle }}</h2>
         <!-- 🔽 篩選區塊 -->
         <div class="filters">
+          <span>{{ $t("words.changeByFilter") }}</span>
           <div>
             <label for="sortorder">{{ $t("words.sort") }}：</label>
             <select id="sortorder" v-model="sortorder">

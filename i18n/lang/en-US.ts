@@ -51,6 +51,9 @@ export default {
     years: "years",
     current: "current",
     canNotWatchVideo: "Your browser does not support the video tag",
+    changeByFilter:
+      "The content will change immediately to the new sorting and filtering criteria after the three dropdowns are changed.",
+    updateDay: "Update Date",
   },
   des: {
     noData: "There is no data now.",

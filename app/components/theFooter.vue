@@ -15,11 +15,13 @@
             :to="switchLocalePath(loc.code)"
             :title="$t('action.switch') + loc.name"
           >
+            <span class="visually-hidden">{{ $t("action.switch") }}</span>
             {{ loc.name }}
           </nuxt-link>
         </span>
       </template>
       <span>&copy; Neil</span>
+      <span>{{ $t("words.updateDay") }}：2025/08/21</span>
     </div>
   </footer>
 </template>
