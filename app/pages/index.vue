@@ -3,6 +3,7 @@
     <div class="page-container">
       <h2 class="visually-hidden">{{ pageTitle }}</h2>
       <div class="card animation-fade-out intro">
+        <akContainer />
         <h3>{{ t("words.intro") }}</h3>
         <i18n-t keypath="page.about.p1" tag="p" scope="global"><br /></i18n-t>
         <i18n-t keypath="page.about.p2" tag="p" scope="global">
@@ -72,7 +73,6 @@
         </ul>
       </div>
       <div class="card animation-fade-out media">
-        <akContainer />
         <div class="media-container">
           <div>
             <div>
