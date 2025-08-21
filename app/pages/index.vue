@@ -90,7 +90,7 @@
                   scope="global"
                 ></i18n-t>
               </figcaption>
-              <div class="vedio-container">
+              <div class="video-container">
                 <video ref="videoRef" controls>
                   <source
                     src="/video/portfolio-by-notebooklm.mp4"

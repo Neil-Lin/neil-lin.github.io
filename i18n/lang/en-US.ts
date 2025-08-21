@@ -140,7 +140,7 @@ export default {
     podcast: {
       p1: "Listen to portfolio content via Podcast (BY NotebookLM).",
     },
-    vedioAbstract: {
+    videoAbstract: {
       p1: "Watch portfolio content via Video (BY NotebookLM), now only English version.",
     },
   },
