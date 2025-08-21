@@ -141,7 +141,7 @@ export default {
       p1: "使用 Podcast 方式聆聽作品集內容(BY NotebookLM)",
     },
     videoAbstract: {
-      p1: "使用影片方式觀看作品集內容(BY NotebookLM)",
+      p1: "使用影片方式觀看作品集內容(BY NotebookLM)，目前只有英文",
     },
   },
   data: {
