@@ -99,7 +99,7 @@
         @click="scrollToTop"
       >
         <span class="visually-hidden">{{ $t("action.backToTop") }}</span>
-        🔝
+        <span aria-hidden="true">🔝</span>
       </button>
     </Body>
   </Html>
