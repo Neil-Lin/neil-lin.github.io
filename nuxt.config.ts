@@ -196,6 +196,6 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    "/__og-image__/image/**": { prerender: true },
+    "/__og-image__/static/**": { prerender: true },
   },
 });

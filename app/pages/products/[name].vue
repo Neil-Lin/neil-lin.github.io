@@ -270,7 +270,7 @@ defineOgImageComponent("OgImageCustomTemplate", {
   imagePath: product.value
     ? runtimeConfig.public.baseUrl +
       product.value.heroImage[locale.value][0]?.src
-    : runtimeConfig.public.baseUrl + "/images/social-media.png",
+    : "",
 });
 </script>
 
