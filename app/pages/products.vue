@@ -378,6 +378,14 @@ onMounted(() => {
   }
 });
 
+const orgUrl = computed(() => {
+  if (locale.value === "en") {
+    return `${runtimeConfig.public.baseUrl}/en`;
+  } else {
+    return `${runtimeConfig.public.baseUrl}`;
+  }
+});
+
 // 🔥 設定 Schema.org 資料
 useSchemaOrg([
   // 作品集列表 (ItemList)
@@ -392,21 +400,21 @@ useSchemaOrg([
     itemListElement: productsData.map((work, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      url: `${runtimeConfig.public.baseUrl}/products/${work.slug}`,
+      url: `${orgUrl.value}/products/${work.slug}`,
       item: {
         "@type": "CreativeWork",
-        "@id": `${runtimeConfig.public.baseUrl}/products/${work.slug}#creativework`,
+        "@id": `${orgUrl.value}/products/${work.slug}#creativework`,
         name: work.name[locale.value],
         description: work.intro?.[locale.value] || "",
         image: `${runtimeConfig.public.baseUrl}${work.heroImage[locale.value][0]?.src}`,
         creator: {
           "@type": "Person",
           name: "Neil",
-          url: runtimeConfig.public.baseUrl,
+          url: orgUrl.value,
         },
         datePublished: work.yearRange.start,
         dateModified: work.yearRange.end ?? new Date().getFullYear(),
-        url: `${runtimeConfig.public.baseUrl}/products/${work.slug}`,
+        url: `${orgUrl.value}/products/${work.slug}`,
         inLanguage: locale.value,
         keywords: work.roles[locale.value].join(", "),
         audience: {

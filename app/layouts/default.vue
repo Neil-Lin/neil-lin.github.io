@@ -26,7 +26,11 @@
     <Meta
       hid="og:url"
       property="og:url"
-      :content="runtimeConfig.public.baseUrl"
+      :content="
+        head.htmlAttrs?.lang === 'en-US'
+          ? runtimeConfig.public.baseUrl + '/en'
+          : runtimeConfig.public.baseUrl
+      "
     />
     <Meta hid="og:title" property="og:title" :content="$t('website.name')" />
     <Meta
@@ -38,7 +42,11 @@
     <Meta
       hid="twitter:url"
       name="twitter:url"
-      :content="runtimeConfig.public.baseUrl"
+      :content="
+        head.htmlAttrs?.lang === 'en-US'
+          ? runtimeConfig.public.baseUrl + '/en'
+          : runtimeConfig.public.baseUrl
+      "
     />
     <Meta
       hid="twitter:title"
@@ -96,7 +104,16 @@
 <script setup lang="ts">
 const { t } = useI18n();
 const runtimeConfig = useRuntimeConfig();
+const { locale } = useI18n();
 const head = useLocaleHead();
+
+const orgUrl = computed(() => {
+  if (locale.value === "en") {
+    return `${runtimeConfig.public.baseUrl}/en`;
+  } else {
+    return `${runtimeConfig.public.baseUrl}`;
+  }
+});
 
 useHead({
   titleTemplate: (pageTitle) => {
@@ -105,7 +122,7 @@ useHead({
       : t("website.name");
   },
   link: [...(head.value.link || [])],
-  script: [{ src: runtimeConfig.public.baseUrl + "/js/clarity.js" }],
+  script: [{ src: orgUrl.value + "/js/clarity.js" }],
   meta: [...(head.value.meta || [])],
 });
 
@@ -117,16 +134,16 @@ defineOgImageComponent("OgImageCustomTemplate", {
 
 useSchemaOrg([
   {
-    "@id": `${runtimeConfig.public.baseUrl}/#website`,
+    "@id": `${orgUrl.value}/#website`,
     "@type": "WebSite",
     name: t("website.name"),
-    url: `${runtimeConfig.public.baseUrl}/`,
+    url: `${orgUrl.value}`,
   },
   {
-    "@id": `${runtimeConfig.public.baseUrl}/#person`,
+    "@id": `${orgUrl.value}/#person`,
     "@type": "Person",
     name: "Neil Lin", // ← 可改你想呈現的名稱
-    url: `${runtimeConfig.public.baseUrl}/`,
+    url: `${orgUrl.value}`,
   },
 ]);
 </script>

@@ -42,6 +42,14 @@ const pageTitle = ref(t("mainMenu.blog"));
 const pageDescription = ref(t("des.blog"));
 const route = useRoute();
 
+const orgUrl = computed(() => {
+  if (locale.value === "en") {
+    return `${runtimeConfig.public.baseUrl}/en`;
+  } else {
+    return `${runtimeConfig.public.baseUrl}`;
+  }
+});
+
 useHead({
   title: pageTitle,
   meta: [
@@ -112,29 +120,29 @@ const breadCrumbsList = computed(() => [
 useSchemaOrg([
   // 直接覆寫掉模組自動產生的 WebPage（同一個 @id）
   {
-    "@id": `${runtimeConfig.public.baseUrl}/blog#webpage`,
+    "@id": `${orgUrl.value}/blog#webpage`,
     "@type": "CollectionPage",
     name: pageTitle.value,
     description: pageDescription.value,
-    url: runtimeConfig.public.baseUrl + route.path, // => .../blog 或 .../en/blog
+    url: orgUrl.value + route.path, // => .../blog 或 .../en/blog
     inLanguage: locale.value === "zh-Hant-TW" ? "zh-Hant-TW" : "en",
-    isPartOf: { "@id": `${runtimeConfig.public.baseUrl}/#website` },
+    isPartOf: { "@id": `${orgUrl.value}/#website` },
     potentialAction: [
       {
         "@type": "ReadAction",
-        target: [runtimeConfig.public.baseUrl + route.path],
+        target: [orgUrl.value + route.path],
       },
     ],
   },
 
   // Blog 節點（保留）
   {
-    "@id": `${runtimeConfig.public.baseUrl}/blog#blog`,
+    "@id": `${orgUrl.value}/blog#blog`,
     "@type": "Blog",
     name: pageTitle.value,
-    url: `${runtimeConfig.public.baseUrl}/blog`,
+    url: `${orgUrl.value}/blog`,
     inLanguage: locale.value === "zh-Hant-TW" ? "zh-Hant-TW" : "en",
-    publisher: { "@id": `${runtimeConfig.public.baseUrl}/#person` }, // 由 layout 提供
+    publisher: { "@id": `${orgUrl.value}/#person` }, // 由 layout 提供
     sameAs:
       locale.value === "en"
         ? ["https://neil-lin.medium.com/"]
