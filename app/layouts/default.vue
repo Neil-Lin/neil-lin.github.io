@@ -65,7 +65,21 @@
     <Meta name="apple-mobile-web-app-title" :content="$t('website.name')" />
     <Meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-    <Link rel="canonical" :href="runtimeConfig.public.baseUrl + $route.path" />
+    <Link
+      rel="alternate"
+      hreflang="zh-Hant-TW"
+      :href="runtimeConfig.public.baseUrl"
+    />
+    <Link
+      rel="alternate"
+      hreflang="en"
+      :href="runtimeConfig.public.baseUrl + '/en'"
+    />
+    <Link
+      rel="alternate"
+      hreflang="x-default"
+      :href="runtimeConfig.public.baseUrl"
+    />
     <Link
       rel="shortcut icon"
       type="image/x-icon"
@@ -126,6 +140,21 @@ const { scrollToTop, scrollDistance } = useScrollToTop();
 defineOgImageComponent("OgImageCustomTemplate", {
   imagePath: runtimeConfig.public.baseUrl + "/images/social-media.png",
 });
+
+useSchemaOrg([
+  {
+    "@id": `${runtimeConfig.public.baseUrl}/#website`,
+    "@type": "WebSite",
+    name: t("website.name"),
+    url: `${runtimeConfig.public.baseUrl}/`,
+  },
+  {
+    "@id": `${runtimeConfig.public.baseUrl}/#person`,
+    "@type": "Person",
+    name: "Neil Lin", // ← 可改你想呈現的名稱
+    url: `${runtimeConfig.public.baseUrl}/`,
+  },
+]);
 </script>
 
 <style>

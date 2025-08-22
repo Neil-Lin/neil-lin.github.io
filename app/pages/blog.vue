@@ -94,18 +94,51 @@ const breadCrumbsList = computed(() => [
   },
 ]);
 
+// useSchemaOrg([
+//   {
+//     "@type": "CollectionPage",
+//     name: pageTitle.value,
+//     description: pageDescription.value,
+//     url: runtimeConfig.public.baseUrl + route.path,
+//     inLanguage: locale.value === "zh-Hant-TW" ? "zh-Hant-TW" : "en",
+//     isPartOf: {
+//       "@type": "WebSite",
+//       name: t("website.name"),
+//       url: runtimeConfig.public.baseUrl,
+//     },
+//   },
+// ]);
+
 useSchemaOrg([
+  // 直接覆寫掉模組自動產生的 WebPage（同一個 @id）
   {
+    "@id": `${runtimeConfig.public.baseUrl}/blog#webpage`,
     "@type": "CollectionPage",
     name: pageTitle.value,
     description: pageDescription.value,
-    url: runtimeConfig.public.baseUrl + route.path,
+    url: runtimeConfig.public.baseUrl + route.path, // => .../blog 或 .../en/blog
     inLanguage: locale.value === "zh-Hant-TW" ? "zh-Hant-TW" : "en",
-    isPartOf: {
-      "@type": "WebSite",
-      name: t("website.name"),
-      url: runtimeConfig.public.baseUrl,
-    },
+    isPartOf: { "@id": `${runtimeConfig.public.baseUrl}/#website` },
+    potentialAction: [
+      {
+        "@type": "ReadAction",
+        target: [runtimeConfig.public.baseUrl + route.path],
+      },
+    ],
+  },
+
+  // Blog 節點（保留）
+  {
+    "@id": `${runtimeConfig.public.baseUrl}/blog#blog`,
+    "@type": "Blog",
+    name: pageTitle.value,
+    url: `${runtimeConfig.public.baseUrl}/blog`,
+    inLanguage: locale.value === "zh-Hant-TW" ? "zh-Hant-TW" : "en",
+    publisher: { "@id": `${runtimeConfig.public.baseUrl}/#person` }, // 由 layout 提供
+    sameAs:
+      locale.value === "en"
+        ? ["https://neil-lin.medium.com/"]
+        : ["https://vocus.cc/user/@neil-lin"],
   },
 ]);
 
