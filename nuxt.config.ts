@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   },
   compatibilityDate: "2024-04-03",
   devtools: { enabled: false },
-  // ssr: true,
+  ssr: true,
   nitro: {
     prerender: {
       routes: ["/", "/products", ...dynamicRoutes, "projects", "blog"],
@@ -193,5 +193,9 @@ export default defineNuxtConfig({
 
   ogImage: {
     fonts: ["Noto+Sans+TC:700"],
+  },
+
+  routeRules: {
+    "/__og-image__/image/**": { prerender: true },
   },
 });
