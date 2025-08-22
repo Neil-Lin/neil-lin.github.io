@@ -482,6 +482,10 @@ watchEffect(() => {
     useBreadcrumbSchema(breadcrumbs.value);
   }
 });
+
+defineOgImageComponent("OgImageCustomTemplate", {
+  title: pageTitle.value,
+});
 </script>
 
 <style scoped>

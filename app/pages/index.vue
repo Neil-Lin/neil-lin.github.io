@@ -183,6 +183,10 @@ onMounted(() => {
     audioRef.value.playbackRate = 1.25;
   }
 });
+
+defineOgImageComponent("OgImageCustomTemplate", {
+  title: pageTitle.value,
+});
 </script>
 
 <style scoped>

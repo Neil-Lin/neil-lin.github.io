@@ -127,11 +127,6 @@ useHead({
 
 const { scrollToTop, scrollDistance } = useScrollToTop();
 
-defineOgImageComponent("OgImageCustomTemplate", {
-  title: t("website.name"),
-  imagePath: "",
-});
-
 useSchemaOrg([
   {
     "@id": `${runtimeConfig.public.baseUrl}/#website`,

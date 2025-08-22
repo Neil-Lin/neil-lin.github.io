@@ -194,8 +194,4 @@ export default defineNuxtConfig({
   ogImage: {
     fonts: ["Noto+Sans+TC:700"],
   },
-
-  routeRules: {
-    "/__og-image__/static/**": { prerender: true },
-  },
 });
