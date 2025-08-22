@@ -1,19 +1,41 @@
 <template>
-  <div class="thumbnail">
-    <div v-if="imagePath !== ''">
+  <div style="height: 630px; background-color: #fafafa">
+    <img
+      v-if="imagePath"
+      :src="imagePath"
+      :alt="`${props.title}封面照`"
+      style="width: 100%; height: 100%; object-fit: cover"
+    />
+
+    <div
+      v-else
+      style="
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+      "
+    >
       <img
-        :src="imagePath"
-        :alt="`${props.title}封面照`"
+        src="@/assets/images/sitename.svg"
         style="
+          position: absolute;
+          bottom: 0;
+          left: 0;
           width: 100%;
-          height: 600px;
           object-fit: cover;
-          aspect-ratio: 12 / 6;
         "
       />
-    </div>
-    <div v-else>
-      {{ title }}
+      <div
+        style="font-weight: bold; font-size: 4rem; color: #222; padding: 0 4rem"
+      >
+        {{ title }}
+      </div>
+      <div style="font-size: 2rem; color: #565656; padding: 0 4rem">
+        {{ description }}
+      </div>
     </div>
   </div>
 </template>
@@ -24,15 +46,13 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  description: {
+    type: String,
+    default: "",
+  },
   imagePath: {
     type: String,
     default: "",
   },
 });
 </script>
-<style scoped>
-.thumbnail {
-  display: grid;
-  place-content: center;
-}
-</style>

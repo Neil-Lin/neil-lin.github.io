@@ -138,7 +138,7 @@ useHead({
 const { scrollToTop, scrollDistance } = useScrollToTop();
 
 defineOgImageComponent("OgImageCustomTemplate", {
-  imagePath: runtimeConfig.public.baseUrl + "/images/social-media.png",
+  title: t("website.name"),
 });
 
 useSchemaOrg([
