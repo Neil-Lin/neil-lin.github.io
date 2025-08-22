@@ -1,6 +1,0 @@
-[[redirects]]
-  from = "/*"
-  to = "https://neillin.com/:splat"
-  status = 301
-  force = true
-  conditions = { Host = ["neil-lin.netlify.app"] }
