@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   ssr: true,
   nitro: {
     prerender: {
-      routes: ["/", "/products", ...dynamicRoutes, "projects", "blog"],
+      routes: [...dynamicRoutes, "/projects", "/blog"], // 移除 / 和 /products
     },
   },
   modules: [
@@ -198,6 +198,5 @@ export default defineNuxtConfig({
   routeRules: {
     // 禁掉 OG 動態端點的 prerender，確保永遠走動態
     "/__og-image__/image/**": { prerender: false },
-    "/__og-image__/static/**": { prerender: false }, // 避免生成 static 版本
   },
 });
