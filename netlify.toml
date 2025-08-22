@@ -3,9 +3,3 @@
   to = "https://neillin.com/:splat"
   status = 301
   force = true
-
-[[redirects]]
-  from = "https://www.neillin.com/*"
-  to = "https://neillin.com/:splat"
-  status = 301
-  force = true
