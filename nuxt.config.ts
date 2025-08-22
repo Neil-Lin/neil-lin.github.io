@@ -194,4 +194,10 @@ export default defineNuxtConfig({
   ogImage: {
     fonts: ["Noto+Sans+TC:700"],
   },
+
+  routeRules: {
+    // 禁掉 OG 動態端點的 prerender，確保永遠走動態
+    "/__og-image__/image/**": { prerender: false },
+    "/__og-image__/static/**": { prerender: false }, // 避免生成 static 版本
+  },
 });
