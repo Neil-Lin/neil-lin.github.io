@@ -18,6 +18,9 @@ export default defineNuxtConfig({
     prerender: {
       routes: ["/", "/products", ...dynamicRoutes, "projects", "blog"],
     },
+    routeRules: {
+      "/proxy/**": { proxy: process.env.NUXT_PUBLIC_API_URL + "/**" },
+    },
   },
   modules: [
     "@nuxt/eslint",
