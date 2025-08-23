@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="default" aria-live="polite" :aria-busy="loading">
+  <NuxtLayout name="default" :aria-busy="loading">
     <main class="page">
       <akContainer />
       <h2>{{ t("error.title") }}</h2>

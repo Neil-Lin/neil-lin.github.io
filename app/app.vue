@@ -6,7 +6,7 @@
         <div class="loader"></div>
       </div>
     </div>
-    <NuxtLayout name="default" aria-live="polite" :aria-busy="loading">
+    <NuxtLayout name="default" :aria-busy="loading">
       <!-- 
       if using pageTransition
       <NuxtPage :key="$route.fullPath" /> 
