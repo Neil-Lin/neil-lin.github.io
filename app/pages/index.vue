@@ -123,8 +123,8 @@
                   controls
                   :src="
                     locale === 'en'
-                      ? '/audio/podcast-portfolio-en.wav'
-                      : '/audio/podcast-portfolio-zh.wav'
+                      ? '/audio/podcast-portfolio-en.m4a'
+                      : '/audio/podcast-portfolio-zh.m4a'
                   "
                 ></audio>
               </div>

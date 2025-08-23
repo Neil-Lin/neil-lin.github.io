@@ -549,7 +549,7 @@ export const productsData = [
       en: "BPGCMS",
     },
     intro: {
-      "zh-Hant-TW": "公私專用後台內容管理系統",
+      "zh-Hant-TW": "公司後台內容管理系統範本",
       en: "Content Management System",
     },
     keywords: {
