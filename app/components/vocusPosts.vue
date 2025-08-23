@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div v-if="pending">Loading...</div>
-    <div v-else-if="error">Error: {{ error.message }}</div>
+    <div v-if="pending">載入中...</div>
+    <div v-else-if="error">錯誤: {{ error.message }}</div>
     <ul v-else class="blog-list">
       <li
         v-for="article in articles"
