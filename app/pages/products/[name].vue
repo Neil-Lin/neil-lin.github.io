@@ -269,7 +269,7 @@ defineOgImageComponent("OgImageCustomTemplate", {
   title: product.value ? product.value.name[locale.value] : "",
   imagePath: product.value
     ? runtimeConfig.public.baseUrl +
-      product.value.heroImage[locale.value][0]?.src
+      product.value.schemaImage[locale.value][0]?.src
     : "",
 });
 </script>

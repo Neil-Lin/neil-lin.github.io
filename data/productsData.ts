@@ -3,7 +3,7 @@ export const productsData = [
     id: 1,
     slug: "piman",
     clickable: true,
-    heroImage: {
+    schemaImage: {
       "zh-Hant-TW": [
         {
           src: "/images/piman-thumbnail.png",
@@ -13,6 +13,20 @@ export const productsData = [
       en: [
         {
           src: "/images/piman-thumbnail.png",
+          figcaption: "Piman A11Y UI Framework",
+        },
+      ],
+    },
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/piman-thumbnail.webp",
+          figcaption: "Piman 無障礙 UI 框架 簡介",
+        },
+      ],
+      en: [
+        {
+          src: "/images/piman-thumbnail.webp",
           figcaption: "Piman A11Y UI Framework",
         },
       ],
@@ -232,7 +246,7 @@ export const productsData = [
     id: 2,
     slug: "choose-chart",
     clickable: true,
-    heroImage: {
+    schemaImage: {
       "zh-Hant-TW": [
         {
           src: "/images/choose-chart-thumbnail.png",
@@ -242,6 +256,20 @@ export const productsData = [
       en: [
         {
           src: "/images/choose-chart-thumbnail.png",
+          figcaption: "Choose: Data Visualization intro",
+        },
+      ],
+    },
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/choose-chart-thumbnail.webp",
+          figcaption: "Choose 蛛思：資料視覺化 簡介",
+        },
+      ],
+      en: [
+        {
+          src: "/images/choose-chart-thumbnail.webp",
           figcaption: "Choose: Data Visualization intro",
         },
       ],
@@ -383,7 +411,7 @@ export const productsData = [
     id: 3,
     slug: "scout",
     clickable: true,
-    heroImage: {
+    schemaImage: {
       "zh-Hant-TW": [
         {
           src: "/images/scout-thumbnail.png",
@@ -393,6 +421,20 @@ export const productsData = [
       en: [
         {
           src: "/images/scout-thumbnail.png",
+          figcaption: "ΣCOUT intro",
+        },
+      ],
+    },
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/scout-thumbnail.webp",
+          figcaption: "ΣCOUT 實告 簡介",
+        },
+      ],
+      en: [
+        {
+          src: "/images/scout-thumbnail.webp",
           figcaption: "ΣCOUT intro",
         },
       ],
@@ -530,7 +572,7 @@ export const productsData = [
     id: 4,
     slug: "bpgcms",
     clickable: false,
-    heroImage: {
+    schemaImage: {
       "zh-Hant-TW": [
         {
           src: "/images/bpgcms-thumbnail.png",
@@ -540,6 +582,20 @@ export const productsData = [
       en: [
         {
           src: "/images/bpgcms-thumbnail.png",
+          figcaption: "Content Management System Template",
+        },
+      ],
+    },
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/bpgcms-thumbnail.webp",
+          figcaption: "通用後台系統模板",
+        },
+      ],
+      en: [
+        {
+          src: "/images/bpgcms-thumbnail.webp",
           figcaption: "Content Management System Template",
         },
       ],
@@ -568,7 +624,7 @@ export const productsData = [
     id: 5,
     slug: "vital-crm-new",
     clickable: false,
-    heroImage: {
+    schemaImage: {
       "zh-Hant-TW": [
         {
           src: "/images/vital-crm-new-thumbnail.png",
@@ -578,6 +634,20 @@ export const productsData = [
       en: [
         {
           src: "/images/vital-crm-new-thumbnail.png",
+          figcaption: "Vital CRM - Customer List",
+        },
+      ],
+    },
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/vital-crm-new-thumbnail.webp",
+          figcaption: "Vital CRM 客戶關係管理系統客戶列表設計",
+        },
+      ],
+      en: [
+        {
+          src: "/images/vital-crm-new-thumbnail.webp",
           figcaption: "Vital CRM - Customer List",
         },
       ],
@@ -606,7 +676,7 @@ export const productsData = [
     id: 6,
     slug: "vital-ttc",
     clickable: false,
-    heroImage: {
+    schemaImage: {
       "zh-Hant-TW": [
         {
           src: "/images/ttc-thumbnail.png",
@@ -616,6 +686,20 @@ export const productsData = [
       en: [
         {
           src: "/images/ttc-thumbnail.png",
+          figcaption: "Vital TTC",
+        },
+      ],
+    },
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/ttc-thumbnail.webp",
+          figcaption: "Vital TTC 物聯客",
+        },
+      ],
+      en: [
+        {
+          src: "/images/ttc-thumbnail.webp",
           figcaption: "Vital TTC",
         },
       ],
@@ -645,7 +729,7 @@ export const productsData = [
     id: 7,
     slug: "vitals-esp-survey",
     clickable: true,
-    heroImage: {
+    schemaImage: {
       "zh-Hant-TW": [
         {
           src: "/images/vitalsespsurvey-thumbnail.png",
@@ -655,6 +739,20 @@ export const productsData = [
       en: [
         {
           src: "/images/vitalsespsurvey-thumbnail.png",
+          figcaption: "Vitals ESP Survey",
+        },
+      ],
+    },
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/vitalsespsurvey-thumbnail.webp",
+          figcaption: "Vitals ESP 問卷模組",
+        },
+      ],
+      en: [
+        {
+          src: "/images/vitalsespsurvey-thumbnail.webp",
           figcaption: "Vitals ESP Survey",
         },
       ],
@@ -825,7 +923,7 @@ export const productsData = [
     id: 8,
     slug: "vital-ui-kit",
     clickable: true,
-    heroImage: {
+    schemaImage: {
       "zh-Hant-TW": [
         {
           src: "/images/vitaluikit-thumbnail.png",
@@ -835,6 +933,20 @@ export const productsData = [
       en: [
         {
           src: "/images/vitaluikit-thumbnail.png",
+          figcaption: "Vital UI Kit",
+        },
+      ],
+    },
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/vitaluikit-thumbnail.webp",
+          figcaption: "Vital UI Kit",
+        },
+      ],
+      en: [
+        {
+          src: "/images/vitaluikit-thumbnail.webp",
           figcaption: "Vital UI Kit",
         },
       ],
@@ -969,7 +1081,7 @@ export const productsData = [
     id: 9,
     slug: "mpos",
     clickable: true,
-    heroImage: {
+    schemaImage: {
       "zh-Hant-TW": [
         {
           src: "/images/mpos-thumbnail.png",
@@ -979,6 +1091,20 @@ export const productsData = [
       en: [
         {
           src: "/images/mpos-thumbnail.png",
+          figcaption: "POS System",
+        },
+      ],
+    },
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/mpos-thumbnail.webp",
+          figcaption: "POS 系統示意圖",
+        },
+      ],
+      en: [
+        {
+          src: "/images/mpos-thumbnail.webp",
           figcaption: "POS System",
         },
       ],
@@ -1167,7 +1293,7 @@ export const productsData = [
     id: 10,
     slug: "vital-crm-app",
     clickable: true,
-    heroImage: {
+    schemaImage: {
       "zh-Hant-TW": [
         {
           src: "/images/vitalcrm-app-thumbnail.png",
@@ -1177,6 +1303,20 @@ export const productsData = [
       en: [
         {
           src: "/images/vitalcrm-app-thumbnail.png",
+          figcaption: "Vital CRM App",
+        },
+      ],
+    },
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/vitalcrm-app-thumbnail.webp",
+          figcaption: "Vital CRM 客戶關係管理系統 App",
+        },
+      ],
+      en: [
+        {
+          src: "/images/vitalcrm-app-thumbnail.webp",
           figcaption: "Vital CRM App",
         },
       ],
@@ -1324,7 +1464,7 @@ export const productsData = [
     id: 11,
     slug: "accesserty",
     clickable: true,
-    heroImage: {
+    schemaImage: {
       "zh-Hant-TW": [
         {
           src: "/images/accesserty-thumbnail.png",
@@ -1334,6 +1474,20 @@ export const productsData = [
       en: [
         {
           src: "/images/accesserty-thumbnail.png",
+          figcaption: "Accesserty website a11y solutions",
+        },
+      ],
+    },
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/accesserty-thumbnail.webp",
+          figcaption: "Accesserty 無障礙網頁解決方案",
+        },
+      ],
+      en: [
+        {
+          src: "/images/accesserty-thumbnail.webp",
           figcaption: "Accesserty website a11y solutions",
         },
       ],
@@ -1487,7 +1641,7 @@ export const productsData = [
     id: 12,
     slug: "workether",
     clickable: true,
-    heroImage: {
+    schemaImage: {
       "zh-Hant-TW": [
         {
           src: "/images/workether-thumbnail.png",
@@ -1497,6 +1651,20 @@ export const productsData = [
       en: [
         {
           src: "/images/workether-thumbnail.png",
+          figcaption: "workether",
+        },
+      ],
+    },
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/workether-thumbnail.webp",
+          figcaption: "workether",
+        },
+      ],
+      en: [
+        {
+          src: "/images/workether-thumbnail.webp",
           figcaption: "workether",
         },
       ],
@@ -1622,7 +1790,7 @@ export const productsData = [
     id: 13,
     slug: "poinfo",
     clickable: true,
-    heroImage: {
+    schemaImage: {
       "zh-Hant-TW": [
         {
           src: "/images/poinfo-thumbnail.png",
@@ -1632,6 +1800,20 @@ export const productsData = [
       en: [
         {
           src: "/images/poinfo-thumbnail.png",
+          figcaption: "Poinfo",
+        },
+      ],
+    },
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/poinfo-thumbnail.webp",
+          figcaption: "Poinfo",
+        },
+      ],
+      en: [
+        {
+          src: "/images/poinfo-thumbnail.webp",
           figcaption: "Poinfo",
         },
       ],
@@ -1720,7 +1902,7 @@ export const productsData = [
     id: 14,
     slug: "2pick1",
     clickable: true,
-    heroImage: {
+    schemaImage: {
       "zh-Hant-TW": [
         {
           src: "/images/2pick1-thumbnail.png",
@@ -1730,6 +1912,20 @@ export const productsData = [
       en: [
         {
           src: "/images/2pick1-thumbnail.png",
+          figcaption: "2Pick1",
+        },
+      ],
+    },
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/2pick1-thumbnail.webp",
+          figcaption: "2Pick1",
+        },
+      ],
+      en: [
+        {
+          src: "/images/2pick1-thumbnail.webp",
           figcaption: "2Pick1",
         },
       ],

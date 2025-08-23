@@ -414,7 +414,7 @@ useSchemaOrg([
         "@id": `${orgUrl.value}/products/${work.slug}#creativework`,
         name: work.name[locale.value],
         description: work.intro?.[locale.value] || "",
-        image: `${runtimeConfig.public.baseUrl}${work.heroImage[locale.value][0]?.src}`,
+        image: `${runtimeConfig.public.baseUrl}${work.schemaImage[locale.value][0]?.src}`,
         creator: {
           "@type": "Person",
           name: "Neil",
