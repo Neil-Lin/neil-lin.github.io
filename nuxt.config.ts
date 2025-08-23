@@ -29,7 +29,7 @@ export default defineNuxtConfig({
   ],
 
   gtag: {
-    id: "G-3JHEDXCEG0",
+    id: process.env.NUXT_PUBLIC_GTAG_ID,
   },
 
   pwa: {
