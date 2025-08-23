@@ -112,7 +112,7 @@ export default defineNuxtConfig({
       ],
     },
     workbox: {
-      navigateFallback: "/index.html",
+      navigateFallback: null,
       cleanupOutdatedCaches: true,
     },
     devOptions: {
