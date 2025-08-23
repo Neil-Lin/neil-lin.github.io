@@ -92,10 +92,7 @@
               </figcaption>
               <div class="video-container">
                 <video ref="videoRef" controls>
-                  <source
-                    src="/video/portfolio-by-notebooklm.mp4"
-                    type="video/mp4"
-                  />
+                  <source preload="none" type="video/mp4" />
                   {{ $t("words.canNotWatchVideo") }}
                 </video>
               </div>
@@ -118,15 +115,7 @@
                 ></i18n-t>
               </figcaption>
               <div class="audio-container">
-                <audio
-                  ref="audioRef"
-                  controls
-                  :src="
-                    locale === 'en'
-                      ? '/audio/podcast-portfolio-en.m4a'
-                      : '/audio/podcast-portfolio-zh.m4a'
-                  "
-                ></audio>
+                <audio ref="audioRef" controls preload="none"></audio>
               </div>
             </figure>
           </div>
@@ -177,12 +166,84 @@ const experienceList = computed(() => [
 ]);
 
 const audioRef = ref<HTMLAudioElement | null>(null);
+const audioLoaded = ref(false);
+
+const getAudioSrc = () =>
+  locale.value === "en"
+    ? "/audio/podcast-portfolio-en.m4a"
+    : "/audio/podcast-portfolio-zh.m4a";
+
+let audioIo: IntersectionObserver | null = null;
+
+const videoRef = ref<HTMLVideoElement | null>(null);
+const videoLoaded = ref(false);
+
+const getVideoSrc = () => {
+  return locale.value === "en"
+    ? "/video/portfolio-by-notebooklm.mp4"
+    : "/video/portfolio-by-notebooklm.mp4"; // 先預留
+};
+
+let videoIo: IntersectionObserver | null = null;
 
 onMounted(() => {
-  if (audioRef.value && locale.value === "zh-Hant-TW") {
-    audioRef.value.playbackRate = 1.25;
-  }
+  audioIo = new IntersectionObserver(
+    (entries) => {
+      if (!audioRef.value) return;
+      const [entry] = entries;
+      if (entry && entry.isIntersecting && !audioLoaded.value) {
+        // 進入視窗才綁 src
+        audioRef.value.src = getAudioSrc();
+        audioRef.value.load(); // 尊重 preload="none"
+        audioLoaded.value = true;
+      }
+    },
+    { threshold: 0.1 }
+  );
+
+  if (audioRef.value) audioIo.observe(audioRef.value);
+
+  if (!videoRef.value) return;
+  videoIo = new IntersectionObserver(
+    ([entry]) => {
+      if (
+        !entry ||
+        !entry.isIntersecting ||
+        videoLoaded.value === true ||
+        !videoRef.value
+      )
+        return;
+      // 進入視窗才綁 src（或 <source> 的 src）
+      const source = document.createElement("source");
+      source.src = getVideoSrc();
+      source.type = "video/mp4";
+      videoRef.value.appendChild(source);
+      videoRef.value.load(); // 尊重 preload="none"
+      videoLoaded.value = true;
+    },
+    { threshold: 0.1 }
+  );
+  videoIo.observe(videoRef.value);
 });
+
+onBeforeUnmount(() => {
+  audioIo?.disconnect();
+  videoIo?.disconnect();
+});
+
+// 語系切換時，如果已載入過，重新指向但不自動播放
+watch(
+  () => locale.value,
+  () => {
+    if (audioRef.value && audioLoaded.value) {
+      const wasPlaying = !audioRef.value.paused;
+      audioRef.value.pause();
+      audioRef.value.src = getAudioSrc();
+      audioRef.value.load();
+      if (wasPlaying) audioRef.value.play().catch(() => {});
+    }
+  }
+);
 
 defineOgImageComponent("OgImageCustomTemplate", {
   title: pageTitle.value + " - " + t("website.name"),
