@@ -71,7 +71,7 @@
     <Link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <Link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap"
     />
 
     <!-- https://github.com/nuxt/nuxt/issues/19752 -->
