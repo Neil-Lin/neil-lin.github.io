@@ -70,8 +70,15 @@
     <Link rel="preconnect" href="https://fonts.googleapis.com" />
     <Link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <Link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap"
+    />
+    <Link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
 
     <!-- https://github.com/nuxt/nuxt/issues/19752 -->
