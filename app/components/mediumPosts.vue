@@ -1,26 +1,31 @@
 <template>
-  <div>
-    <div v-if="pending">Loading...</div>
-    <div v-else-if="error">Error: {{ error.message }}</div>
-    <ul v-else class="blog-list">
-      <li
-        v-for="post in posts"
-        :key="post.link"
-        class="blog-item animation-fade-out"
-      >
-        <h3>
-          <nuxt-link
-            :to="post.link"
-            :title="`${$t('action.openWindow')} ${$t('action.goTo')} ${post.title}`"
-            target="_blank"
+  <ClientOnly>
+    <div>
+      <div v-if="pending">Loading...</div>
+      <div v-else-if="error">Error: {{ error.message }}</div>
+      <template v-else>
+        <ul v-if="posts.length" class="blog-list">
+          <li
+            v-for="post in posts"
+            :key="post.link"
+            class="blog-item animation-fade-out"
           >
-            {{ post.title }}
-          </nuxt-link>
-        </h3>
-        <p class="des">{{ post.description }}</p>
-      </li>
-    </ul>
-  </div>
+            <h3>
+              <nuxt-link
+                :to="post.link"
+                :title="`${$t('action.openWindow')} ${$t('action.goTo')} ${post.title}`"
+                target="_blank"
+              >
+                {{ post.title }}
+              </nuxt-link>
+            </h3>
+            <p class="des">{{ post.description }}</p>
+          </li>
+        </ul>
+        <div v-else>There are no posts available.</div>
+      </template>
+    </div>
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">
