@@ -22,7 +22,7 @@
               <span>{{ formatAMPM(new Date()) }}</span>
               <span>{{ $t("intro.greet") }}</span>
             </div>
-            <span class="visually-hidden">回首頁</span>
+            <span class="visually-hidden">{{ $t("action.goToHomePage") }}</span>
           </nuxt-link>
         </div>
       </div>
