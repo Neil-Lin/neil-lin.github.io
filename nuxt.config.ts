@@ -26,6 +26,7 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@nuxtjs/html-validator",
     "@nuxtjs/seo",
+    "nuxt-clarity-analytics",
   ],
 
   gtag: {

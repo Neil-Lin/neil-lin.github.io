@@ -122,7 +122,6 @@ useHead({
       : t("website.name");
   },
   link: [...(head.value.link || [])],
-  script: [{ src: orgUrl.value + "/js/clarity.js" }],
   meta: [...(head.value.meta || [])],
 });
 
