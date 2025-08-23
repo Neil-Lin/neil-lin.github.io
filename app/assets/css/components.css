@@ -38,6 +38,7 @@
   left: calc(50% - 150px);
   width: 300px;
   background-color: oklch(var(--noscript-bg));
+  color: oklch(var(--noscript-color));
   border-radius: 0.25rem;
   padding: 1rem;
   box-shadow: 0 0.25rem 1rem oklch(var(--noscript-box-shadow-color) / 0.15);

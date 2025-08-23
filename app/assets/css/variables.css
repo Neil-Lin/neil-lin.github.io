@@ -5,6 +5,8 @@
   --color-gray-900: 30% 0 0;
   --color-gray-700: 44.95% 0 0;
   --color-gray-300: 80% 0 0;
+  --color-gray-200: 85% 0 0;
+  --color-gray-100: 90% 0 0;
   --breakpoint-320: 320px;
   --breakpoint-375: 375px;
   --breakpoint-560: 560px;
@@ -54,6 +56,10 @@
 
   --input-bg: var(--color-white);
 
+  --noscript-color: var(--wrapper-color);
+  --noscript-bg: var(--wrapper-bg);
+  --noscript-box-shadow-color: var(--color-black);
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -65,7 +71,7 @@
     --box-shadow: 0 0.75rem 1.125rem oklch(var(--color-white) / 15%);
 
     --wrapper-bg: var(--color-black);
-    --wrapper-color: var(--color-gray-300);
+    --wrapper-color: var(--color-gray-100);
 
     --title-color: var(--wrapper-color);
 
