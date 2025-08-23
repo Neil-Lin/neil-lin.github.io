@@ -55,6 +55,9 @@ export default {
       "The content will change immediately to the new sorting and filtering criteria after the select are changed.",
     updateDay: "Update Date",
     noscript: "Your browser does not support JavaScript!",
+    relatedTags: "Related Tags",
+    startToEnd: "Start to End",
+    platformType: "Platform Type",
   },
   des: {
     noData: "There is no data now.",

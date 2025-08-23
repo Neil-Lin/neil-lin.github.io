@@ -55,6 +55,9 @@ export default {
     updateDay: "更新日期",
     noscript:
       "您的瀏覽器不支援 JavaScript 功能，若網頁功能無法正常使用時，請開啟瀏覽器 JavaScript 狀態。",
+    relatedTags: "相關標籤",
+    startToEnd: "執行起始時間",
+    platformType: "平臺種類",
   },
   des: {
     noData: "目前沒有資料。",

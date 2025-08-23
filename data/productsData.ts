@@ -622,7 +622,7 @@ export const productsData = [
     },
     name: {
       "zh-Hant-TW": "Vital TTC 物聯客",
-      en: "Vital TTC 物聯客",
+      en: "Vital TTC",
     },
     intro: {
       "zh-Hant-TW":

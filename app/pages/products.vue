@@ -91,9 +91,13 @@
                     </div>
                   </div>
                   <div class="portfolio-footer">
-                    <span class="visually-hidden">相關標籤：</span>
+                    <span class="visually-hidden">
+                      {{ $t("words.relatedTags") }}：
+                    </span>
                     <span class="tag">
-                      <span class="visually-hidden">執行起始時間：</span>
+                      <span class="visually-hidden">
+                        {{ $t("words.startToEnd") }}：
+                      </span>
                       {{ formatYearRange(product.yearRange) }}
                     </span>
                     <span
@@ -103,7 +107,7 @@
                       "
                       class="visually-hidden"
                     >
-                      平臺種類：
+                      {{ $t("words.platformType") }}：
                     </span>
                     <span v-if="product.platform.includes('web')" class="tag">
                       Web
@@ -115,7 +119,7 @@
                       v-if="product.roles[$i18n.locale].length > 0"
                       class="visually-hidden"
                     >
-                      擔當角色：
+                      {{ $t("words.roles") }}：
                     </span>
                     <span
                       v-for="(item, index) in product.roles[$i18n.locale]"
@@ -144,9 +148,13 @@
                     </div>
                   </div>
                   <div class="portfolio-footer">
-                    <span class="visually-hidden">相關標籤：</span>
+                    <span class="visually-hidden">
+                      {{ $t("words.relatedTags") }}：
+                    </span>
                     <span class="tag">
-                      <span class="visually-hidden">執行起始時間：</span>
+                      <span class="visually-hidden">
+                        {{ $t("words.startToEnd") }}：
+                      </span>
                       {{ formatYearRange(product.yearRange) }}
                     </span>
                     <span
@@ -156,7 +164,7 @@
                       "
                       class="visually-hidden"
                     >
-                      平臺種類：
+                      {{ $t("words.platformType") }}：
                     </span>
                     <span v-if="product.platform.includes('web')" class="tag">
                       Web
@@ -168,7 +176,7 @@
                       v-if="product.roles[$i18n.locale].length > 0"
                       class="visually-hidden"
                     >
-                      擔當角色：
+                      {{ $t("words.roles") }}：
                     </span>
                     <span
                       v-for="(item, index) in product.roles[$i18n.locale]"
