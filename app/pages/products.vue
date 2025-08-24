@@ -497,12 +497,6 @@ watchEffect(() => {
   if (breadcrumbs.value.length > 0) {
     useBreadcrumbSchema(breadcrumbs.value);
   }
-  useHead({
-    meta:
-      route.query.dialog === "true"
-        ? [{ name: "robots", content: "noindex,follow" }]
-        : [],
-  });
 });
 
 defineOgImageComponent("OgImageCustomTemplate", {
