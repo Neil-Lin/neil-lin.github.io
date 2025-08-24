@@ -502,10 +502,6 @@ watchEffect(() => {
 defineOgImageComponent("OgImageCustomTemplate", {
   title: pageTitle.value + " - " + t("website.name"),
 });
-
-useSeoMeta({
-  robots: computed(() => (isModal.value ? "noindex,follow" : "index,follow")),
-});
 </script>
 
 <style scoped>
