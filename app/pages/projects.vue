@@ -318,7 +318,6 @@ const formatYearRange = (yearRange: { start: number; end: number | null }) => {
 
 // 🔥 設定 Schema.org 資料
 useSchemaOrg([
-  // 作品集列表 (ItemList)
   {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -327,34 +326,58 @@ useSchemaOrg([
     description: pageDescription.value,
     url: `${runtimeConfig.public.baseUrl}${route.path}`,
     numberOfItems: projectsData.length,
-    itemListElement: projectsData.map((work, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      url: `${runtimeConfig.public.baseUrl}/projects/${work.slug}`,
-      item: {
+    itemListElement: projectsData.map((work, index) => {
+      const hasExternal =
+        Boolean(work.link || work.link) && work.clickable !== false;
+      const externalUrl = work.link || work.link || undefined;
+      const imageSrc = work.heroImage?.[locale.value]?.[0]?.src
+        ? `${runtimeConfig.public.baseUrl}${work.heroImage[locale.value][0]?.src}`
+        : undefined;
+
+      // 基本 CreativeWork 內容（不放 url，後面再有條件加）
+      const creativeWork: Record<string, unknown> = {
         "@type": "CreativeWork",
-        "@id": `${runtimeConfig.public.baseUrl}/projects/${work.slug}#creativework`,
-        name: work.name[locale.value],
+        "@id": `${runtimeConfig.public.baseUrl}${route.path}#${work.slug}`,
+        name: work.name?.[locale.value] ?? work.name?.["zh-Hant-TW"] ?? "",
         description: work.intro?.[locale.value] || "",
-        image: work.heroImage?.[locale.value]?.[0]?.src
-          ? `${runtimeConfig.public.baseUrl}${work.heroImage[locale.value][0]?.src}`
-          : undefined, // 若無圖片則不顯示 `image` 欄位
+        ...(imageSrc ? { image: imageSrc } : {}),
         creator: {
           "@type": "Person",
           name: "Neil",
           url: runtimeConfig.public.baseUrl,
         },
-        datePublished: work.yearRange.start,
-        dateModified: work.yearRange.end ?? new Date().getFullYear(),
-        url: `${runtimeConfig.public.baseUrl}/projects/${work.slug}`,
+        datePublished: work.yearRange?.start,
+        dateModified: work.yearRange?.end ?? new Date().getFullYear(),
         inLanguage: locale.value,
-        keywords: work.roles[locale.value].join(", "),
+        keywords: Array.isArray(work.roles?.[locale.value])
+          ? work.roles[locale.value].join(", ")
+          : "",
         audience: {
           "@type": "EducationalAudience",
           educationalRole: "Designer, Developer",
         },
-      },
-    })),
+      };
+
+      // 有外部連結才輸出 url；沒有就補上狀態為 Archived（自訂文字即可）
+      if (hasExternal && externalUrl) {
+        creativeWork.url = externalUrl;
+      } else {
+        creativeWork.creativeWorkStatus = "Archived";
+        // 可選：如果有 Wayback/作品說明頁，可放到 sameAs
+        // creativeWork.sameAs = ["https://web.archive.org/..."]
+      }
+
+      const listItem: Record<string, unknown> = {
+        "@type": "ListItem",
+        position: index + 1,
+        item: creativeWork,
+      };
+      if (hasExternal && externalUrl) {
+        listItem.url = externalUrl;
+      }
+
+      return listItem;
+    }),
   },
 ]);
 
