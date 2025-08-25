@@ -385,15 +385,18 @@ watch(isModal, async (modal) => {
   if (modal) {
     await nextTick();
     lightBox.value?.showModal();
+
+    // 等首屏先畫出，再清掉 query（避免阻塞）
+    requestAnimationFrame(() => {
+      // 只改網址，不觸發導航
+      window.history.replaceState(window.history.state, "", route.path);
+    });
   }
 });
 
 onMounted(() => {
   if (isModal.value) {
     lightBox.value?.showModal();
-  }
-  if (Object.keys(route.query).length > 0) {
-    router.replace(route.path);
   }
 });
 
