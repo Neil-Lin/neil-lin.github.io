@@ -52,7 +52,7 @@
         >
           <ul class="portfolio-list">
             <li
-              v-for="project in group.projects"
+              v-for="(project, idx) in group.projects"
               :key="project.id"
               class="portfolio-item animation-fade-out"
             >
@@ -67,15 +67,29 @@
                   {{ project.name[$i18n.locale] }}
                 </h3>
                 <div class="portfolio-content">
-                  <img
-                    v-if="
-                      project.heroImage &&
-                      project.heroImage[$i18n.locale].length > 0
-                    "
-                    :src="`${runtimeConfig.public.baseUrl}${project.heroImage[$i18n.locale]?.[0]?.src}`"
-                    alt=""
-                    class="portfolio-img"
-                  />
+                  <template v-if="idx === 0">
+                    <img
+                      v-if="
+                        project.heroImage &&
+                        project.heroImage[$i18n.locale].length > 0
+                      "
+                      :src="`${runtimeConfig.public.baseUrl}${project.heroImage[$i18n.locale]?.[0]?.src}`"
+                      alt=""
+                      class="portfolio-img"
+                      fetchpriority="high"
+                    />
+                  </template>
+                  <template v-else>
+                    <img
+                      v-if="
+                        project.heroImage &&
+                        project.heroImage[$i18n.locale].length > 0
+                      "
+                      :src="`${runtimeConfig.public.baseUrl}${project.heroImage[$i18n.locale]?.[0]?.src}`"
+                      alt=""
+                      class="portfolio-img"
+                    />
+                  </template>
                   <div
                     v-if="project.intro![$i18n.locale]"
                     class="portfolio-intro"

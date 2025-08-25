@@ -53,7 +53,7 @@
           >
             <ul class="portfolio-list">
               <li
-                v-for="product in group.products"
+                v-for="(product, idx) in group.products"
                 :key="product.id"
                 class="portfolio-item animation-fade-out"
               >
@@ -77,12 +77,23 @@
                     {{ product.name[$i18n.locale] }}
                   </h3>
                   <div class="portfolio-content">
-                    <img
-                      v-if="product.heroImage[$i18n.locale]?.[0]?.src"
-                      :src="`${product.heroImage[$i18n.locale][0].src}`"
-                      alt=""
-                      class="portfolio-img"
-                    />
+                    <template v-if="idx === 0">
+                      <img
+                        v-if="product.heroImage[$i18n.locale]?.[0]?.src"
+                        :src="`${product.heroImage[$i18n.locale][0]?.src}`"
+                        alt=""
+                        class="portfolio-img"
+                        fetchpriority="high"
+                      />
+                    </template>
+                    <template v-else>
+                      <img
+                        v-if="product.heroImage[$i18n.locale]?.[0]?.src"
+                        :src="`${product.heroImage[$i18n.locale][0]?.src}`"
+                        alt=""
+                        class="portfolio-img"
+                      />
+                    </template>
                     <div
                       v-if="product.intro![$i18n.locale]"
                       class="portfolio-intro"
