@@ -21,14 +21,21 @@
         </span>
       </template>
       <span>&copy; Neil</span>
-      <span>{{ $t("words.updateDay") }}：2025/08/27</span>
+      <span>
+        {{ $t("words.updateDay") }}：
+        <span aria-hidden="true">2025/08/27</span>
+        <span v-if="locale === 'en'" class="visually-hidden">
+          27 August 2025
+        </span>
+        <span v-else class="visually-hidden">2025 年 8 月 27 日</span>
+      </span>
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
 const switchLocalePath = useSwitchLocalePath();
-const { locales } = useI18n();
+const { locales, locale } = useI18n();
 const supportedLocales = locales.value as Array<LocaleObject>;
 </script>
 

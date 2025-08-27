@@ -53,7 +53,7 @@ export default {
     canNotWatchVideo: "Your browser does not support the video tag",
     changeByFilter:
       "The content will change immediately to the new sorting and filtering criteria after the select are changed.",
-    updateDay: "Update Date",
+    updateDay: "Update",
     noscript: "Your browser does not support JavaScript!",
     relatedTags: "Related Tags",
     startToEnd: "Start to End",
