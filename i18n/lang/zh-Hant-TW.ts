@@ -108,7 +108,7 @@ export default {
     des: "一位熱愛通用設計的 UI/UX designer，擅長 UI、UX、Vue/Nuxt 切版、無障礙網頁設計、資料視覺化與設計管理。",
   },
   shortcut: {
-    skipToContent: "跳至主要內容",
+    skipToContent: "跳至中央內容區塊",
     header: "上方功能區塊",
     mainContent: "中央內容區塊",
     footer: "下方功能區塊",
@@ -119,7 +119,7 @@ export default {
       p2: "這個網站是使用 Nuxt4 建立，您可以在 {link} 上查看原始碼。",
     },
     sitemap: {
-      p1: "本網站依無障礙網頁設計原則建置，網站的主要內容分為三大區塊：{0}{0}1. 上方功能區塊 2.中央內容區塊 3.下方功能區塊{0}{0}本網站的快速鍵(Accesskey)設定如下：",
+      p1: "本網站依無障礙網頁設計原則建置，網站版型分為三大區塊：{0}{0}1. 上方功能區塊 2.中央內容區塊 3.下方功能區塊{0}{0}本網站的快速鍵(Accesskey)設定如下：",
       p2: "{keyU}：上方功能區塊，選單，含語言切換。{n}{keyC}：中央內容區塊。{n}{keyZ}：下方功能區塊，含語言切換。{n}",
       p3: "如果您的瀏覽器是 Firefox，快速鍵的使用方法為 {firefoxKeyExample}，例如 {firefoxKeyExample2} 會跳至網頁中央內容區塊，以此類推。{n}{n}另外，如果您是 MAC 用戶，快速鍵的使用方法為 {macKeyExample}。{n}{n}若以上方式皆無法使用，建議可以檢查是不是有自訂的快速鍵影響。",
       tableCaption: "各作業系統與瀏覽器快速鍵參考表",
