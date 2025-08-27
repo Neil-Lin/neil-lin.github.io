@@ -21,7 +21,7 @@
         </span>
       </template>
       <span>&copy; Neil</span>
-      <span>{{ $t("words.updateDay") }}：2025/08/23</span>
+      <span>{{ $t("words.updateDay") }}：2025/08/27</span>
     </div>
   </footer>
 </template>

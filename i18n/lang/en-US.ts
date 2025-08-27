@@ -118,7 +118,7 @@ export default {
       p2: "This website is built using Nuxt4. You can view the source code on {link}.",
     },
     sitemap: {
-      p1: "This website is built based on the principles of accessible web design. The main content of the website is divided into three major sections.{0}{0}1. The Header Section 2.The Main Content 3.The Footer Section{0}{0}The Accesskey settings for this website are as follows:：",
+      p1: "This website is built based on the principles of accessible web design. The main content of the website is divided into three major sections.{0}{0}1. header 2.main content 3.footer{0}{0}The Accesskey settings for this website are as follows:：",
       p2: "{keyU}：header{n}, main menu, including switch language&copyright{n}{keyC}：main content{n}{keyZ}：footer, including switch language&copyright{n}",
       p3: "If you are using Firefox as your browser, the method for using the Accesskeys is {firefoxKeyExample}. For example, {firefoxKeyExample2} will navigate to the main content of the webpage, and so on. {n}{n}Additionally, if you are a Mac user, the method for using the Accesskeys is {macKeyExample}.If none of the above methods work, it is recommended to check if there are any custom keybindings or settings that may be affecting the use of Accesskeys.",
       tableCaption: "Accesskey for different Operating Systems and Browsers",
