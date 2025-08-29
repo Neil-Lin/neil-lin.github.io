@@ -23,12 +23,27 @@
       <span>&copy; Neil</span>
       <span>
         {{ $t("words.updateDay") }}：
-        <span aria-hidden="true">2025/08/27</span>
+        <span aria-hidden="true">2025/08/30</span>
         <span v-if="locale === 'en'" class="visually-hidden">
-          27 August 2025
+          30 August 2025
         </span>
-        <span v-else class="visually-hidden">2025 年 8 月 27 日</span>
+        <span v-else class="visually-hidden">2025 年 8 月 30 日</span>
       </span>
+      <div>
+        <nuxt-link
+          to="https://accessibility.moda.gov.tw/Applications/Detail?category=20250820134645"
+          title="另開視窗前往無障礙網站"
+          target="_blank"
+          class="a11y-img"
+        >
+          <img
+            src="@/assets/images/a11y-aa.svg"
+            width="88"
+            height="31"
+            alt="通過AA無障礙網頁檢測"
+          />
+        </nuxt-link>
+      </div>
     </div>
   </footer>
 </template>
@@ -53,5 +68,9 @@ footer {
       flex-direction: column;
     }
   }
+}
+
+.a11y-img {
+  display: inline-block;
 }
 </style>

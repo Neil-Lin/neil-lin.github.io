@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "3.2.2",
+  "version": "3.3.0",
   "description": "Neil's Portfolio",
   "author": "Neil Lin",
   "private": true,
@@ -9,6 +9,7 @@
     "dev": "nuxi dev",
     "build": "nuxi build",
     "preview": "nuxi preview",
+    "generate": "nuxt generate",
     "postinstall": "nuxt prepare",
     "lint": "eslint --ext .ts,.js,.vue .",
     "lint:fix": "eslint . --fix",
