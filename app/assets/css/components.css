@@ -161,9 +161,14 @@
   position: relative;
   padding: 2rem 0 0;
   .portfolio-item {
+    contain: layout style; 
+    contain-intrinsic-size: auto 346px;
     flex-basis: calc(50% - 1rem);
     @media screen and (width <= 1024px) {
       flex-basis: 100%;
+    }
+    @media screen and (width <= 460px) {
+      contain-intrinsic-size: auto 200px;
     }
     &:first-child {
       flex-basis: 100%;
