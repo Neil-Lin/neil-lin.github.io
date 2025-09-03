@@ -77,23 +77,13 @@
                     {{ product.name[$i18n.locale] }}
                   </h3>
                   <div class="portfolio-content">
-                    <template v-if="idx === 0">
-                      <img
-                        v-if="product.heroImage[$i18n.locale]?.[0]?.src"
-                        :src="`${product.heroImage[$i18n.locale][0]?.src}`"
-                        alt=""
-                        class="portfolio-img"
-                        fetchpriority="high"
-                      />
-                    </template>
-                    <template v-else>
-                      <img
-                        v-if="product.heroImage[$i18n.locale]?.[0]?.src"
-                        :src="`${product.heroImage[$i18n.locale][0]?.src}`"
-                        alt=""
-                        class="portfolio-img"
-                      />
-                    </template>
+                    <img
+                      v-if="product.heroImage[$i18n.locale]?.[0]?.src"
+                      :src="`${product.heroImage[$i18n.locale][0]?.src}`"
+                      alt=""
+                      class="portfolio-img"
+                      :fetchpriority="idx === 0 ? 'high' : ''"
+                    />
                     <div
                       v-if="product.intro![$i18n.locale]"
                       class="portfolio-intro"

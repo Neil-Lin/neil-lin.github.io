@@ -67,29 +67,16 @@
                   {{ project.name[$i18n.locale] }}
                 </h3>
                 <div class="portfolio-content">
-                  <template v-if="idx === 0">
-                    <img
-                      v-if="
-                        project.heroImage &&
-                        project.heroImage[$i18n.locale].length > 0
-                      "
-                      :src="`${runtimeConfig.public.baseUrl}${project.heroImage[$i18n.locale]?.[0]?.src}`"
-                      alt=""
-                      class="portfolio-img"
-                      fetchpriority="high"
-                    />
-                  </template>
-                  <template v-else>
-                    <img
-                      v-if="
-                        project.heroImage &&
-                        project.heroImage[$i18n.locale].length > 0
-                      "
-                      :src="`${runtimeConfig.public.baseUrl}${project.heroImage[$i18n.locale]?.[0]?.src}`"
-                      alt=""
-                      class="portfolio-img"
-                    />
-                  </template>
+                  <img
+                    v-if="
+                      project.heroImage &&
+                      project.heroImage[$i18n.locale].length > 0
+                    "
+                    :src="`${runtimeConfig.public.baseUrl}${project.heroImage[$i18n.locale]?.[0]?.src}`"
+                    alt=""
+                    class="portfolio-img"
+                    :fetchpriority="idx === 0 ? 'high' : ''"
+                  />
                   <div
                     v-if="project.intro![$i18n.locale]"
                     class="portfolio-intro"
