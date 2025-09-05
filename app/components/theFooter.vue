@@ -23,11 +23,11 @@
       <span>&copy; Neil</span>
       <span>
         {{ $t("words.updateDay") }}：
-        <span aria-hidden="true">2025/08/30</span>
+        <span aria-hidden="true">2025-09-06</span>
         <span v-if="locale === 'en'" class="visually-hidden">
-          30 August 2025
+          06 Sep. 2025
         </span>
-        <span v-else class="visually-hidden">2025 年 8 月 30 日</span>
+        <span v-else class="visually-hidden">2025 年 9 月 6 日</span>
       </span>
       <div>
         <nuxt-link
@@ -44,13 +44,14 @@
           />
         </nuxt-link>
       </div>
+      <div>&#8599; {{ t("words.aboutExternalWebsite") }}</div>
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
 const switchLocalePath = useSwitchLocalePath();
-const { locales, locale } = useI18n();
+const { t, locales, locale } = useI18n();
 const supportedLocales = locales.value as Array<LocaleObject>;
 </script>
 
@@ -59,6 +60,7 @@ footer {
   .footer-container {
     padding: 1rem 0.5rem;
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
     color: oklch(var(--footer-color));

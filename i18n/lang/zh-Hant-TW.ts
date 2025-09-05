@@ -58,6 +58,8 @@ export default {
     relatedTags: "相關標籤",
     startToEnd: "執行起始時間",
     platformType: "平臺種類",
+    aboutExternalWebsite:
+      "有這個符號代表外部連結，該連結可能沒有通過無障礙檢測",
   },
   des: {
     noData: "目前沒有資料。",

@@ -58,6 +58,8 @@ export default {
     relatedTags: "Related Tags",
     startToEnd: "Start to End",
     platformType: "Platform Type",
+    aboutExternalWebsite:
+      "Indicates external site which may or may not meet accessibility guidelines",
   },
   des: {
     noData: "There is no data now.",
