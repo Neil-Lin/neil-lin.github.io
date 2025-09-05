@@ -60,6 +60,8 @@ export default {
     platformType: "Platform Type",
     aboutExternalWebsite:
       "Indicates external site which may or may not meet accessibility guidelines",
+    openNewWindowToA11yCheckPage: "open new window to a11y check page",
+    passA11yTWBadge: "A11y AA level",
   },
   des: {
     noData: "There is no data now.",

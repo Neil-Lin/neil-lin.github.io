@@ -32,7 +32,7 @@
       <div>
         <nuxt-link
           to="https://accessibility.moda.gov.tw/Applications/Detail?category=20250820134645"
-          title="另開視窗前往無障礙網站"
+          :title="t('words.openNewWindowToA11yCheckPage')"
           target="_blank"
           class="a11y-img"
         >
@@ -40,7 +40,7 @@
             src="@/assets/images/a11y-aa.svg"
             width="88"
             height="31"
-            alt="通過AA無障礙網頁檢測"
+            :alt="t('words.passA11yTWBadge')"
           />
         </nuxt-link>
       </div>

@@ -59,7 +59,9 @@ export default {
     startToEnd: "執行起始時間",
     platformType: "平臺種類",
     aboutExternalWebsite:
-      "有這個符號代表外部連結，該連結可能沒有通過無障礙檢測",
+      "有這個符號代表外部連結，該連結可能與此網站的無障礙政策不相符。",
+    openNewWindowToA11yCheckPage: "另開視窗前往無障礙網站",
+    passA11yTWBadge: "通過AA無障礙網頁檢測",
   },
   des: {
     noData: "目前沒有資料。",
