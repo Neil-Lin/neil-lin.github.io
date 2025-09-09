@@ -21,27 +21,28 @@
 </template>
 
 <script setup lang="ts">
-// https://phrase.com/blog/posts/nuxt-js-tutorial-i18n/
-// Used for type casting
 import type { LocaleObject } from "@nuxtjs/i18n";
 
-// Get active locale and supported locales
 const { locale, locales } = useI18n();
-// Cast to avoid TypeScript errors in template
 const supportedLocales = locales.value as Array<LocaleObject>;
 
-// const router = useRouter();
+// 引入 useRoute 來取得當前路由資訊
+const route = useRoute();
 const switchLocalePath = useSwitchLocalePath();
 
-// When the visitor selects a new locale, route to
-// to the new locale's path e.g. /en-CA/foo → /ar-EG/foo
 async function onLocaleChanged(event: Event) {
   const target = event.target as HTMLInputElement;
 
-  // switchLocalePath('ar-EG') will return Arabic equivalent
-  // for the *current* URL path e.g. if we're at /en-CA/about,
-  // switchLocalePath('ar-EG') will return '/ar-EG/about'
-  // router.push({ path: switchLocalePath(target.value) });
-  await navigateTo({ path: switchLocalePath(target.value) });
+  // 取得新的語言路徑
+  const newPath = switchLocalePath(target.value as "zh-Hant-TW" | "en");
+
+  // 取得當前的查詢參數
+  const currentQueries = route.query;
+
+  // 使用 navigateTo 函數，並將新路徑和現有的查詢參數一起傳遞
+  await navigateTo({
+    path: newPath,
+    query: currentQueries,
+  });
 }
 </script>
