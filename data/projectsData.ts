@@ -534,7 +534,7 @@ export const projectsData = [
   {
     id: 21,
     slug: "taipei-dashboard",
-    clickable: true,
+    clickable: false,
     link: "https://dashboard.gov.taipei/",
     heroImage: {
       "zh-Hant-TW": [

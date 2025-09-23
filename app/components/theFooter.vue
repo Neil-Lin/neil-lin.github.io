@@ -23,11 +23,11 @@
       <span>&copy; Neil</span>
       <span>
         {{ $t("words.updateDay") }}：
-        <span aria-hidden="true">2025-09-06</span>
+        <span aria-hidden="true">2025-09-23</span>
         <span v-if="locale === 'en'" class="visually-hidden">
-          06 Sep. 2025
+          23 Sep. 2025
         </span>
-        <span v-else class="visually-hidden">2025 年 9 月 6 日</span>
+        <span v-else class="visually-hidden">2025 年 9 月 23 日</span>
       </span>
       <div>
         <nuxt-link
