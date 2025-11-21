@@ -377,10 +377,10 @@ watch(isModal, async (modal) => {
     lightBox.value?.showModal();
 
     // 等首屏先畫出，再清掉 query（避免阻塞）
-    requestAnimationFrame(() => {
-      // 只改網址，不觸發導航
-      window.history.replaceState(window.history.state, "", route.path);
-    });
+    // requestAnimationFrame(() => {
+    // 只改網址，不觸發導航
+    // window.history.replaceState(window.history.state, "", route.path);
+    // });
   }
 });
 
