@@ -23,7 +23,7 @@
       <span>&copy; Neil</span>
       <span>
         {{ $t("words.updateDay") }}：
-        <span aria-hidden="true">2025-09-23</span>
+        <span aria-hidden="true">2025-11-21</span>
         <span v-if="locale === 'en'" class="visually-hidden">
           23 Sep. 2025
         </span>
