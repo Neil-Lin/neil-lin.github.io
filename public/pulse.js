@@ -11,7 +11,7 @@
 
   // 請填入你的 Google Apps Script 部署網址 (網頁應用程式 URL)
   const GOOGLE_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbw7Jm--67IUnwNWdY8BSLR8hvijZDbIGORcq4aNhejvuXyssTyeQiWUacArJtFUY9MObA/exec";
+    "https://script.google.com/macros/s/AKfycbx-ROlbI5iUulqvxJUZASNZ852R4EZPum6ocSNzhrci5mj-8OFDjfEleILq5LX8CG1IFA/exec";
 
   // 偵測閾值設定
   const CONFIG = {
