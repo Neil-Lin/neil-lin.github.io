@@ -232,39 +232,40 @@
    * 產生可讀性高的 CSS Selector
    * 優先級：ID > Class > Tag + Attribute
    */
+  // 請替換掉原本 pulse.js 裡面的 getSelector 函式
+
   function getSelector(el) {
     if (!el) return "unknown";
 
-    // 1. ID 最準
-    if (el.id) return `#${el.id}`;
+    // 1. 如果有 ID，這是最棒的，直接回傳 (因為 ID 在頁面上是唯一的)
+    if (el.id) return "#" + el.id;
 
-    // 2. 組合 Tag + Class
-    let path = el.tagName.toLowerCase();
-    if (el.className && typeof el.className === "string") {
-      const classes = el.className.trim().split(/\s+/).join(".");
-      if (classes) path += `.${classes}`;
+    // 2. 如果沒有 ID，我們就開始組裝「麵包屑」路徑
+    let path = [];
+
+    // 往上找，直到 body 或是找到有 ID 的父層為止
+    while (el && el.tagName !== "HTML") {
+      let selector = el.tagName.toLowerCase();
+
+      // 如果父層有 ID，就用父層 ID 當起點，停止往上找
+      if (el.id) {
+        selector = "#" + el.id;
+        path.unshift(selector);
+        break;
+      } else {
+        // 如果有兄弟姊妹，就要標示我是「第幾個」(nth-child)
+        let sibling = el;
+        let nth = 1;
+        while ((sibling = sibling.previousElementSibling)) {
+          if (sibling.tagName.toLowerCase() == selector) nth++;
+        }
+        if (nth > 1) selector += ":nth-of-type(" + nth + ")";
+      }
+
+      path.unshift(selector);
+      el = el.parentElement;
     }
 
-    // 3. 如果有特定屬性 (如 type, role, name) 加上去增加辨識度
-    ["type", "name", "role", "aria-label"].forEach((attr) => {
-      if (el.hasAttribute(attr)) {
-        path += `[${attr}="${el.getAttribute(attr)}"]`;
-      }
-    });
-
-    // 4. 如果路徑太短（只有 tag），嘗試往上找一層父層
-    if (
-      path.indexOf(".") === -1 &&
-      path.indexOf("#") === -1 &&
-      el.parentElement
-    ) {
-      const parent = el.parentElement;
-      if (parent.id) path = `#${parent.id} > ${path}`;
-      else if (parent.className && typeof parent.className === "string") {
-        path = `.${parent.className.trim().split(/\s+/)[0]} > ${path}`;
-      }
-    }
-
-    return path;
+    return path.join(" > ");
   }
 })();
