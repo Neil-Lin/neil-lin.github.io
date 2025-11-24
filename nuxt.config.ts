@@ -10,6 +10,16 @@ const dynamicRoutes = productsData
 export default defineNuxtConfig({
   app: {
     baseURL: "/",
+    head: {
+      script: [
+        {
+          src: "https://neillin.com/pulse.js", // 請替換成您的真實網域
+          defer: true,
+          // 這是您的專屬追蹤 ID
+          "data-client-id": "neiltest_001_starbucks",
+        },
+      ],
+    },
   },
   compatibilityDate: "2024-04-03",
   devtools: { enabled: false },
