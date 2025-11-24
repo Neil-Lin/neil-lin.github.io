@@ -214,7 +214,7 @@
 
   function reportEvent(type, element, metadata = {}) {
     const selector = getUniqueSelector(element);
-    const pageUrl = window.location.href;
+    const pageUrl = window.location.origin + window.location.pathname;
 
     // 防止重複發送 (Key: 類型+路徑+頁面)
     const errorKey = `${type}|${selector}|${window.location.pathname}`;
