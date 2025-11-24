@@ -13,7 +13,7 @@
   // ⚠️ 請填入你的 Google Apps Script 部署網址 (網頁應用程式 URL)
   // 記得：Apps Script 部署權限要設為 "Anyone (所有人)"
   const GOOGLE_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbx-ROlbI5iUulqvxJUZASNZ852R4EZPum6ocSNzhrci5mj-8OFDjfEleILq5LX8CG1IFA/exec";
+    "https://script.google.com/macros/s/AKfycbyEoOvocw7plN1corA7HO1xdBuOhn9NnqN99OrjJvDvccPkXt9ilCnF--kFdGDxCU4Zeg/exec";
 
   // 偵測參數設定
   const CONFIG = {
