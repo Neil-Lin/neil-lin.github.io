@@ -1,3 +1,13 @@
+interface NominatimResponse {
+  address?: {
+    country_code?: string;
+  };
+}
+
+interface IpApiResponse {
+  country_code?: string;
+}
+
 export const useUserLocation = () => {
   const country = ref("TW");
   const isGeoSuccess = ref(false);
@@ -35,18 +45,28 @@ export const useUserLocation = () => {
           console.warn("❌ Geolocation 失敗", error);
           resolve(null);
         },
-        { enableHighAccuracy: true, timeout: 5000 },
+        { enableHighAccuracy: true, timeout: 5000 }
       );
     });
   };
 
   const reverseGeocode = async (lat: number, lon: number) => {
     try {
-      const response = await fetch(
-        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`,
+      const data = await $fetch<NominatimResponse>(
+        "https://nominatim.openstreetmap.org/reverse",
+        {
+          params: {
+            format: "json",
+            lat,
+            lon,
+          },
+          headers: {
+            "User-Agent": "NeilPortfolio/1.0", // Required by Nominatim
+          },
+        }
       );
-      const data = await response.json();
-      if (data && data.address && data.address.country_code) {
+
+      if (data?.address?.country_code) {
         console.log(`🌍 解析: ${data.address.country_code.toUpperCase()}`);
         return data.address.country_code.toUpperCase(); // 轉大寫，例如 "DE"
       }
@@ -58,8 +78,7 @@ export const useUserLocation = () => {
 
   const fetchFromIP = async () => {
     try {
-      const response = await fetch("https://ipapi.co/json/");
-      const data = await response.json();
+      const data = await $fetch<IpApiResponse>("https://ipapi.co/json/");
       country.value = data.country_code || "TW";
       console.log(`🌍 IP 解析國家: ${country.value}`);
     } catch (error) {

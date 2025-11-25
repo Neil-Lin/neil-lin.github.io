@@ -1,5 +1,5 @@
 export const useBreadcrumbSchema = (
-  breadcrumbs: Array<{ title: string; link?: string }>
+  breadcrumbs: { title: string; link?: string }[]
 ) => {
   const route = useRoute()
   const runtimeConfig = useRuntimeConfig()
