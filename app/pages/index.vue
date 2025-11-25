@@ -131,21 +131,39 @@ const { t } = useI18n();
 const pageTitle = ref(t("words.home"));
 
 // SEO
+// SEO
 useHead({
   title: pageTitle,
   meta: [
     {
-      hid: "og:title",
+      name: "description",
+      content: t("intro.des3"),
+    },
+    {
       property: "og:title",
       content: pageTitle.value + " - " + t("website.name"),
     },
     {
-      hid: "twitter:title",
+      property: "og:description",
+      content: t("intro.des3"),
+    },
+    {
       name: "twitter:title",
       content: pageTitle.value + " - " + t("website.name"),
     },
+    {
+      name: "twitter:description",
+      content: t("intro.des3"),
+    },
   ],
 });
+
+useSchemaOrg([
+  {
+    "@type": "ProfilePage",
+    description: t("intro.des3"),
+  },
+]);
 
 const experienceList = computed(() => [
   {
