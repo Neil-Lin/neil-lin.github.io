@@ -21,14 +21,16 @@
         </span>
       </template>
       <span>&copy; Neil</span>
-      <span>
-        {{ $t("words.updateDay") }}：
-        <span aria-hidden="true">2025-11-25</span>
-        <span v-if="locale === 'en'" class="visually-hidden">
-          23 Sep. 2025
+      <ClientOnly>
+        <span>
+          {{ $t("words.updateDay") }}：
+          <span aria-hidden="true">2025-11-25</span>
+          <span v-if="locale === 'en'" class="visually-hidden">
+            23 Sep. 2025
+          </span>
+          <span v-else class="visually-hidden">2025 年 9 月 23 日</span>
         </span>
-        <span v-else class="visually-hidden">2025 年 9 月 23 日</span>
-      </span>
+      </ClientOnly>
       <div>
         <nuxt-link
           to="https://accessibility.moda.gov.tw/Applications/Detail?category=20250820134645"
