@@ -772,6 +772,41 @@ export const projectsData = [
       en: ["UI", "Layout"],
     },
   },
+  {
+    id: 28,
+    slug: "dpp",
+    clickable: true,
+    link: "https://dpp.moenv.gov.tw/",
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/dpp-thumbnail.webp",
+          figcaption: "產品數位履歷",
+        },
+      ],
+      en: [
+        {
+          src: "/images/dpp-thumbnail.webp",
+          figcaption: "Digital Product Passport",
+        },
+      ],
+    },
+    name: {
+      "zh-Hant-TW": "產品數位履歷",
+      en: "Digital Product Passport",
+    },
+    intro: {
+      "zh-Hant-TW":
+        "產品的數位身分證，透過揭露產品資訊，促進二手再利用、維修或更有效益的回收。",
+      en: "Digital Product Passport is a digital identity for products, disclosing product information to promote second-hand utilization, repair, or more beneficial recycling.",
+    },
+    platform: ["web"],
+    yearRange: { start: 2023, end: null },
+    roles: {
+      "zh-Hant-TW": ["UI", "切版"],
+      en: ["UI", "Layout"],
+    },
+  },
 ];
 
 export default projectsData;
