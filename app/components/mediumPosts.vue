@@ -1,31 +1,29 @@
 <template>
-  <ClientOnly>
-    <div>
-      <div v-if="pending">Loading...</div>
-      <div v-else-if="error">Error: {{ error.message }}</div>
-      <template v-else>
-        <ul v-if="posts.length" class="blog-list">
-          <li
-            v-for="post in posts"
-            :key="post.link"
-            class="blog-item animation-fade-out"
-          >
-            <h3>
-              <nuxt-link
-                :to="post.link"
-                :title="`${$t('action.openWindow')} ${$t('action.goTo')} ${post.title}`"
-                target="_blank"
-              >
-                {{ post.title }}
-              </nuxt-link>
-            </h3>
-            <p class="des">{{ post.description }}</p>
-          </li>
-        </ul>
-        <div v-else>There are no posts available.</div>
-      </template>
-    </div>
-  </ClientOnly>
+  <div>
+    <div v-if="status === 'pending'">Loading...</div>
+    <div v-else-if="error">Error: {{ error.message }}</div>
+    <template v-else>
+      <ul v-if="posts.length" class="blog-list">
+        <li
+          v-for="post in posts"
+          :key="post.link"
+          class="blog-item animation-fade-out"
+        >
+          <h3>
+            <nuxt-link
+              :to="post.link"
+              :title="`${$t('action.openWindow')} ${$t('action.goTo')} ${post.title}`"
+              target="_blank"
+            >
+              {{ post.title }}
+            </nuxt-link>
+          </h3>
+          <p class="des">{{ post.description }}</p>
+        </li>
+      </ul>
+      <div v-else>There are no posts available.</div>
+    </template>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -43,20 +41,18 @@ const props = defineProps({
   },
 });
 
-const { data, pending, error } = await useFetch<{
+const { data, status, error } = await useFetch<{
   status: string;
   items: MediumPost[];
 }>(
-  `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${props.username}`
+  `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${props.username}`,
+  {
+    key: `medium-posts-${props.username}`,
+  }
 );
 
 const stripHtml = (html: string) => {
-  if (import.meta.client) {
-    const doc = new DOMParser().parseFromString(html, "text/html");
-    return doc.body.textContent || "";
-  } else {
-    return html.replace(/<\/?[^>]+(>|$)/g, ""); // 使用正則備用處理
-  }
+  return html.replace(/<\/?[^>]+(>|$)/g, "");
 };
 
 const posts = computed(() => {
