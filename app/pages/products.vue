@@ -316,7 +316,7 @@ const filteredList = computed(() => {
 
 // 新增依據 yearRange.start 分組的 computed 屬性
 const groupedlist = computed(() => {
-  const groups: { products: typeof products.value }[] = [];
+  const groups: { year: number; products: typeof products.value }[] = [];
 
   filteredList.value.forEach((product) => {
     const year = product.yearRange.start;
@@ -400,41 +400,39 @@ const orgUrl = computed(() => {
 
 // 🔥 設定 Schema.org 資料
 useSchemaOrg([
-  // 作品集列表 (ItemList)
   {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "@id": `${runtimeConfig.public.baseUrl}${route.path}#productsList`,
+    "@type": "CollectionPage",
+    "@id": `${runtimeConfig.public.baseUrl}${route.path}#collection`,
     name: t("words.portfolio"),
     description: pageDescription.value,
     url: `${runtimeConfig.public.baseUrl}${route.path}`,
-    numberOfItems: productsData.length,
-    itemListElement: productsData.map((work, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      url: `${orgUrl.value}/products/${work.slug}`,
-      item: {
-        "@type": "CreativeWork",
-        "@id": `${orgUrl.value}/products/${work.slug}#creativework`,
-        name: work.name[locale.value],
-        description: work.intro?.[locale.value] || "",
-        image: `${runtimeConfig.public.baseUrl}${work.schemaImage[locale.value][0]?.src}`,
-        creator: {
-          "@type": "Person",
-          name: "Neil",
-          url: orgUrl.value,
-        },
-        datePublished: work.yearRange.start,
-        dateModified: work.yearRange.end ?? new Date().getFullYear(),
+    mainEntity: {
+      "@type": "ItemList",
+      "@id": `${runtimeConfig.public.baseUrl}${route.path}#productsList`,
+      numberOfItems: productsData.length,
+      itemListElement: productsData.map((work, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
         url: `${orgUrl.value}/products/${work.slug}`,
-        inLanguage: locale.value,
-        keywords: work.roles[locale.value].join(", "),
-        audience: {
-          "@type": "EducationalAudience",
-          educationalRole: "Designer, Developer",
+        item: {
+          "@type": "CreativeWork",
+          "@id": `${orgUrl.value}/products/${work.slug}#creativework`,
+          name: work.name[locale.value],
+          description: work.intro?.[locale.value] || "",
+          image: `${runtimeConfig.public.baseUrl}${work.schemaImage[locale.value][0]?.src}`,
+          creator: {
+            "@type": "Person",
+            name: "Neil",
+            url: orgUrl.value,
+          },
+          datePublished: work.yearRange.start,
+          dateModified: work.yearRange.end ?? new Date().getFullYear(),
+          url: `${orgUrl.value}/products/${work.slug}`,
+          inLanguage: locale.value,
+          keywords: work.roles[locale.value].join(", "),
         },
-      },
-    })),
+      })),
+    },
   },
 ]);
 
@@ -442,37 +440,30 @@ useHead({
   title: pageTitle,
   meta: [
     {
-      hid: "description",
       name: "description",
       content: pageDescription.value,
     },
     {
-      hid: "og:url",
       property: "og:url",
       content: runtimeConfig.public.baseUrl + route.path,
     },
     {
-      hid: "og:title",
       property: "og:title",
       content: pageTitle.value + " - " + t("website.name"),
     },
     {
-      hid: "og:description",
       property: "og:description",
       content: pageDescription.value,
     },
     {
-      hid: "twitter:url",
       name: "twitter:url",
       content: runtimeConfig.public.baseUrl + route.path,
     },
     {
-      hid: "twitter:title",
       name: "twitter:title",
       content: pageTitle.value + " - " + t("website.name"),
     },
     {
-      hid: "twitter:description",
       name: "twitter:description",
       content: pageDescription.value,
     },
