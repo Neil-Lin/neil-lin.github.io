@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     head: {
       script: [
         {
-          src: "https://neillin.com/pulse.js", // 請替換成您的真實網域
+          src: "https://accesserty.com/pulse.js",
           defer: true,
           // 這是您的專屬追蹤 ID
           "data-client-id": "neiltest_001_starbucks",
