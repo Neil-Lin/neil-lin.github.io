@@ -348,16 +348,26 @@ const formatYearRange = (yearRange: { start: number; end: number | null }) => {
 };
 
 // 關閉 dialog 時，導向至 "/products" 清除 encodedName 與 query 參數
-const closeProduct = async () => {
-  lightBox.value?.close();
-  await router.replace({
-    path: localePath("/products"),
-    query: {
-      role: selectedRole.value || undefined,
-      platform: selectedPlatform.value || undefined,
-      sortorder: sortorder.value || undefined,
-    },
-  });
+// 修改 closeProduct
+const closeProduct = () => {
+  // 這裡不需要 async 了，因為我們要手動控制時序
+  if (!lightBox.value) return;
+
+  // 1. 先告訴瀏覽器：開始播放關閉動畫 (觸發 CSS 的 exit transition)
+  lightBox.value.close();
+
+  // 2. 設定一個計時器，時間必須等於(或略大於)你的 CSS transition 時間 (0.3s)
+  setTimeout(async () => {
+    // 3. 動畫跑完了，現在才切換網址，讓 Vue 移除 DOM
+    await router.replace({
+      path: localePath("/products"),
+      query: {
+        role: selectedRole.value || undefined,
+        platform: selectedPlatform.value || undefined,
+        sortorder: sortorder.value || undefined,
+      },
+    });
+  }, 300); // 300ms 對應你的 CSS transition: 0.3s
 };
 
 // 監聽 route.fullPath，若不符合條件則關閉 dialog

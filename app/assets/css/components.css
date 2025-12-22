@@ -293,3 +293,49 @@
     animation-fill-mode: both;
   }
 }
+
+/* Dialog */
+dialog {
+  /* 1. 這是「關閉狀態」 (預設) */
+  opacity: 0;
+  transform: scale(0.95) translateY(10px);
+  
+  /* 2. 關鍵：設定 transition */
+  /* display 和 overlay 必須加上 allow-discrete，讓瀏覽器知道要「等動畫跑完」再切換狀態 */
+  transition: 
+    opacity 0.3s ease-out, 
+    transform 0.3s ease-out, 
+    overlay 0.3s allow-discrete, 
+    display 0.3s allow-discrete;
+
+  /* 3. 確保 backdrop 也有過渡 */
+  &::backdrop {
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* 記得給顏色 */
+    transition: 
+      opacity 0.3s ease-out, 
+      display 0.3s allow-discrete, 
+      overlay 0.3s allow-discrete;
+  }
+
+  /* 4. 這是「開啟狀態」 */
+  &[open] {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+
+    /* 5. 進場動畫的起始點 */
+    @starting-style {
+      opacity: 0;
+      transform: scale(0.95) translateY(10px);
+    }
+
+    &::backdrop {
+      opacity: 1;
+
+      @starting-style {
+        opacity: 0;
+      }
+    }
+  }
+}
+
