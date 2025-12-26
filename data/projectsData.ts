@@ -807,6 +807,41 @@ export const projectsData = [
       en: ["UI", "Layout"],
     },
   },
+  {
+    id: 29,
+    slug: "dpp",
+    clickable: true,
+    link: "https://gctftw.org/",
+    heroImage: {
+      "zh-Hant-TW": [
+        {
+          src: "/images/gctf-thumbnail.webp",
+          figcaption: "GCTF 全球合作暨訓練架構",
+        },
+      ],
+      en: [
+        {
+          src: "/images/gctf-thumbnail.webp",
+          figcaption: "GCTF",
+        },
+      ],
+    },
+    name: {
+      "zh-Hant-TW": "GCTF 全球合作暨訓練架構",
+      en: "GCTF",
+    },
+    intro: {
+      "zh-Hant-TW":
+        "「全球合作暨訓練架構」，目的在發揮台灣的優勢及專業，針對雙方共同關切的議題合作舉辦訓練計畫，進一步拓展台灣國際空間",
+      en: "The purpose is to leverage Taiwan's strengths and expertise to jointly organize training programs on issues of mutual concern, inviting officials and experts from Indo-Pacific countries to participate.",
+    },
+    platform: ["web"],
+    yearRange: { start: 2025, end: null },
+    roles: {
+      "zh-Hant-TW": ["UI", "切版"],
+      en: ["UI", "Layout"],
+    },
+  },
 ];
 
 export default projectsData;
