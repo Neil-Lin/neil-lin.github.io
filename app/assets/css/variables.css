@@ -17,7 +17,7 @@
   --breakpoint-1600: 1600px;
   --breakpoint-1920: 1920px;
   --font-size-base: 1.0625rem;
-  --font-family: system-ui,Helvetica,Arial,"Noto Sans TC",sans-serif;
+  --font-family: system-ui, Helvetica, Arial, "Noto Sans TC", sans-serif;
   --color-primary: 46.16% .146 294.72;
   --color-primary-modified: 98.16% .05 294.72;
   --color-success: 79.21% .153 117.53;
@@ -55,10 +55,10 @@
   --router-active-bg: var(--color-black);
 
   --input-bg: var(--color-white);
-
+  /* 
   --noscript-color: var(--wrapper-color);
   --noscript-bg: var(--wrapper-bg);
-  --noscript-box-shadow-color: var(--color-black);
+  --noscript-box-shadow-color: var(--color-black); */
 
 }
 
@@ -92,5 +92,3 @@
     --input-bg: var(--color-deep-black);
   }
 }
-
-

@@ -1,45 +1,31 @@
 <template>
-  <ClientOnly>
-    <div>
-      <div v-if="status === 'pending'">載入中...</div>
-      <div v-else-if="error">錯誤: {{ error.message }}</div>
-      <template v-else>
-        <ul v-if="articles.length" class="blog-list">
-          <li
-            v-for="article in articles"
-            :key="article.url"
-            class="blog-item animation-fade-out"
+  <div>
+    <ul v-if="articles.length" class="blog-list">
+      <li
+        v-for="article in articles"
+        :key="article.url"
+        class="blog-item animation-fade-out"
+      >
+        <h3>
+          <nuxt-link
+            :to="article.url"
+            :title="`${$t('action.openWindow')} ${$t('action.goTo')} ${article.title}`"
+            target="_blank"
           >
-            <h3>
-              <nuxt-link
-                :to="article.url"
-                :title="`${$t('action.openWindow')} ${$t('action.goTo')} ${article.title}`"
-                target="_blank"
-              >
-                {{ article.title }}
-              </nuxt-link>
-            </h3>
-            <p class="des">{{ article.abstract }}</p>
-          </li>
-        </ul>
-        <div v-else>目前沒有文章</div>
-      </template>
-    </div>
-  </ClientOnly>
+            {{ article.title }}
+          </nuxt-link>
+        </h3>
+        <p class="des">{{ article.abstract }}</p>
+      </li>
+    </ul>
+    <div v-else>目前沒有文章</div>
+  </div>
 </template>
 
 <script setup lang="ts">
-interface Article {
-  title: string;
-  abstract: string;
-  url: string;
-}
+import vocusPosts from "../../data/vocusPosts";
 
-const { data, status, error } = await useFetch<Article[]>("/zh-blog.json", {
-  key: "vocus-posts",
-});
-
-const articles = computed(() => data.value ?? []);
+const articles = vocusPosts;
 </script>
 
 <style scoped>

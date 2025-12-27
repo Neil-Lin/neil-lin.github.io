@@ -171,6 +171,13 @@ export default defineNuxtConfig({
     env: "",
     baseUrl: process.env.NUXT_PUBLIC_BASE_URL || "http://localhost:3000",
     public: {
+      buildDate: (() => {
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = (date.getMonth() + 1).toString().padStart(2, "0");
+        const day = date.getDate().toString().padStart(2, "0");
+        return `${year}-${month}-${day}`;
+      })(),
       baseUrl: process.env.NUXT_PUBLIC_BASE_URL || "http://localhost:3000",
       websiteName: {
         "zh-Hant-TW":
@@ -207,7 +214,7 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    // 禁掉 OG 動態端點的 prerender，確保永遠走動態
-    "/__og-image__/image/**": { prerender: false },
+    // Enable prerendering for OG images to generate them at build time (recommended for Netlify/Static)
+    "/__og-image__/image/**": { prerender: true },
   },
 });

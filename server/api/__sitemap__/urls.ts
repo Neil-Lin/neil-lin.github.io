@@ -9,12 +9,12 @@ export default defineSitemapEventHandler(async () => {
   const clickableProducts = productsData.filter((p) => p.clickable);
 
   return clickableProducts.map((p) => {
-    const images: Record<string, unknown>[] = [];
+    const images: any[] = [];
     // 確認產品有圖片資料，並且有預設語系 'zh-Hant-TW' 的圖片
     if (p.images && p.images["zh-Hant-TW"]) {
       p.images["zh-Hant-TW"].forEach((img, index) => {
         // Sitemap 模組的圖片物件格式
-        const imageEntry: Record<string, unknown> = {
+        const imageEntry: any = {
           loc: img.src, // 圖片網址
           title: img.figcaption, // 圖片標題
         };
@@ -32,12 +32,12 @@ export default defineSitemapEventHandler(async () => {
       });
     }
 
-    const videos: Record<string, unknown>[] = [];
+    const videos: any[] = [];
     // 確認產品有影片資料，並且有預設語系 'zh-Hant-TW' 的影片
     if (p.videos && p.videos["zh-Hant-TW"]) {
       p.videos["zh-Hant-TW"].forEach((video, index) => {
         // Sitemap 模組的影片物件格式
-        const videoEntry: Record<string, unknown> = {
+        const videoEntry: any = {
           title: video.title,
           description: video.description,
           // 影片縮圖是必要欄位
@@ -60,9 +60,10 @@ export default defineSitemapEventHandler(async () => {
     }
 
     // 將處理好的圖片陣列加入回傳的物件中
+    const config = useRuntimeConfig();
     return {
       loc: `/products/${p.slug}`,
-      lastmod: p.updatedAt ? new Date(p.updatedAt).toISOString() : undefined,
+      lastmod: p.updatedAt ? new Date(config.public.buildDate as string).toISOString() : undefined,
       _i18nTransform: true,
       images,
       videos,

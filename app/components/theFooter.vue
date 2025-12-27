@@ -24,11 +24,11 @@
       <ClientOnly>
         <span>
           {{ $t("words.updateDay") }}：
-          <span aria-hidden="true">2025-11-25</span>
+          <span aria-hidden="true">{{ formattedDate }}</span>
           <span v-if="locale === 'en'" class="visually-hidden">
-            23 Sep. 2025
+            {{ formattedDateEn }}
           </span>
-          <span v-else class="visually-hidden">2025 年 9 月 23 日</span>
+          <span v-else class="visually-hidden">{{ formattedDateZh }}</span>
         </span>
       </ClientOnly>
       <div>
@@ -55,6 +55,27 @@
 const switchLocalePath = useSwitchLocalePath();
 const { t, locales, locale } = useI18n();
 const supportedLocales = locales.value as Array<LocaleObject>;
+
+const runtimeConfig = useRuntimeConfig();
+const buildDateStr = (runtimeConfig.public.buildDate as string) || "2025-01-01";
+const [yearStr, monthStr, dayStr] = buildDateStr.split("-");
+// Ensure parsing is safe; fallback to 0 if undefined (though with valid date string it won't be)
+const year = Number(yearStr);
+const month = Number(monthStr);
+const day = Number(dayStr);
+const buildDate = new Date(year, month - 1, day);
+
+const formattedDate = buildDateStr;
+const formattedDateEn = buildDate.toLocaleDateString("en-GB", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+});
+const formattedDateZh = buildDate.toLocaleDateString("zh-TW", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
 </script>
 
 <style scoped>
