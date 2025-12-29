@@ -16,7 +16,7 @@ export default defineNuxtConfig({
           src: "https://accesserty.com/pulse.js",
           defer: true,
           // 這是您的專屬追蹤 ID
-          "data-client-id": "Partner_MJRB6G7B_848",
+          "data-client-id": "Partner_MJRBV4ZI_850",
         },
       ],
     },
