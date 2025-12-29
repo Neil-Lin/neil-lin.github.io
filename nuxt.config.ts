@@ -215,6 +215,6 @@ export default defineNuxtConfig({
 
   routeRules: {
     // Enable prerendering for OG images to generate them at build time (recommended for Netlify/Static)
-    "/__og-image__/image/**": { prerender: true },
+    "/__og-image__/image/**": { prerender: false },
   },
 });
