@@ -243,15 +243,23 @@ definePageMeta({
   scrollToTop: false,
 });
 
+// 判斷是否為「重新整理」且帶有 dialog 參數的情境
+// 如果是，我們在初始化時就忽略這些參數，避免它們將髒數據寫回 URL
+const isDialogRefresh = route.query.dialog === "true" && route.params.name;
+
 // 新增排序狀態，預設為新到舊 (desc)
 const sortorder = ref(
-  route.query.sortorder ? String(route.query.sortorder) : "desc"
+  !isDialogRefresh && route.query.sortorder
+    ? String(route.query.sortorder)
+    : "desc"
 );
 
 // **從網址讀取篩選條件**
-const selectedRole = ref(route.query.role ? String(route.query.role) : ""); // 單選角色
+const selectedRole = ref(
+  !isDialogRefresh && route.query.role ? String(route.query.role) : ""
+); // 單選角色
 const selectedPlatform = ref(
-  route.query.platform ? String(route.query.platform) : ""
+  !isDialogRefresh && route.query.platform ? String(route.query.platform) : ""
 ); // 單選平台（web / app）
 
 const isModal = computed(
@@ -286,6 +294,9 @@ watch([selectedRole, selectedPlatform, sortorder], updateQueryParams);
 watch(
   () => route.query,
   (query) => {
+    // 如果是 dialog refresh 正在進行中（還沒 redirect 完），不要反向同步
+    if (route.query.dialog === "true" && route.params.name) return;
+
     selectedRole.value = query.role ? String(query.role) : "";
     selectedPlatform.value = query.platform ? String(query.platform) : "";
     sortorder.value = query.sortorder ? String(query.sortorder) : "desc";
@@ -395,6 +406,15 @@ watch(isModal, async (modal) => {
 });
 
 onMounted(() => {
+  // UX Improvement:
+  // If user refreshes or opens a link with ?dialog=true, we redirect to the clean URL (detail page)
+  // instead of opening the modal on top of the list.
+  if (route.query.dialog === "true" && route.params.name) {
+    // Clear ALL query params (sortorder, filters, etc.) to show a clean detail page
+    router.replace({ path: route.path, query: {} });
+    return;
+  }
+
   if (isModal.value) {
     lightBox.value?.showModal();
   }

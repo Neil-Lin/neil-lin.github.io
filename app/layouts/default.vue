@@ -23,15 +23,6 @@
     <Meta name="copyright" content="Neil" />
     <Meta name="format-detection" content="telephone=no" />
     <Meta hid="description" name="description" :content="$t('intro.des2')" />
-    <Meta
-      hid="og:url"
-      property="og:url"
-      :content="
-        head.htmlAttrs?.lang === 'en-US'
-          ? runtimeConfig.public.baseUrl + '/en'
-          : runtimeConfig.public.baseUrl
-      "
-    />
     <Meta hid="og:title" property="og:title" :content="$t('website.name')" />
     <Meta
       hid="og:description"
@@ -39,15 +30,6 @@
       :content="$t('intro.des2')"
     />
     <Meta name="twitter:card" content="summary_large_image" />
-    <Meta
-      hid="twitter:url"
-      name="twitter:url"
-      :content="
-        head.htmlAttrs?.lang === 'en-US'
-          ? runtimeConfig.public.baseUrl + '/en'
-          : runtimeConfig.public.baseUrl
-      "
-    />
     <Meta
       hid="twitter:title"
       name="twitter:title"
@@ -86,9 +68,9 @@
 
     <Body class="wrapper">
       <div class="layout">
-        <noscript class="noscript">
+        <!-- <noscript class="noscript">
           {{ $t("words.noscript") }}
-        </noscript>
+        </noscript> -->
         <TheHeader />
         <slot />
         <TheFooter />

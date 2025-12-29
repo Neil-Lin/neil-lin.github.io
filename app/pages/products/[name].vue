@@ -265,6 +265,30 @@ const headData = computed(() => ({
 
 useHead(headData);
 
+useSchemaOrg([
+  {
+    "@type": "SoftwareApplication",
+    name: product.value ? product.value.name[locale.value] : t("error.notFound"),
+    description: product.value ? product.value.intro[locale.value] : "",
+    image: product.value
+      ? runtimeConfig.public.baseUrl +
+        product.value.schemaImage[locale.value][0]?.src
+      : "",
+    url: runtimeConfig.public.baseUrl + route.path,
+    applicationCategory: "WebApplication",
+    operatingSystem: "Web",
+    author: {
+      "@type": "Person",
+      name: "Neil Lin",
+    },
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "TWD",
+    },
+  },
+]);
+
 defineOgImageComponent("OgImageCustomTemplate", {
   title: product.value ? product.value.name[locale.value] : "",
   imagePath: product.value
