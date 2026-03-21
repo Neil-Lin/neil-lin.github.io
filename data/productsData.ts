@@ -1600,6 +1600,10 @@ export const productsData = [
     relatedLinks: {
       "zh-Hant-TW": [
         {
+          title: "Accesserty Website",
+          link: "https://accesserty.com/",
+        },
+        {
           title: "Accesserty Signal",
           link: "https://chromewebstore.google.com/detail/accesserty-signal/jabgpbgdmhdmibhogmcjfinnkcngcelc",
         },
@@ -1609,7 +1613,7 @@ export const productsData = [
         },
         {
           title: "Accesserty UI KIT",
-          link: "https://github.com/Accesserty/UI-Kit",
+          link: "https://accesserty.com/uikit",
         },
         {
           title: "Accesserty Product Hunt",
@@ -1618,6 +1622,10 @@ export const productsData = [
       ],
       en: [
         {
+          title: "Accesserty Website",
+          link: "https://accesserty.com/en",
+        },
+        {
           title: "Accesserty Signal",
           link: "https://chromewebstore.google.com/detail/accesserty-signal/jabgpbgdmhdmibhogmcjfinnkcngcelc",
         },
@@ -1627,7 +1635,7 @@ export const productsData = [
         },
         {
           title: "Accesserty UI KIT",
-          link: "https://github.com/Accesserty/UI-Kit",
+          link: "https://accesserty.com/en/uikit",
         },
         {
           title: "Accesserty Product Hunt",
