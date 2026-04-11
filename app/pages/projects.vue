@@ -72,7 +72,7 @@
                       project.heroImage &&
                       project.heroImage[$i18n.locale].length > 0
                     "
-                    :src="`${runtimeConfig.public.baseUrl}${project.heroImage[$i18n.locale]?.[0]?.src}`"
+                    :src="`${project.heroImage[$i18n.locale]?.[0]?.src}`"
                     alt=""
                     class="portfolio-img"
                     :fetchpriority="idx === 0 ? 'high' : ''"
@@ -134,7 +134,7 @@
                       project.heroImage &&
                       project.heroImage[$i18n.locale].length > 0
                     "
-                    :src="`${runtimeConfig.public.baseUrl}${project.heroImage[$i18n.locale][0]!.src}`"
+                    :src="`${project.heroImage[$i18n.locale][0]!.src}`"
                     :alt="project.name[$i18n.locale]"
                     class="portfolio-img"
                   />

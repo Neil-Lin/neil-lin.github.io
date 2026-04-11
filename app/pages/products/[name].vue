@@ -130,7 +130,7 @@
         <div v-for="(item, index) in product.videos[$i18n.locale]" :key="index">
           <video :title="item.title" controls>
             <source
-              :src="`${runtimeConfig.public.baseUrl}${item.src}`"
+              :src="`${item.src}`"
               type="video/mp4"
             />
             您的瀏覽器沒有支援 / Your browser does not support the video tag.
@@ -292,8 +292,7 @@ useSchemaOrg([
 defineOgImageComponent("OgImageCustomTemplate", {
   title: product.value ? product.value.name[locale.value] : "",
   imagePath: product.value
-    ? runtimeConfig.public.baseUrl +
-      product.value.schemaImage[locale.value][0]?.src
+    ? product.value.schemaImage[locale.value][0]?.src
     : "",
 });
 </script>
