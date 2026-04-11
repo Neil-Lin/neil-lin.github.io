@@ -559,7 +559,7 @@ export const projectsData = [
       en: "Taipei Dashboard",
     },
     platform: ["web"],
-    yearRange: { start: 2022, end: null },
+    yearRange: { start: 2022, end: 2025 },
     roles: {
       "zh-Hant-TW": ["UI", "切版"],
       en: ["UI", "Layout"],
@@ -593,7 +593,7 @@ export const projectsData = [
       en: "Search Data of land",
     },
     platform: ["web"],
-    yearRange: { start: 2023, end: null },
+    yearRange: { start: 2023, end: 2023 },
     roles: {
       "zh-Hant-TW": ["UI", "切版"],
       en: ["UI", "Layout"],

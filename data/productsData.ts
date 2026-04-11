@@ -50,7 +50,7 @@ export const productsData = [
       en: 'In recent years, the concept of user-centric design has become deeply ingrained, and this mindset has started to spread to the field of accessible web design. By continuously improving the user-friendliness of web pages, the core concept of universal design, "Design for All", can be achieved.Piman was created with this purpose in mind, starting with the improvement of web pages that people encounter frequently in their daily lives. Therefore, the primary task is to promote the use of Piman by developers in the development of government agency websites, and subsequently apply it to products, official websites, and other areas. In doing so, businesses can fulfill their social responsibilities and align with international trends.',
     },
     platform: ["web"],
-    yearRange: { start: 2021, end: null },
+    yearRange: { start: 2021, end: 2025 },
     target: {
       "zh-Hant-TW": ["實現網頁的通用設計", "開源專案", "設計系統"],
       en: [
