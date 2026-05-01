@@ -25,6 +25,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   ssr: true,
   nitro: {
+    trailingSlash: false,
     prerender: {
       routes: [
         "/",
@@ -227,4 +228,5 @@ export default defineNuxtConfig({
     // Enable prerendering for OG images to generate them at build time (recommended for Netlify/Static)
     "/__og-image__/image/**": { prerender: false },
   },
+
 });
