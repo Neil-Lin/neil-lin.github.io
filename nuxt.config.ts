@@ -26,7 +26,17 @@ export default defineNuxtConfig({
   ssr: true,
   nitro: {
     prerender: {
-      routes: [...dynamicRoutes],
+      routes: [
+        "/",
+        "/projects",
+        "/blog",
+        "/sitemap",
+        "/en",
+        "/en/projects",
+        "/en/blog",
+        "/en/sitemap",
+        ...dynamicRoutes,
+      ],
     },
   },
   modules: [
