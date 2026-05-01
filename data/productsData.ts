@@ -2171,11 +2171,19 @@ export const productsData = [
           title: "DahTahDoc",
           link: "https://dahtahdoc.com/",
         },
+        {
+          title: "ProductHunt",
+          link: "https://www.producthunt.com/products/dahtahdoc",
+        },
       ],
       en: [
         {
           title: "DahTahDoc",
-          link: "https://dahtahdoc.com/",
+          link: "https://dahtahdoc.com/en",
+        },
+        {
+          title: "ProductHunt",
+          link: "https://www.producthunt.com/products/dahtahdoc",
         },
       ],
     },
