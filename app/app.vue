@@ -7,10 +7,6 @@
       </div>
     </div>
     <NuxtLayout name="default" :aria-busy="loading">
-      <!-- 
-      if using pageTransition
-      <NuxtPage :key="$route.fullPath" /> 
-      -->
       <NuxtPage />
     </NuxtLayout>
   </div>

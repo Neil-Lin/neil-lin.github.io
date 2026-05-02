@@ -21,7 +21,7 @@
         </span>
       </template>
       <span>&copy; Neil</span>
-      <ClientOnly>
+      <ClientOnly fallback-tag="span">
         <span>
           {{ $t("words.updateDay") }}：
           <span aria-hidden="true">{{ formattedDate }}</span>

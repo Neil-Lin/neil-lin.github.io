@@ -19,7 +19,9 @@
           <nuxt-link :to="localePath('/')" :title="$t('action.goToHomePage')">
             <img src="@/assets/images/avatar.webp" alt="" />
             <div class="slogan intro">
-              <span>{{ formatAMPM(new Date()) }}</span>
+              <ClientOnly fallback-tag="span">
+                <span>{{ formatAMPM(new Date()) }}</span>
+              </ClientOnly>
               <span>{{ $t("intro.greet") }}</span>
             </div>
             <span class="visually-hidden">{{ $t("action.goToHomePage") }}</span>

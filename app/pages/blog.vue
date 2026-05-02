@@ -38,8 +38,8 @@
 <script setup lang="ts">
 const { t, locale } = useI18n();
 const runtimeConfig = useRuntimeConfig();
-const pageTitle = ref(t("mainMenu.blog"));
-const pageDescription = ref(t("des.blog"));
+const pageTitle = computed(() => t("mainMenu.blog"));
+const pageDescription = computed(() => t("des.blog"));
 const route = useRoute();
 
 const orgUrl = computed(() => {

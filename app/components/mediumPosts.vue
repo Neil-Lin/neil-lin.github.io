@@ -43,13 +43,14 @@ const props = defineProps({
   },
 });
 
-const { data, status, error } = await useFetch<{
+const { data, status, error } = useFetch<{
   status: string;
   items: MediumPost[];
 }>(
   `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${props.username}`,
   {
     key: `medium-posts-${props.username}`,
+    lazy: true,
   }
 );
 
