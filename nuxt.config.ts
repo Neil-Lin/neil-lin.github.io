@@ -206,7 +206,7 @@ export default defineNuxtConfig({
 
   robots: {
     robotsTxt: true,
-    sitemap: `${process.env.NUXT_PUBLIC_BASE_URL}/sitemap.xml`,
+    sitemap: `${process.env.NUXT_PUBLIC_BASE_URL}/sitemap_index.xml`,
   },
 
   site: {
