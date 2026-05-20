@@ -217,7 +217,8 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    sources: ["/api/__sitemap__/urls"],
+    filename: 'sitemap_index.xml',
+    sources: ['/api/__sitemap__/urls'],
   },
 
   ogImage: {
