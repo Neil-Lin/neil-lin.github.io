@@ -207,7 +207,7 @@ export default defineNuxtConfig({
 
   robots: {
     robotsTxt: true,
-    sitemap: `${process.env.NUXT_PUBLIC_BASE_URL}/sitemap_index.xml`,
+    sitemap: `${process.env.NUXT_PUBLIC_BASE_URL}/sitemap.xml`,
   },
 
   site: {
@@ -218,12 +218,11 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    filename: 'sitemap_index.xml',
     sources: ['/api/__sitemap__/urls'],
   },
 
-  ogImage: {
-    zeroRuntime: true,
+  routeRules: {
+    "/__og-image__/image/**": { prerender: false },
   },
 
 });
