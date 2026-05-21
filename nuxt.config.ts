@@ -50,6 +50,7 @@ export default defineNuxtConfig({
     "@nuxtjs/html-validator",
     "@nuxtjs/seo",
     "nuxt-clarity-analytics",
+    "@nuxt/fonts",
   ],
 
   gtag: {
@@ -218,11 +219,21 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    sources: ['/api/__sitemap__/urls'],
+    sources: ["/api/__sitemap__/urls"],
   },
 
-  routeRules: {
-    "/__og-image__/image/**": { prerender: false },
+  ogImage: {
+    zeroRuntime: true,
   },
 
+  fonts: {
+    families: [
+      {
+        name: "Noto Sans TC",
+        provider: "google",
+        weights: [400, 700],
+        global: true,
+      },
+    ],
+  },
 });
