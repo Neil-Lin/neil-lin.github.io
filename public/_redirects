@@ -1,4 +1,3 @@
 /sitemap.xml   /sitemap_index.xml   301!
 /sitemap.xml/*   /sitemap_index.xml   301!
 https://neil-lin.netlify.app/*   https://neillin.com/:splat   301!
-/:path/   /:path   301!
