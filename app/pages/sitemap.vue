@@ -217,7 +217,7 @@ watchEffect(() => {
   if (breadCrumbsList.value.length > 0) useBreadcrumbSchema(breadCrumbsList.value)
 })
 
-defineOgImageComponent('OgImageCustomTemplate', {
+defineOgImage('CustomTemplate', {
   title: pageTitle.value + ' - ' + t('website.name'),
   description: pageDescription.value,
 })

@@ -67,7 +67,7 @@
                     :src="project.heroImage[$i18n.locale][0]!.src"
                     :alt="project.clickable ? '' : project.name[$i18n.locale]"
                     class="portfolio-img"
-                    :fetchpriority="idx === 0 ? 'high' : ''"
+                    :fetchpriority="idx === 0 ? 'high' : undefined"
                   />
                   <div v-if="project.intro?.[$i18n.locale]" class="portfolio-intro">
                     <p>{{ project.intro[$i18n.locale] }}</p>
@@ -185,7 +185,7 @@ watchEffect(() => {
   if (breadCrumbsList.value.length > 0) useBreadcrumbSchema(breadCrumbsList.value)
 })
 
-defineOgImageComponent('OgImageCustomTemplate', {
+defineOgImage('CustomTemplate', {
   title: pageTitle.value + ' - ' + t('website.name'),
   description: pageDescription.value,
 })

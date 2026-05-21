@@ -98,7 +98,7 @@ useHead(computed(() => ({
 
 const { scrollToTop, scrollDistance } = useScrollToTop()
 
-defineOgImageComponent('OgImageCustomTemplate', {
+defineOgImage('CustomTemplate', {
   title: t('website.name'),
   description: t('intro.des2'),
 })

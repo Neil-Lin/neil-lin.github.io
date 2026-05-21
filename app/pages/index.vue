@@ -232,7 +232,7 @@ watch(
   }
 );
 
-defineOgImageComponent('OgImageCustomTemplate', {
+defineOgImage('CustomTemplate', {
   title: pageTitle.value + ' - ' + t('website.name'),
   description: pageDescription.value,
 })

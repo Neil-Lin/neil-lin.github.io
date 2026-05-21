@@ -242,7 +242,7 @@ useSchemaOrg(
   ])
 )
 
-defineOgImageComponent('OgImageCustomTemplate', {
+defineOgImage('CustomTemplate', {
   title: pageTitle.value,
   imagePath: product.value ? product.value.schemaImage[locale.value][0]?.src : '',
 })

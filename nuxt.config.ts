@@ -164,7 +164,6 @@ export default defineNuxtConfig({
         file: "en-US.ts",
       },
     ],
-    lazy: true,
     langDir: "lang",
     // strategy: 'prefix',
     defaultLocale: "zh-Hant-TW",
@@ -224,12 +223,7 @@ export default defineNuxtConfig({
   },
 
   ogImage: {
-    fonts: ["Noto+Sans+TC:700"],
-  },
-
-  routeRules: {
-    // Enable prerendering for OG images to generate them at build time (recommended for Netlify/Static)
-    "/__og-image__/image/**": { prerender: false },
+    zeroRuntime: true,
   },
 
 });

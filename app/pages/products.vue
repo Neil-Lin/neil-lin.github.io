@@ -69,7 +69,7 @@
                       :src="product.heroImage[$i18n.locale][0]!.src"
                       alt=""
                       class="portfolio-img"
-                      :fetchpriority="idx === 0 ? 'high' : ''"
+                      :fetchpriority="idx === 0 ? 'high' : undefined"
                     />
                     <div v-if="product.intro[$i18n.locale]" class="portfolio-intro">
                       <p>{{ product.intro[$i18n.locale] }}</p>
@@ -262,7 +262,7 @@ watchEffect(() => {
   if (breadcrumbs.value.length > 0) useBreadcrumbSchema(breadcrumbs.value)
 })
 
-defineOgImageComponent('OgImageCustomTemplate', {
+defineOgImage('CustomTemplate', {
   title: pageTitle.value + ' - ' + t('website.name'),
   description: pageDescription.value,
 })
