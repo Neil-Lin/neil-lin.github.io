@@ -7,7 +7,10 @@ export function usePageSeoMeta(
   const runtimeConfig = useRuntimeConfig()
   const route = useRoute()
 
-  const resolvedUrl = url ?? computed(() => runtimeConfig.public.baseUrl + route.path)
+  const resolvedUrl = url ?? computed(() => {
+    const path = route.path === '/' ? '' : route.path
+    return runtimeConfig.public.baseUrl + path
+  })
 
   useHead(
     computed(() => ({

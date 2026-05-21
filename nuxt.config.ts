@@ -4,7 +4,7 @@ import { productsData } from "./data/productsData";
 
 const dynamicRoutes = productsData
   .filter((p) => p.clickable)
-  .map((p) => `/products/${p.slug}`);
+  .flatMap((p) => [`/products/${p.slug}`, `/en/products/${p.slug}`]);
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -29,10 +29,12 @@ export default defineNuxtConfig({
     prerender: {
       routes: [
         "/",
+        "/products",
         "/projects",
         "/blog",
         "/sitemap",
         "/en",
+        "/en/products",
         "/en/projects",
         "/en/blog",
         "/en/sitemap",
