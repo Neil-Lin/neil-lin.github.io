@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 630px; background-color: #fafafa">
+  <div style="height: 630px; background-color: #fafafa; font-family: 'Noto Sans TC', 'Noto Sans', sans-serif">
     <img
       v-if="imagePath"
       :src="imagePath"
