@@ -261,6 +261,7 @@ watchEffect(() => {
 
 defineOgImageComponent('OgImageCustomTemplate', {
   title: pageTitle.value + ' - ' + t('website.name'),
+  description: pageDescription.value,
 })
 </script>
 

@@ -7,7 +7,7 @@
       <p>{{ t("page.blog.hint") }}</p>
       <div v-if="locale === 'en'">
         <br />
-        <medium-posts username="neil-lin" />
+        <BlogPostList :posts="mediumPosts" empty-text="There are no posts available." />
         <br />
         <nuxt-link
           to="https://neil-lin.medium.com/"
@@ -20,7 +20,7 @@
       </div>
       <div v-else>
         <br />
-        <vocus-posts />
+        <BlogPostList :posts="vocusPosts" empty-text="目前沒有文章" />
         <br />
         <nuxt-link
           to="https://vocus.cc/user/@neil-lin"
@@ -36,8 +36,9 @@
 </template>
 
 <script setup lang="ts">
+import vocusPostsRaw from '~~/data/vocusPosts'
+
 const { t, locale } = useI18n()
-const runtimeConfig = useRuntimeConfig()
 const route = useRoute()
 const orgUrl = useOrgUrl()
 
@@ -46,18 +47,24 @@ const pageDescription = computed(() => t('des.blog'))
 
 usePageSeoMeta(pageTitle, pageDescription)
 
-const breadCrumbsList = computed(() => [
-  {
-    link: "/",
-    title: t("action.goToHomePage"),
-  },
-  {
-    link: "",
-    title: t("mainMenu.blog"),
-  },
-]);
+const { data: mediumData } = useFetch<{ title: string; url: string; description: string }[]>(
+  '/api/medium-posts',
+  { default: () => [] }
+)
+const mediumPosts = computed(() => mediumData.value ?? [])
 
-useSchemaOrg([
+const vocusPosts = vocusPostsRaw.map(p => ({
+  title: p.title,
+  url: p.url,
+  description: p.abstract,
+}))
+
+const breadCrumbsList = computed(() => [
+  { link: '/', title: t('action.goToHomePage') },
+  { link: '', title: t('mainMenu.blog') },
+])
+
+useSchemaOrg(computed(() => [
   {
     '@id': `${orgUrl.value}/blog#webpage`,
     '@type': 'CollectionPage',
@@ -75,12 +82,20 @@ useSchemaOrg([
     url: `${orgUrl.value}/blog`,
     inLanguage: locale.value === 'zh-Hant-TW' ? 'zh-Hant-TW' : 'en',
     publisher: { '@id': `${orgUrl.value}/#person` },
-    sameAs:
-      locale.value === 'en'
-        ? ['https://neil-lin.medium.com/']
-        : ['https://vocus.cc/user/@neil-lin'],
+    sameAs: locale.value === 'en'
+      ? ['https://neil-lin.medium.com/']
+      : ['https://vocus.cc/user/@neil-lin'],
   },
-])
+  ...(locale.value === 'en' ? mediumPosts.value : vocusPosts).map(post => ({
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.description,
+    url: post.url,
+    isPartOf: { '@id': `${orgUrl.value}/blog#blog` },
+    author: { '@id': `${orgUrl.value}/#person` },
+    publisher: { '@id': `${orgUrl.value}/#person` },
+  })),
+]))
 
 watchEffect(() => {
   if (breadCrumbsList.value.length > 0) useBreadcrumbSchema(breadCrumbsList.value)
@@ -88,5 +103,6 @@ watchEffect(() => {
 
 defineOgImageComponent('OgImageCustomTemplate', {
   title: pageTitle.value + ' - ' + t('website.name'),
+  description: pageDescription.value,
 })
 </script>

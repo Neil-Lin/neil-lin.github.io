@@ -100,6 +100,7 @@ const { scrollToTop, scrollDistance } = useScrollToTop()
 
 defineOgImageComponent('OgImageCustomTemplate', {
   title: t('website.name'),
+  description: t('intro.des2'),
 })
 
 useSchemaOrg([

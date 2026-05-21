@@ -1,31 +1,30 @@
 <template>
-  <div>
-    <ul v-if="articles.length" class="blog-list">
-      <li
-        v-for="article in articles"
-        :key="article.url"
-        class="blog-item animation-fade-out"
-      >
-        <h3>
-          <nuxt-link
-            :to="article.url"
-            :title="`${$t('action.openWindow')} ${$t('action.goTo')} ${article.title}`"
-            target="_blank"
-          >
-            {{ article.title }}
-          </nuxt-link>
-        </h3>
-        <p class="des">{{ article.abstract }}</p>
-      </li>
-    </ul>
-    <div v-else>目前沒有文章</div>
-  </div>
+  <ul v-if="posts.length" class="blog-list">
+    <li
+      v-for="post in posts"
+      :key="post.url"
+      class="blog-item animation-fade-out"
+    >
+      <h3>
+        <nuxt-link
+          :to="post.url"
+          :title="`${$t('action.openWindow')} ${$t('action.goTo')} ${post.title}`"
+          target="_blank"
+        >
+          {{ post.title }}
+        </nuxt-link>
+      </h3>
+      <p class="des">{{ post.description }}</p>
+    </li>
+  </ul>
+  <div v-else>{{ emptyText }}</div>
 </template>
 
 <script setup lang="ts">
-import vocusPosts from "../../data/vocusPosts";
-
-const articles = vocusPosts;
+defineProps<{
+  posts: { title: string; url: string; description: string }[]
+  emptyText?: string
+}>()
 </script>
 
 <style scoped>
