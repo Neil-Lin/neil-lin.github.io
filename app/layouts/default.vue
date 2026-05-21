@@ -89,12 +89,12 @@ const { t, locale } = useI18n()
 const head = useLocaleHead()
 const orgUrl = useOrgUrl()
 
-useHead({
+useHead(computed(() => ({
   titleTemplate: (pageTitle) =>
     pageTitle ? `${pageTitle} - ${t('website.name')}` : t('website.name'),
   link: [...(head.value.link || [])],
   meta: [...(head.value.meta || [])],
-})
+})))
 
 const { scrollToTop, scrollDistance } = useScrollToTop()
 
@@ -103,7 +103,7 @@ defineOgImageComponent('OgImageCustomTemplate', {
   description: t('intro.des2'),
 })
 
-useSchemaOrg([
+useSchemaOrg(computed(() => [
   {
     '@id': `${orgUrl.value}/#website`,
     '@type': 'WebSite',
@@ -116,7 +116,7 @@ useSchemaOrg([
     name: 'Neil Lin',
     url: orgUrl.value,
   },
-])
+]))
 </script>
 
 <style>

@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="default" :aria-busy="loading">
+  <NuxtLayout name="default">
     <main class="page">
       <akContainer />
       <h2>{{ t("error.title") }}</h2>
@@ -16,13 +16,14 @@
   </NuxtLayout>
 </template>
 
-<script setup>
-const { t } = useI18n();
-defineProps({
-  error: Object,
-});
+<script setup lang="ts">
+const { t } = useI18n()
+
+defineProps<{
+  error: { statusCode: number; statusMessage?: string; message?: string }
+}>()
 
 onBeforeUnmount(() => {
-  clearError({ redirect: "/" });
-});
+  clearError({ redirect: '/' })
+})
 </script>

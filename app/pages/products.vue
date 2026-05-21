@@ -238,15 +238,18 @@ useSchemaOrg(
 
 usePageSeoMeta(pageTitle, pageDescription)
 
-const slug = route.params.name
-const product = productsData.find((p) => p.slug === slug)
+const slug = computed(() => {
+  const name = route.params.name
+  return name ? decodeURIComponent(Array.isArray(name) ? (name[0] ?? '') : name) : ''
+})
+const product = computed(() => productsData.find((p) => p.slug === slug.value))
 
 const breadcrumbs = computed(() => {
-  if (slug && product) {
+  if (slug.value && product.value) {
     return [
       { link: '/', title: String(t('action.goToHomePage')) },
       { link: '/products', title: String(t('mainMenu.products')) },
-      { title: String(product.name[locale.value] || slug) },
+      { title: String(product.value.name[locale.value] || slug.value) },
     ]
   }
   return [

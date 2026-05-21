@@ -196,20 +196,21 @@ const breadCrumbsList = computed(() => [
 ])
 
 const checkScrollable = ref<HTMLElement | null>(null)
-const tabIndex = ref()
+const tabIndex = ref<number | undefined>(undefined)
 const checkTabAble = () => {
-  if (
-    checkScrollable.value!['scrollWidth'] > 0 &&
-    checkScrollable.value!['scrollWidth'] > checkScrollable.value!['clientWidth']
-  ) {
+  const el = checkScrollable.value
+  if (el && el.scrollWidth > 0 && el.scrollWidth > el.clientWidth) {
     tabIndex.value = 0
   } else {
-    tabIndex.value = null
+    tabIndex.value = undefined
   }
 }
 onMounted(() => {
   checkTabAble()
   window.addEventListener('resize', checkTabAble)
+})
+onUnmounted(() => {
+  window.removeEventListener('resize', checkTabAble)
 })
 
 watchEffect(() => {

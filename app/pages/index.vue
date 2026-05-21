@@ -131,12 +131,12 @@ const pageDescription = computed(() => t('intro.des3'))
 
 usePageSeoMeta(pageTitle, pageDescription)
 
-useSchemaOrg([
+useSchemaOrg(computed(() => [
   {
-    "@type": "ProfilePage",
-    description: t("intro.des3"),
+    '@type': 'ProfilePage',
+    description: t('intro.des3'),
   },
-]);
+]))
 
 const experienceList = computed(() => [
   {

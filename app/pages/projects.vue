@@ -125,7 +125,7 @@ definePageMeta({ scrollToTop: false })
 const { sortorder, selectedRole, selectedPlatform, uniqueRoles, groupedList, formatYearRange } =
   usePortfolioFilter(projectsData)
 
-useSchemaOrg([
+useSchemaOrg(computed(() => [
   {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -172,7 +172,7 @@ useSchemaOrg([
       return listItem
     }),
   },
-])
+]))
 
 usePageSeoMeta(pageTitle, pageDescription)
 

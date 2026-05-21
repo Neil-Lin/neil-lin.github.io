@@ -21,28 +21,17 @@
 </template>
 
 <script setup lang="ts">
-import type { LocaleObject } from "@nuxtjs/i18n";
+type LocaleItem = { code: 'zh-Hant-TW' | 'en'; name: string }
 
-const { locale, locales } = useI18n();
-const supportedLocales = locales.value as Array<LocaleObject>;
+const { locale, locales } = useI18n()
+const supportedLocales = locales.value as LocaleItem[]
 
-// 引入 useRoute 來取得當前路由資訊
-const route = useRoute();
-const switchLocalePath = useSwitchLocalePath();
+const route = useRoute()
+const switchLocalePath = useSwitchLocalePath()
 
 async function onLocaleChanged(event: Event) {
-  const target = event.target as HTMLInputElement;
-
-  // 取得新的語言路徑
-  const newPath = switchLocalePath(target.value as "zh-Hant-TW" | "en");
-
-  // 取得當前的查詢參數
-  const currentQueries = route.query;
-
-  // 使用 navigateTo 函數，並將新路徑和現有的查詢參數一起傳遞
-  await navigateTo({
-    path: newPath,
-    query: currentQueries,
-  });
+  const target = event.target as HTMLInputElement
+  const newPath = switchLocalePath(target.value as 'zh-Hant-TW' | 'en')
+  await navigateTo({ path: newPath, query: route.query })
 }
 </script>
