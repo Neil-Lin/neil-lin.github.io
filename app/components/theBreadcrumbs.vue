@@ -16,13 +16,11 @@
 </template>
 
 <script setup lang="ts">
-const localePath = useLocalePath();
-const props = defineProps({
-  list: {
-    type: Array,
-    required: true,
-  },
-});
+const localePath = useLocalePath()
+
+defineProps<{
+  list: { link?: string; title: string }[]
+}>()
 </script>
 
 <style scoped>

@@ -36,60 +36,15 @@
 </template>
 
 <script setup lang="ts">
-const { t, locale } = useI18n();
-const runtimeConfig = useRuntimeConfig();
-const pageTitle = computed(() => t("mainMenu.blog"));
-const pageDescription = computed(() => t("des.blog"));
-const route = useRoute();
+const { t, locale } = useI18n()
+const runtimeConfig = useRuntimeConfig()
+const route = useRoute()
+const orgUrl = useOrgUrl()
 
-const orgUrl = computed(() => {
-  if (locale.value === "en") {
-    return `${runtimeConfig.public.baseUrl}/en`;
-  } else {
-    return `${runtimeConfig.public.baseUrl}`;
-  }
-});
+const pageTitle = computed(() => t('mainMenu.blog'))
+const pageDescription = computed(() => t('des.blog'))
 
-useHead({
-  title: pageTitle,
-  meta: [
-    {
-      hid: "description",
-      name: "description",
-      content: pageDescription.value,
-    },
-    {
-      hid: "og:url",
-      property: "og:url",
-      content: runtimeConfig.public.baseUrl + route.path,
-    },
-    {
-      hid: "og:title",
-      property: "og:title",
-      content: pageTitle.value + " - " + t("website.name"),
-    },
-    {
-      hid: "og:description",
-      property: "og:description",
-      content: pageDescription.value,
-    },
-    {
-      hid: "twitter:url",
-      name: "twitter:url",
-      content: runtimeConfig.public.baseUrl + route.path,
-    },
-    {
-      hid: "twitter:title",
-      name: "twitter:title",
-      content: pageTitle.value + " - " + t("website.name"),
-    },
-    {
-      hid: "twitter:description",
-      name: "twitter:description",
-      content: pageDescription.value,
-    },
-  ],
-});
+usePageSeoMeta(pageTitle, pageDescription)
 
 const breadCrumbsList = computed(() => [
   {
@@ -102,61 +57,36 @@ const breadCrumbsList = computed(() => [
   },
 ]);
 
-// useSchemaOrg([
-//   {
-//     "@type": "CollectionPage",
-//     name: pageTitle.value,
-//     description: pageDescription.value,
-//     url: runtimeConfig.public.baseUrl + route.path,
-//     inLanguage: locale.value === "zh-Hant-TW" ? "zh-Hant-TW" : "en",
-//     isPartOf: {
-//       "@type": "WebSite",
-//       name: t("website.name"),
-//       url: runtimeConfig.public.baseUrl,
-//     },
-//   },
-// ]);
-
 useSchemaOrg([
-  // 直接覆寫掉模組自動產生的 WebPage（同一個 @id）
   {
-    "@id": `${orgUrl.value}/blog#webpage`,
-    "@type": "CollectionPage",
+    '@id': `${orgUrl.value}/blog#webpage`,
+    '@type': 'CollectionPage',
     name: pageTitle.value,
     description: pageDescription.value,
-    url: orgUrl.value + route.path, // => .../blog 或 .../en/blog
-    inLanguage: locale.value === "zh-Hant-TW" ? "zh-Hant-TW" : "en",
-    isPartOf: { "@id": `${orgUrl.value}/#website` },
-    potentialAction: [
-      {
-        "@type": "ReadAction",
-        target: [orgUrl.value + route.path],
-      },
-    ],
+    url: orgUrl.value + route.path,
+    inLanguage: locale.value === 'zh-Hant-TW' ? 'zh-Hant-TW' : 'en',
+    isPartOf: { '@id': `${orgUrl.value}/#website` },
+    potentialAction: [{ '@type': 'ReadAction', target: [orgUrl.value + route.path] }],
   },
-
-  // Blog 節點（保留）
   {
-    "@id": `${orgUrl.value}/blog#blog`,
-    "@type": "Blog",
+    '@id': `${orgUrl.value}/blog#blog`,
+    '@type': 'Blog',
     name: pageTitle.value,
     url: `${orgUrl.value}/blog`,
-    inLanguage: locale.value === "zh-Hant-TW" ? "zh-Hant-TW" : "en",
-    publisher: { "@id": `${orgUrl.value}/#person` }, // 由 layout 提供
+    inLanguage: locale.value === 'zh-Hant-TW' ? 'zh-Hant-TW' : 'en',
+    publisher: { '@id': `${orgUrl.value}/#person` },
     sameAs:
-      locale.value === "en"
-        ? ["https://neil-lin.medium.com/"]
-        : ["https://vocus.cc/user/@neil-lin"],
+      locale.value === 'en'
+        ? ['https://neil-lin.medium.com/']
+        : ['https://vocus.cc/user/@neil-lin'],
   },
-]);
+])
 
 watchEffect(() => {
-  if (breadCrumbsList.value.length > 0) {
-    useBreadcrumbSchema(breadCrumbsList.value);
-  }
-});
+  if (breadCrumbsList.value.length > 0) useBreadcrumbSchema(breadCrumbsList.value)
+})
 
-defineOgImageComponent("OgImageCustomTemplate", {
-  title: pageTitle.value + " - " + t("website.name"),
-});
+defineOgImageComponent('OgImageCustomTemplate', {
+  title: pageTitle.value + ' - ' + t('website.name'),
+})
 </script>

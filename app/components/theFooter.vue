@@ -52,9 +52,11 @@
 </template>
 
 <script setup lang="ts">
-const switchLocalePath = useSwitchLocalePath();
-const { t, locales, locale } = useI18n();
-const supportedLocales = locales.value as Array<LocaleObject>;
+const switchLocalePath = useSwitchLocalePath()
+const { t, locales, locale } = useI18n()
+
+type LocaleItem = { code: 'zh-Hant-TW' | 'en'; name: string }
+const supportedLocales = locales.value as LocaleItem[]
 
 const runtimeConfig = useRuntimeConfig();
 const buildDateStr = (runtimeConfig.public.buildDate as string) || "2025-01-01";

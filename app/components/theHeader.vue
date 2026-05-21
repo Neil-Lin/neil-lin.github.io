@@ -59,7 +59,7 @@ const { t } = useI18n();
 const route = useRoute();
 const localePath = useLocalePath();
 
-const formatAMPM = (date) => {
+const formatAMPM = (date: Date) => {
   const hours = date.getHours();
   let ampm;
   if (hours < 12 && hours > 5) {
@@ -127,8 +127,12 @@ const handleScroll = () => {
 };
 
 onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
-});
+  window.addEventListener("scroll", handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll)
+})
 </script>
 
 <style scoped>

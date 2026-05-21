@@ -190,111 +190,62 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from "vue-router";
-import productsData from "~~/data/productsData";
-const { t, locale } = useI18n();
-const localePath = useLocalePath();
-// const { country } = useUserLocation();
-const runtimeConfig = useRuntimeConfig();
+import productsData from '~~/data/productsData'
 
-const route = useRoute();
+const { t, locale } = useI18n()
+const localePath = useLocalePath()
+const runtimeConfig = useRuntimeConfig()
+const route = useRoute()
 
-const product = computed(() => {
-  return productsData.find(
-    (p) => p.slug === decodeURIComponent(route.params.name as string)
-  );
-});
+const product = computed(() =>
+  productsData.find((p) => p.slug === decodeURIComponent(route.params.name as string))
+)
 
-// 計算產品價格，若找不到對應的國家，則使用 TW 的價格
-// const productPrice = computed(() => {
-//   if (!product.value) return "N/A";
-//   return (
-//     product.value.pricing[country.value as keyof typeof product.value.pricing]
-//       .price || product.value.pricing["TW"].price
-//   );
-// });
+const pageTitle = computed(() =>
+  product.value ? product.value.name[locale.value] : t('error.notFound')
+)
+const pageDescription = computed(() =>
+  product.value ? product.value.intro[locale.value] : ''
+)
 
-// 將 meta 設定包裝在 computed 中，讓數據更新時 head 自動更新
-const headData = computed(() => ({
-  title: product.value ? product.value.name[locale.value] : t("error.notFound"),
-  meta: [
-    {
-      hid: "description",
-      name: "description",
-      content: product.value ? product.value.intro[locale.value] : "",
-    },
-    {
-      hid: "keywords",
-      name: "keywords",
-      content: product.value
-        ? product.value.keywords[locale.value].join(", ")
-        : "",
-    },
-    {
-      hid: "og:url",
-      property: "og:url",
-      content: runtimeConfig.public.baseUrl + route.path,
-    },
-    {
-      hid: "og:title",
-      property: "og:title",
-      content: product.value ? product.value.name[locale.value] : "",
-    },
-    {
-      hid: "og:description",
-      property: "og:description",
-      content: product.value ? product.value.intro[locale.value] : "",
-    },
-    {
-      hid: "twitter:url",
-      name: "twitter:url",
-      content: runtimeConfig.public.baseUrl + route.path,
-    },
-    {
-      hid: "twitter:title",
-      name: "twitter:title",
-      content: product.value ? product.value.name[locale.value] : "",
-    },
-    {
-      hid: "twitter:description",
-      name: "twitter:description",
-      content: product.value ? product.value.intro[locale.value] : "",
-    },
-  ],
-}));
+useHead(
+  computed(() => ({
+    link: [{ rel: 'canonical', href: runtimeConfig.public.baseUrl + route.path }],
+    meta: [
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content: product.value ? product.value.keywords[locale.value].join(', ') : '',
+      },
+    ],
+  }))
+)
 
-useHead(headData);
+usePageSeoMeta(pageTitle, pageDescription)
 
-useSchemaOrg([
-  {
-    "@type": "SoftwareApplication",
-    name: product.value ? product.value.name[locale.value] : t("error.notFound"),
-    description: product.value ? product.value.intro[locale.value] : "",
-    image: product.value
-      ? runtimeConfig.public.baseUrl +
-        product.value.schemaImage[locale.value][0]?.src
-      : "",
-    url: runtimeConfig.public.baseUrl + route.path,
-    applicationCategory: "WebApplication",
-    operatingSystem: "Web",
-    author: {
-      "@type": "Person",
-      name: "Neil Lin",
+useSchemaOrg(
+  computed(() => [
+    {
+      '@type': 'CreativeWork',
+      name: pageTitle.value,
+      description: pageDescription.value,
+      image: product.value
+        ? runtimeConfig.public.baseUrl + product.value.schemaImage[locale.value][0]?.src
+        : '',
+      url: runtimeConfig.public.baseUrl + route.path,
+      author: { '@type': 'Person', name: 'Neil Lin' },
+      datePublished: product.value?.yearRange.start,
+      dateModified: product.value?.yearRange.end ?? new Date().getFullYear(),
+      inLanguage: locale.value,
+      keywords: product.value?.keywords[locale.value].join(', ') ?? '',
     },
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "TWD",
-    },
-  },
-]);
+  ])
+)
 
-defineOgImageComponent("OgImageCustomTemplate", {
-  title: product.value ? product.value.name[locale.value] : "",
-  imagePath: product.value
-    ? product.value.schemaImage[locale.value][0]?.src
-    : "",
-});
+defineOgImageComponent('OgImageCustomTemplate', {
+  title: pageTitle.value,
+  imagePath: product.value ? product.value.schemaImage[locale.value][0]?.src : '',
+})
 </script>
 
 <style scoped>

@@ -92,7 +92,6 @@
               </figcaption>
               <div class="video-container">
                 <video ref="videoRef" controls>
-                  <source preload="none" type="video/mp4" />
                   {{ $t("words.canNotWatchVideo") }}
                 </video>
               </div>
@@ -126,37 +125,11 @@
 </template>
 
 <script setup lang="ts">
-const { locale } = useI18n();
-const { t } = useI18n();
-const pageTitle = ref(t("words.home"));
+const { locale, t } = useI18n()
+const pageTitle = computed(() => t('words.home'))
+const pageDescription = computed(() => t('intro.des3'))
 
-// SEO
-// SEO
-useHead({
-  title: pageTitle,
-  meta: [
-    {
-      name: "description",
-      content: t("intro.des3"),
-    },
-    {
-      property: "og:title",
-      content: pageTitle.value + " - " + t("website.name"),
-    },
-    {
-      property: "og:description",
-      content: t("intro.des3"),
-    },
-    {
-      name: "twitter:title",
-      content: pageTitle.value + " - " + t("website.name"),
-    },
-    {
-      name: "twitter:description",
-      content: t("intro.des3"),
-    },
-  ],
-});
+usePageSeoMeta(pageTitle, pageDescription)
 
 useSchemaOrg([
   {
@@ -196,11 +169,7 @@ let audioIo: IntersectionObserver | null = null;
 const videoRef = ref<HTMLVideoElement | null>(null);
 const videoLoaded = ref(false);
 
-const getVideoSrc = () => {
-  return locale.value === "en"
-    ? "/video/portfolio-by-notebooklm.mp4"
-    : "/video/portfolio-by-notebooklm.mp4"; // 先預留
-};
+const getVideoSrc = () => "/video/portfolio-by-notebooklm.mp4"
 
 let videoIo: IntersectionObserver | null = null;
 
@@ -263,9 +232,9 @@ watch(
   }
 );
 
-defineOgImageComponent("OgImageCustomTemplate", {
-  title: pageTitle.value + " - " + t("website.name"),
-});
+defineOgImageComponent('OgImageCustomTemplate', {
+  title: pageTitle.value + ' - ' + t('website.name'),
+})
 </script>
 
 <style scoped>

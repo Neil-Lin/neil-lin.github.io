@@ -182,92 +182,43 @@
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n();
-const localePath = useLocalePath();
-const runtimeConfig = useRuntimeConfig();
-const pageTitle = ref(t("mainMenu.sitemap"));
-const pageDescription = ref(t("des.sitemap"));
-const route = useRoute();
+const { t } = useI18n()
+const localePath = useLocalePath()
 
-useHead({
-  title: pageTitle,
-  meta: [
-    {
-      hid: "description",
-      name: "description",
-      content: pageDescription.value,
-    },
-    {
-      hid: "og:url",
-      property: "og:url",
-      content: runtimeConfig.public.baseUrl + route.path,
-    },
-    {
-      hid: "og:title",
-      property: "og:title",
-      content: pageTitle.value + " - " + t("website.name"),
-    },
-    {
-      hid: "og:description",
-      property: "og:description",
-      content: pageDescription.value,
-    },
-    {
-      hid: "twitter:url",
-      name: "twitter:url",
-      content: runtimeConfig.public.baseUrl + route.path,
-    },
-    {
-      hid: "twitter:title",
-      name: "twitter:title",
-      content: pageTitle.value + " - " + t("website.name"),
-    },
-    {
-      hid: "twitter:description",
-      name: "twitter:description",
-      content: pageDescription.value,
-    },
-  ],
-});
+const pageTitle = computed(() => t('mainMenu.sitemap'))
+const pageDescription = computed(() => t('des.sitemap'))
+
+usePageSeoMeta(pageTitle, pageDescription)
 
 const breadCrumbsList = computed(() => [
-  {
-    link: "/",
-    title: t("action.goToHomePage"),
-  },
-  {
-    link: "",
-    title: t("mainMenu.sitemap"),
-  },
-]);
+  { link: '/', title: t('action.goToHomePage') },
+  { link: '', title: t('mainMenu.sitemap') },
+])
 
-const checkScrollable = ref<HTMLElement | null>(null);
-const tabIndex = ref();
+const checkScrollable = ref<HTMLElement | null>(null)
+const tabIndex = ref()
 const checkTabAble = () => {
   if (
-    checkScrollable.value!["scrollWidth"] > 0 &&
-    checkScrollable.value!["scrollWidth"] >
-      checkScrollable.value!["clientWidth"]
+    checkScrollable.value!['scrollWidth'] > 0 &&
+    checkScrollable.value!['scrollWidth'] > checkScrollable.value!['clientWidth']
   ) {
-    tabIndex.value = 0;
+    tabIndex.value = 0
   } else {
-    tabIndex.value = null;
+    tabIndex.value = null
   }
-};
+}
 onMounted(() => {
-  checkTabAble();
-  window.addEventListener("resize", checkTabAble);
-});
+  checkTabAble()
+  window.addEventListener('resize', checkTabAble)
+})
 
 watchEffect(() => {
-  if (breadCrumbsList.value.length > 0) {
-    useBreadcrumbSchema(breadCrumbsList.value);
-  }
-});
+  if (breadCrumbsList.value.length > 0) useBreadcrumbSchema(breadCrumbsList.value)
+})
 
-defineOgImageComponent("OgImageCustomTemplate", {
-  title: pageTitle.value + " - " + t("website.name"),
-});
+defineOgImageComponent('OgImageCustomTemplate', {
+  title: pageTitle.value + ' - ' + t('website.name'),
+})
 </script>
 
 <style scoped>

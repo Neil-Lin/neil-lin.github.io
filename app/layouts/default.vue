@@ -44,11 +44,7 @@
     <Meta name="apple-touch-fullscreen" content="yes" />
     <Meta name="apple-mobile-web-app-title" :content="$t('website.name')" />
     <Meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <Link
-      rel="shortcut icon"
-      type="image/x-icon"
-      :href="`${runtimeConfig.public.baseUrl}/favicon.ico`"
-    />
+    <Link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <Link rel="preconnect" href="https://fonts.googleapis.com" />
     <Link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <Link
@@ -89,49 +85,37 @@
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n();
-const runtimeConfig = useRuntimeConfig();
-const { locale } = useI18n();
-const head = useLocaleHead();
-
-const orgUrl = computed(() => {
-  if (locale.value === "en") {
-    return `${runtimeConfig.public.baseUrl}/en`;
-  } else {
-    return `${runtimeConfig.public.baseUrl}`;
-  }
-});
+const { t, locale } = useI18n()
+const head = useLocaleHead()
+const orgUrl = useOrgUrl()
 
 useHead({
-  titleTemplate: (pageTitle) => {
-    return pageTitle
-      ? `${pageTitle} - ` + t("website.name")
-      : t("website.name");
-  },
+  titleTemplate: (pageTitle) =>
+    pageTitle ? `${pageTitle} - ${t('website.name')}` : t('website.name'),
   link: [...(head.value.link || [])],
   meta: [...(head.value.meta || [])],
-});
+})
 
-const { scrollToTop, scrollDistance } = useScrollToTop();
+const { scrollToTop, scrollDistance } = useScrollToTop()
 
-defineOgImageComponent("OgImageCustomTemplate", {
-  title: t("website.name"),
-});
+defineOgImageComponent('OgImageCustomTemplate', {
+  title: t('website.name'),
+})
 
 useSchemaOrg([
   {
-    "@id": `${orgUrl.value}/#website`,
-    "@type": "WebSite",
-    name: t("website.name"),
-    url: `${orgUrl.value}`,
+    '@id': `${orgUrl.value}/#website`,
+    '@type': 'WebSite',
+    name: t('website.name'),
+    url: orgUrl.value,
   },
   {
-    "@id": `${orgUrl.value}/#person`,
-    "@type": "Person",
-    name: "Neil Lin", // ← 可改你想呈現的名稱
-    url: `${orgUrl.value}`,
+    '@id': `${orgUrl.value}/#person`,
+    '@type': 'Person',
+    name: 'Neil Lin',
+    url: orgUrl.value,
   },
-]);
+])
 </script>
 
 <style>
