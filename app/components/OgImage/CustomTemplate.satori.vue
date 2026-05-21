@@ -1,7 +1,5 @@
 <template>
-  <div
-    style="height: 630px; background-color: #fafafa; font-family: 'Noto Sans TC', sans-serif;"
-  >
+  <div style="height: 630px; background-color: #fafafa">
     <img
       v-if="imagePath"
       :src="imagePath"
@@ -11,7 +9,15 @@
 
     <div
       v-else
-      style="position: relative; display: flex; flex-direction: column; height: 100%; justify-content: center; align-items: center; font-family: 'Noto Sans TC', sans-serif;"
+      style="
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+      "
     >
       <img
         src="@/assets/images/sitename.svg"
@@ -24,11 +30,11 @@
         "
       />
       <div
-        style="font-weight: 700; font-size: 4rem; color: #222; padding: 2rem"
+        style="font-weight: bold; font-size: 4rem; color: #222; padding: 0 4rem"
       >
         {{ title }}
       </div>
-      <div style="font-size: 2rem; color: #565656; padding: 2rem 4rem">
+      <div style="font-size: 2rem; color: #565656; padding: 0 4rem">
         {{ description }}
       </div>
     </div>
