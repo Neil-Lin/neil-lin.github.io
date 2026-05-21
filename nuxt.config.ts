@@ -224,6 +224,15 @@ export default defineNuxtConfig({
 
   ogImage: {
     zeroRuntime: true,
+    // Ensure the build-time renderer loads this local font file (for CJK glyphs)
+    fonts: [
+      {
+        name: "Noto Sans TC",
+        path: "/fonts/NotoSansTC-VariableFont_wght.woff2",
+        weight: 400,
+        style: "normal"
+      }
+    ],
   },
 
   fonts: {
@@ -232,6 +241,15 @@ export default defineNuxtConfig({
         name: "Noto Sans TC",
         provider: "google",
         weights: [400, 700],
+        /* Local fallback for build-time Satori rendering: add local src pointing
+           to the bundled font in public/fonts. Keep `global: true` so @nuxt/fonts
+           emits the @font-face for server-side usage. */
+        src: [
+          {
+            url: "/fonts/NotoSansTC-VariableFont_wght.woff2",
+            format: "woff2"
+          }
+        ],
         global: true,
       },
     ],

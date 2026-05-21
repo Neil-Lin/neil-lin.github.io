@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 630px; background-color: #fafafa; font-family: 'Noto Sans TC', 'Noto Sans', sans-serif">
+  <div style="height: 630px; background-color: #fafafa; font-family: 'Noto Sans TC', sans-serif">
     <img
       v-if="imagePath"
       :src="imagePath"
@@ -11,10 +11,10 @@
       v-else
       style="
         position: relative;
-        display: flex;
-        flex-direction: column;
         width: 100%;
         height: 100%;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
       "
