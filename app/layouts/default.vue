@@ -98,11 +98,6 @@ useHead(computed(() => ({
 
 const { scrollToTop, scrollDistance } = useScrollToTop()
 
-defineOgImage('CustomTemplate', {
-  title: t('website.name'),
-  description: t('intro.des2'),
-})
-
 useSchemaOrg(computed(() => [
   {
     '@id': `${orgUrl.value}/#website`,

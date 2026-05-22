@@ -207,6 +207,11 @@ const pageTitle = computed(() =>
 const pageDescription = computed(() =>
   product.value ? product.value.intro[locale.value] : ''
 )
+const ogImageUrl = computed(() =>
+  product.value
+    ? runtimeConfig.public.baseUrl + product.value.schemaImage[locale.value][0]?.src
+    : ''
+)
 
 useHead(
   computed(() => ({
@@ -222,6 +227,12 @@ useHead(
 )
 
 usePageSeoMeta(pageTitle, pageDescription)
+
+useSeoMeta({
+  ogImage: () => ogImageUrl.value,
+  twitterImage: () => ogImageUrl.value,
+  twitterCard: 'summary_large_image',
+})
 
 useSchemaOrg(
   computed(() => [
@@ -242,10 +253,6 @@ useSchemaOrg(
   ])
 )
 
-defineOgImage('CustomTemplate', {
-  title: pageTitle.value,
-  imagePath: product.value ? product.value.schemaImage[locale.value][0]?.src : '',
-})
 </script>
 
 <style scoped>

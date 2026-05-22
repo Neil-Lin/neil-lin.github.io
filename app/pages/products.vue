@@ -262,10 +262,12 @@ watchEffect(() => {
   if (breadcrumbs.value.length > 0) useBreadcrumbSchema(breadcrumbs.value)
 })
 
-defineOgImage('CustomTemplate', {
-  title: pageTitle.value + ' - ' + t('website.name'),
-  description: pageDescription.value,
-})
+if (!route.params.name) {
+  defineOgImage('CustomTemplate', {
+    title: pageTitle.value + ' - ' + t('website.name'),
+    description: pageDescription.value,
+  })
+}
 </script>
 
 <style scoped>

@@ -8,9 +8,15 @@ const dynamicRoutes = productsData
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  css: ["~/assets/css/og-fonts.css"],
   app: {
     baseURL: "/",
     head: {
+      htmlAttrs: {
+        lang: "zh-Hant-TW",
+        dir: "ltr",
+      },
+      title: zhHantTW.website.name,
       script: [
         {
           src: "https://accesserty.com/pulse.js",
@@ -224,32 +230,17 @@ export default defineNuxtConfig({
 
   ogImage: {
     zeroRuntime: true,
-    // Ensure the build-time renderer loads this local font file (for CJK glyphs)
-    fonts: [
-      {
-        name: "Noto Sans TC",
-        path: "/fonts/NotoSansTC-VariableFont_wght.woff2",
-        weight: 400,
-        style: "normal"
-      }
-    ],
+    security: {
+      renderTimeout: 60000,
+    },
   },
 
   fonts: {
     families: [
       {
         name: "Noto Sans TC",
-        provider: "google",
+        src: "/fonts/NotoSansTC-VariableFont_wght.woff2",
         weights: [400, 700],
-        /* Local fallback for build-time Satori rendering: add local src pointing
-           to the bundled font in public/fonts. Keep `global: true` so @nuxt/fonts
-           emits the @font-face for server-side usage. */
-        src: [
-          {
-            url: "/fonts/NotoSansTC-VariableFont_wght.woff2",
-            format: "woff2"
-          }
-        ],
         global: true,
       },
     ],
