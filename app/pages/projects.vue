@@ -186,6 +186,7 @@ watchEffect(() => {
 })
 
 defineOgImage('CustomTemplate', {
+  cacheKey: 'noto-tc-v2',
   title: pageTitle.value + ' - ' + t('website.name'),
   description: pageDescription.value,
 })
