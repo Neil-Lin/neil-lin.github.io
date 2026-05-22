@@ -2,6 +2,12 @@ import enUS from "./i18n/lang/en-US";
 import zhHantTW from "./i18n/lang/zh-Hant-TW";
 import { productsData } from "./data/productsData";
 
+const fallbackBaseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://neillin.com"
+    : "http://localhost:3000";
+const siteUrl = process.env.NUXT_PUBLIC_BASE_URL || fallbackBaseUrl;
+
 const dynamicRoutes = productsData
   .filter((p) => p.clickable)
   .flatMap((p) => [`/products/${p.slug}`, `/en/products/${p.slug}`]);
@@ -67,7 +73,7 @@ export default defineNuxtConfig({
     registerType: "autoUpdate",
     manifest: {
       id: "/",
-      start_url: process.env.NUXT_PUBLIC_BASE_URL,
+      start_url: siteUrl,
       name: "Neil's Portfolio",
       short_name: "Neil's Portfolio",
       categories: [
@@ -81,11 +87,11 @@ export default defineNuxtConfig({
         {
           name: "products",
           short_name: "products",
-          url: process.env.NUXT_PUBLIC_BASE_URL + "/products",
+          url: siteUrl + "/products",
           description: "about products of portfolio",
           icons: [
             {
-              src: process.env.NUXT_PUBLIC_BASE_URL + "/favicon-96.png",
+              src: siteUrl + "/favicon-96.png",
               sizes: "96x96",
               type: "image/png",
             },
@@ -153,7 +159,7 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    baseUrl: process.env.NUXT_PUBLIC_BASE_URL || "http://localhost:3000",
+    baseUrl: siteUrl,
     vueI18n: "./i18n.config.ts",
     locales: [
       {
@@ -188,7 +194,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     env: "",
-    baseUrl: process.env.NUXT_PUBLIC_BASE_URL || "http://localhost:3000",
+    baseUrl: siteUrl,
     public: {
       buildDate: (() => {
         const date = new Date();
@@ -197,7 +203,7 @@ export default defineNuxtConfig({
         const day = date.getDate().toString().padStart(2, "0");
         return `${year}-${month}-${day}`;
       })(),
-      baseUrl: process.env.NUXT_PUBLIC_BASE_URL || "http://localhost:3000",
+      baseUrl: siteUrl,
       websiteName: {
         "zh-Hant-TW":
           process.env.NUXT_PUBLIC_WEBSITE_NAME_ZHHANTTW ||
@@ -214,11 +220,11 @@ export default defineNuxtConfig({
 
   robots: {
     robotsTxt: true,
-    sitemap: `${process.env.NUXT_PUBLIC_BASE_URL}/sitemap.xml`,
+    sitemap: `${siteUrl}/sitemap.xml`,
   },
 
   site: {
-    url: process.env.NUXT_PUBLIC_BASE_URL,
+    url: siteUrl,
     name: "Neil's portfolio",
     autoLastmod: true,
     cacheMaxAgeSecond: 3600,

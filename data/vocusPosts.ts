@@ -1,72 +1,83 @@
 export default [
   {
-    "title": "2026 年 4 月 關於無障礙網頁發展的心得",
-    "abstract": "看著目前程式工具在 AI 方面的發展、數位無障礙的各種方向、各種職缺也有所增長、各種無障礙網頁規範 Agent Skills 和 AI 檢測也開始蓬勃發展，我雖然有從中受益，但我感受到更大的迷惘：AI 要到什麼程度才能有巨大的能力幫助數位無障礙的普遍落實，或者應該問：我要怎麼讓 AI 能做到這件事。",
-    "url": "https://vocus.cc/article/69edd564fd897800012e4ec9"
+    title: "2026 年 4 月 關於無障礙網頁發展的心得",
+    abstract:
+      "看著目前程式工具在 AI 方面的發展、數位無障礙的各種方向、各種職缺也有所增長、各種無障礙網頁規範 Agent Skills 和 AI 檢測也開始蓬勃發展，我雖然有從中受益，但我感受到更大的迷惘：AI 要到什麼程度才能有巨大的能力幫助數位無障礙的普遍落實，或者應該問：我要怎麼讓 AI 能做到這件事。",
+    url: "https://vocus.cc/article/69edd564fd897800012e4ec9",
   },
   {
-    "title": "用普通 Prompt 來 Vibe 一個解決自己工作痛點的產品",
-    "abstract": "今年 LLM 比2025 的可靠許多，如果「一個只懂 Html/CSS人」建立了這樣的產品，需要 Vibe 多久？ Vibe時會遇到什麼問題？ Vibe時會需要懂什麼知識？",
-    "url": "https://vocus.cc/article/69e9f2b8fd89780001e4cd43"
+    title: "用普通 Prompt 來 Vibe 一個解決自己工作痛點的產品",
+    abstract:
+      "今年 LLM 比2025 的可靠許多，如果「一個只懂 Html/CSS人」建立了這樣的產品，需要 Vibe 多久？ Vibe時會遇到什麼問題？ Vibe時會需要懂什麼知識？",
+    url: "https://vocus.cc/article/69e9f2b8fd89780001e4cd43",
   },
   {
-    "title": "在開發階段模擬與偵測無障礙問題",
-    "abstract": "在開發網站時，我們總習慣寫完程式碼後再補測試，再補無障礙，再補設計稿上的細節。但「無障礙設計」這件事，其實不只是檢查通過，而是讓人真的可以用得順、看得懂、操作得了。",
-    "url": "https://vocus.cc/article/6839d6e9fd89780001149160"
+    title: "在開發階段模擬與偵測無障礙問題",
+    abstract:
+      "在開發網站時，我們總習慣寫完程式碼後再補測試，再補無障礙，再補設計稿上的細節。但「無障礙設計」這件事，其實不只是檢查通過，而是讓人真的可以用得順、看得懂、操作得了。",
+    url: "https://vocus.cc/article/6839d6e9fd89780001149160",
   },
   {
-    "title": "看不見的體驗差距：為什麼搜尋不到真正好用的網站？",
-    "abstract": "開發 Accesserty Signal 的初衷是為了讓使用者能夠搜尋到真正好用的網站，並且提升無障礙網頁的可見性。",
-    "url": "https://vocus.cc/article/68373670fd8978000130cffb"
+    title: "看不見的體驗差距：為什麼搜尋不到真正好用的網站？",
+    abstract:
+      "開發 Accesserty Signal 的初衷是為了讓使用者能夠搜尋到真正好用的網站，並且提升無障礙網頁的可見性。",
+    url: "https://vocus.cc/article/68373670fd8978000130cffb",
   },
   {
-    "title": "打造 Accesserty — 從搜尋到開發的無障礙網頁之體驗",
-    "abstract": "分享花了一個月左右打造的新品牌：Accesserty。這是一個專注於提升無障礙網頁體驗的小型工具生態，從搜尋體驗到開發測試。",
-    "url": "https://vocus.cc/article/68332fd1fd897800015fa25c"
+    title: "打造 Accesserty — 從搜尋到開發的無障礙網頁之體驗",
+    abstract:
+      "分享花了一個月左右打造的新品牌：Accesserty。這是一個專注於提升無障礙網頁體驗的小型工具生態，從搜尋體驗到開發測試。",
+    url: "https://vocus.cc/article/68332fd1fd897800015fa25c",
   },
   {
-    "title": "LLM Chat Accessibility",
-    "abstract": "檢測主流 LLM Chat 工具在無障礙上的支援程度，觀察是否能通過即將上路的歐盟無障礙法規。",
-    "url": "https://vocus.cc/article/68332fd7fd897800015fa3f7"
+    title: "LLM Chat Accessibility",
+    abstract:
+      "檢測主流 LLM Chat 工具在無障礙上的支援程度，觀察是否能通過即將上路的歐盟無障礙法規。",
+    url: "https://vocus.cc/article/68332fd7fd897800015fa3f7",
   },
   {
-    "title": "建立所見即所得編輯器的無障礙檢測工具，以 TinyMCE 為例",
-    "abstract": "建立一個小工具協助檢查 TinyMCE 所產出的內容是否符合無障礙網頁設計規範。",
-    "url": "https://vocus.cc/article/68332fd2fd897800015fa290"
+    title: "建立所見即所得編輯器的無障礙檢測工具，以 TinyMCE 為例",
+    abstract:
+      "建立一個小工具協助檢查 TinyMCE 所產出的內容是否符合無障礙網頁設計規範。",
+    url: "https://vocus.cc/article/68332fd2fd897800015fa290",
   },
   {
-    "title": "讓使用者透過 CUI 客製化網站風格",
-    "abstract": "探討讓使用者透過 CUI 自訂網站排版與風格的可能性與挑戰。",
-    "url": "https://vocus.cc/article/68332fd6fd897800015fa39a"
+    title: "讓使用者透過 CUI 客製化網站風格",
+    abstract: "探討讓使用者透過 CUI 自訂網站排版與風格的可能性與挑戰。",
+    url: "https://vocus.cc/article/68332fd6fd897800015fa39a",
   },
   {
-    "title": "UX 三刀流 2024 春季班期中作業",
-    "abstract": "課堂作業，挑選一篇無障礙 UX 案例進行介紹與評論，選用案例為 Slack accessibility redesign。",
-    "url": "https://vocus.cc/article/68332fd9fd897800015fa431"
+    title: "UX 三刀流 2024 春季班期中作業",
+    abstract:
+      "課堂作業，挑選一篇無障礙 UX 案例進行介紹與評論，選用案例為 Slack accessibility redesign。",
+    url: "https://vocus.cc/article/68332fd9fd897800015fa431",
   },
   {
-    "title": "為什麼我愛上了在設計與切版時使用 Emoji",
-    "abstract": "從無障礙設計角度思考 icon 使用，進一步分析 emoji 在設計與切版上的好處與挑戰。",
-    "url": "https://vocus.cc/article/68332fdcfd897800015fa52d"
+    title: "為什麼我愛上了在設計與切版時使用 Emoji",
+    abstract:
+      "從無障礙設計角度思考 icon 使用，進一步分析 emoji 在設計與切版上的好處與挑戰。",
+    url: "https://vocus.cc/article/68332fdcfd897800015fa52d",
   },
   {
-    "title": "我的第一個 Chrome 瀏覽器擴充程式：Report Website issues",
-    "abstract": "學習從零開始開發 Chrome 擴充功能的經驗分享與過程記錄。",
-    "url": "https://vocus.cc/article/68332fe5fd897800015fa7c6"
+    title: "我的第一個 Chrome 瀏覽器擴充程式：Report Website issues",
+    abstract: "學習從零開始開發 Chrome 擴充功能的經驗分享與過程記錄。",
+    url: "https://vocus.cc/article/68332fe5fd897800015fa7c6",
   },
   {
-    "title": "我真的需要一個生成式 AI 工具來產生整份網頁設計稿嗎？",
-    "abstract": "反思 Framer AI 在網頁設計流程中的角色與限制，探討 AI 與設計師之間的平衡點。",
-    "url": "https://vocus.cc/article/68332fe9fd897800015fa8b7"
+    title: "我真的需要一個生成式 AI 工具來產生整份網頁設計稿嗎？",
+    abstract:
+      "反思 Framer AI 在網頁設計流程中的角色與限制，探討 AI 與設計師之間的平衡點。",
+    url: "https://vocus.cc/article/68332fe9fd897800015fa8b7",
   },
   {
-    "title": "Ballpark — 適合線上驗證想法的問卷服務",
-    "abstract": "介紹 Ballpark 問卷服務的使用體驗與適用場景，適合用於產品驗證初期。",
-    "url": "https://vocus.cc/article/68332fe6fd897800015fa819"
+    title: "Ballpark — 適合線上驗證想法的問卷服務",
+    abstract:
+      "介紹 Ballpark 問卷服務的使用體驗與適用場景，適合用於產品驗證初期。",
+    url: "https://vocus.cc/article/68332fe6fd897800015fa819",
   },
   {
-    "title": "macOS 輔助使用— 旁白系列（一）",
-    "abstract": "親身體驗 macOS 的 VoiceOver 功能，記錄無障礙設計的使用者觀察。",
-    "url": "https://vocus.cc/article/68333015fd897800015fb326"
-  }
-]
+    title: "macOS 輔助使用— 旁白系列（一）",
+    abstract: "親身體驗 macOS 的 VoiceOver 功能，記錄無障礙設計的使用者觀察。",
+    url: "https://vocus.cc/article/68333015fd897800015fb326",
+  },
+];

@@ -1,6 +1,6 @@
 <template>
   <Html :lang="head.htmlAttrs?.lang" :dir="head.htmlAttrs?.dir">
-    <Meta charse="utf-8" />
+    <Meta charset="utf-8" />
     <Meta name="viewport" content="width=device-width, initial-scale=1" />
     <Meta
       hid="keywords"
@@ -56,7 +56,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
 
     <!-- https://github.com/nuxt/nuxt/issues/19752 -->
@@ -85,33 +85,37 @@
 </template>
 
 <script setup lang="ts">
-const { t, locale } = useI18n()
-const head = useLocaleHead()
-const orgUrl = useOrgUrl()
+const { t } = useI18n();
+const head = useLocaleHead();
+const orgUrl = useOrgUrl();
 
-useHead(computed(() => ({
-  titleTemplate: (pageTitle) =>
-    pageTitle ? `${pageTitle} - ${t('website.name')}` : t('website.name'),
-  link: [...(head.value.link || [])],
-  meta: [...(head.value.meta || [])],
-})))
+useHead(
+  computed(() => ({
+    titleTemplate: (pageTitle) =>
+      pageTitle ? `${pageTitle} - ${t("website.name")}` : t("website.name"),
+    link: [...(head.value.link || [])],
+    meta: [...(head.value.meta || [])],
+  })),
+);
 
-const { scrollToTop, scrollDistance } = useScrollToTop()
+const { scrollToTop, scrollDistance } = useScrollToTop();
 
-useSchemaOrg(computed(() => [
-  {
-    '@id': `${orgUrl.value}/#website`,
-    '@type': 'WebSite',
-    name: t('website.name'),
-    url: orgUrl.value,
-  },
-  {
-    '@id': `${orgUrl.value}/#person`,
-    '@type': 'Person',
-    name: 'Neil Lin',
-    url: orgUrl.value,
-  },
-]))
+useSchemaOrg(
+  computed(() => [
+    {
+      "@id": `${orgUrl.value}/#website`,
+      "@type": "WebSite",
+      name: t("website.name"),
+      url: orgUrl.value,
+    },
+    {
+      "@id": `${orgUrl.value}/#person`,
+      "@type": "Person",
+      name: "Neil Lin",
+      url: orgUrl.value,
+    },
+  ]),
+);
 </script>
 
 <style>

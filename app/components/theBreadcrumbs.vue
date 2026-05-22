@@ -16,11 +16,11 @@
 </template>
 
 <script setup lang="ts">
-const localePath = useLocalePath()
+const localePath = useLocalePath();
 
 defineProps<{
-  list: { link?: string; title: string }[]
-}>()
+  list: { link?: string; title: string }[];
+}>();
 </script>
 
 <style scoped>

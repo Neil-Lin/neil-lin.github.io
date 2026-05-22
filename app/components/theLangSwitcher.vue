@@ -21,17 +21,17 @@
 </template>
 
 <script setup lang="ts">
-type LocaleItem = { code: 'zh-Hant-TW' | 'en'; name: string }
+type LocaleItem = { code: "zh-Hant-TW" | "en"; name: string };
 
-const { locale, locales } = useI18n()
-const supportedLocales = locales.value as LocaleItem[]
+const { locale, locales } = useI18n();
+const supportedLocales = locales.value as LocaleItem[];
 
-const route = useRoute()
-const switchLocalePath = useSwitchLocalePath()
+const route = useRoute();
+const switchLocalePath = useSwitchLocalePath();
 
 async function onLocaleChanged(event: Event) {
-  const target = event.target as HTMLInputElement
-  const newPath = switchLocalePath(target.value as 'zh-Hant-TW' | 'en')
-  await navigateTo({ path: newPath, query: route.query })
+  const target = event.target as HTMLInputElement;
+  const newPath = switchLocalePath(target.value as "zh-Hant-TW" | "en");
+  await navigateTo({ path: newPath, query: route.query });
 }
 </script>

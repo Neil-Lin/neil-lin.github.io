@@ -22,9 +22,9 @@
 
 <script setup lang="ts">
 defineProps<{
-  posts: { title: string; url: string; description: string }[]
-  emptyText?: string
-}>()
+  posts: { title: string; url: string; description: string }[];
+  emptyText?: string;
+}>();
 </script>
 
 <style scoped>

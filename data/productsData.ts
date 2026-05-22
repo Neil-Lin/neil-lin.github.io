@@ -1,4 +1,4 @@
-import type { Product } from './types'
+import type { Product } from "./types";
 
 export const productsData: Product[] = [
   {
@@ -2066,7 +2066,8 @@ export const productsData: Product[] = [
       en: [
         {
           src: "/images/dahtahdoc-thumbnail.png",
-          figcaption: "DahTahDoc - Built for document collaboration and communication efficiency",
+          figcaption:
+            "DahTahDoc - Built for document collaboration and communication efficiency",
         },
       ],
     },
@@ -2080,7 +2081,8 @@ export const productsData: Product[] = [
       en: [
         {
           src: "/images/dahtahdoc-thumbnail.webp",
-          figcaption: "DahTahDoc - Built for document collaboration and communication efficiency",
+          figcaption:
+            "DahTahDoc - Built for document collaboration and communication efficiency",
         },
       ],
     },
@@ -2136,7 +2138,13 @@ export const productsData: Product[] = [
       en: ["UI", "UX", "Layout", "PM", "Vibe Coding"],
     },
     tools: {
-      "zh-Hant-TW": ["Antigravity", "Cloudflare", "Supabase", "Render", "Gitlab"],
+      "zh-Hant-TW": [
+        "Antigravity",
+        "Cloudflare",
+        "Supabase",
+        "Render",
+        "Gitlab",
+      ],
       en: ["Antigravity", "Cloudflare", "Supabase", "Render", "Gitlab"],
     },
     research: {
@@ -2155,15 +2163,13 @@ export const productsData: Product[] = [
       "zh-Hant-TW": [
         {
           src: "/images/dahtahdoc-system.webp",
-          figcaption:
-            "產品示意圖",
+          figcaption: "產品示意圖",
         },
       ],
       en: [
         {
           src: "/images/dahtahdoc-system.webp",
-          figcaption:
-            "Product screenshot",
+          figcaption: "Product screenshot",
         },
       ],
     },

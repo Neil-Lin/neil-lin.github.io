@@ -36,7 +36,9 @@
         v-if="groupedList.length > 0"
         :class="[
           'group-list',
-          sortorder === 'desc' ? 'group-list--top-space' : 'group-list--bottom-space',
+          sortorder === 'desc'
+            ? 'group-list--top-space'
+            : 'group-list--bottom-space',
         ]"
         aria-live="polite"
       >
@@ -55,50 +57,79 @@
               <PortfolioCard
                 :clickable="Boolean(project.clickable && project.link)"
                 :to="project.link"
-                :title="project.clickable && project.link
-                  ? `${$t('action.openWindow')} ${$t('action.goTo')}${project.name[$i18n.locale]}`
-                  : undefined"
+                :title="
+                  project.clickable && project.link
+                    ? `${$t('action.openWindow')} ${$t('action.goTo')}${project.name[$i18n.locale]}`
+                    : undefined
+                "
                 :external="true"
               >
-                <h3 class="portfolio-title">{{ project.name[$i18n.locale] }}</h3>
+                <h3 class="portfolio-title">
+                  {{ project.name[$i18n.locale] }}
+                </h3>
                 <div class="portfolio-content">
                   <img
-                    v-if="project.heroImage && project.heroImage[$i18n.locale].length > 0"
+                    v-if="
+                      project.heroImage &&
+                      project.heroImage[$i18n.locale].length > 0
+                    "
                     :src="project.heroImage[$i18n.locale][0]!.src"
                     :alt="project.clickable ? '' : project.name[$i18n.locale]"
                     class="portfolio-img"
                     :fetchpriority="idx === 0 ? 'high' : undefined"
                   />
-                  <div v-if="project.intro?.[$i18n.locale]" class="portfolio-intro">
+                  <div
+                    v-if="project.intro?.[$i18n.locale]"
+                    class="portfolio-intro"
+                  >
                     <p>{{ project.intro[$i18n.locale] }}</p>
                   </div>
                 </div>
                 <div class="portfolio-footer">
-                  <span class="visually-hidden">{{ $t("words.relatedTags") }}：</span>
+                  <span class="visually-hidden"
+                    >{{ $t("words.relatedTags") }}：</span
+                  >
                   <span class="tag">
-                    <span class="visually-hidden">{{ $t("words.startToEnd") }}：</span>
+                    <span class="visually-hidden"
+                      >{{ $t("words.startToEnd") }}：</span
+                    >
                     {{ formatYearRange(project.yearRange) }}
                   </span>
                   <span
-                    v-if="project.platform.includes('web') || project.platform.includes('app')"
+                    v-if="
+                      project.platform.includes('web') ||
+                      project.platform.includes('app')
+                    "
                     class="visually-hidden"
-                  >{{ $t("words.platformType") }}：</span>
-                  <span v-if="project.platform.includes('web')" class="tag">Web</span>
-                  <span v-if="project.platform.includes('app')" class="tag">App</span>
-                  <span v-if="project.roles[$i18n.locale].length > 0" class="visually-hidden">
+                    >{{ $t("words.platformType") }}：</span
+                  >
+                  <span v-if="project.platform.includes('web')" class="tag"
+                    >Web</span
+                  >
+                  <span v-if="project.platform.includes('app')" class="tag"
+                    >App</span
+                  >
+                  <span
+                    v-if="project.roles[$i18n.locale].length > 0"
+                    class="visually-hidden"
+                  >
                     {{ $t("words.roles") }}：
                   </span>
                   <span
                     v-for="(item, index) in project.roles[$i18n.locale]"
                     :key="index"
                     class="tag"
-                  >{{ item }}</span>
+                    >{{ item }}</span
+                  >
                 </div>
               </PortfolioCard>
             </li>
           </ul>
           <div
-            :class="['group-year', sortorder === 'desc' ? 'group-year--bottom' : 'group-year--top']"
+            :class="[
+              'group-year',
+              sortorder === 'desc' ? 'group-year--bottom' : 'group-year--top',
+            ]"
           >
             {{ group.year }}
           </div>
@@ -110,86 +141,108 @@
 </template>
 
 <script setup lang="ts">
-import projectsData from '~~/data/projectsData'
+import { OG_IMAGE_CACHE_KEY } from "~~/app/constants/ogImage";
 
-const { t, locale } = useI18n()
-const route = useRoute()
-const runtimeConfig = useRuntimeConfig()
-const orgUrl = useOrgUrl()
+import projectsData from "~~/data/projectsData";
 
-const pageTitle = computed(() => t('words.projects'))
-const pageDescription = computed(() => t('words.careerWorks'))
+const { t, locale } = useI18n();
+const route = useRoute();
+const runtimeConfig = useRuntimeConfig();
 
-definePageMeta({ scrollToTop: false })
+const pageTitle = computed(() => t("words.projects"));
+const pageDescription = computed(() => t("words.careerWorks"));
 
-const { sortorder, selectedRole, selectedPlatform, uniqueRoles, groupedList, formatYearRange } =
-  usePortfolioFilter(projectsData)
+definePageMeta({ scrollToTop: false });
 
-useSchemaOrg(computed(() => [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    '@id': `${runtimeConfig.public.baseUrl}${route.path}#projectsList`,
-    name: t('words.portfolio'),
-    description: pageDescription.value,
-    url: `${runtimeConfig.public.baseUrl}${route.path}`,
-    numberOfItems: projectsData.length,
-    itemListElement: projectsData.map((work, index) => {
-      const hasExternal = Boolean(work.link) && work.clickable !== false
-      const imageSrc = work.heroImage?.[locale.value]?.[0]?.src
-        ? `${runtimeConfig.public.baseUrl}${work.heroImage[locale.value][0]!.src}`
-        : undefined
+const {
+  sortorder,
+  selectedRole,
+  selectedPlatform,
+  uniqueRoles,
+  groupedList,
+  formatYearRange,
+} = usePortfolioFilter(projectsData);
 
-      const creativeWork: Record<string, unknown> = {
-        '@type': 'CreativeWork',
-        '@id': `${runtimeConfig.public.baseUrl}${route.path}#${work.slug}`,
-        name: work.name?.[locale.value] ?? work.name?.['zh-Hant-TW'] ?? '',
-        description: work.intro?.[locale.value] || '',
-        ...(imageSrc ? { image: imageSrc } : {}),
-        creator: { '@type': 'Person', name: 'Neil', url: runtimeConfig.public.baseUrl },
-        datePublished: work.yearRange?.start,
-        dateModified: work.yearRange?.end ?? new Date().getFullYear(),
-        inLanguage: locale.value,
-        keywords: Array.isArray(work.roles?.[locale.value])
-          ? work.roles[locale.value].join(', ')
-          : '',
-        audience: { '@type': 'EducationalAudience', educationalRole: 'Designer, Developer' },
-      }
+useSchemaOrg(
+  computed(() => [
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "@id": `${runtimeConfig.public.baseUrl}${route.path}#projectsList`,
+      name: t("words.portfolio"),
+      description: pageDescription.value,
+      url: `${runtimeConfig.public.baseUrl}${route.path}`,
+      numberOfItems: projectsData.length,
+      itemListElement: projectsData.map((work, index) => {
+        const hasExternal = Boolean(work.link) && work.clickable !== false;
+        const imageSrc = work.heroImage?.[locale.value]?.[0]?.src
+          ? `${runtimeConfig.public.baseUrl}${work.heroImage[locale.value][0]!.src}`
+          : undefined;
 
-      if (hasExternal && work.link) {
-        creativeWork.url = work.link
-      } else {
-        creativeWork.creativeWorkStatus = 'Archived'
-      }
+        const creativeWork: Record<string, unknown> = {
+          "@type": "CreativeWork",
+          "@id": `${runtimeConfig.public.baseUrl}${route.path}#${work.slug}`,
+          name: work.name?.[locale.value] ?? work.name?.["zh-Hant-TW"] ?? "",
+          description: work.intro?.[locale.value] || "",
+          ...(imageSrc ? { image: imageSrc } : {}),
+          creator: {
+            "@type": "Person",
+            name: "Neil",
+            url: runtimeConfig.public.baseUrl,
+          },
+          datePublished: work.yearRange?.start,
+          dateModified: work.yearRange?.end ?? new Date().getFullYear(),
+          inLanguage: locale.value,
+          keywords: Array.isArray(work.roles?.[locale.value])
+            ? work.roles[locale.value].join(", ")
+            : "",
+          audience: {
+            "@type": "EducationalAudience",
+            educationalRole: "Designer, Developer",
+          },
+        };
 
-      const listItem: Record<string, unknown> = {
-        '@type': 'ListItem',
-        position: index + 1,
-        item: creativeWork,
-      }
-      if (hasExternal && work.link) listItem.url = work.link
+        if (hasExternal && work.link) {
+          creativeWork.url = work.link;
+        } else {
+          creativeWork.creativeWorkStatus = "Archived";
+        }
 
-      return listItem
-    }),
-  },
-]))
+        const listItem: Record<string, unknown> = {
+          "@type": "ListItem",
+          position: index + 1,
+          item: creativeWork,
+        };
+        if (hasExternal && work.link) listItem.url = work.link;
 
-usePageSeoMeta(pageTitle, pageDescription)
+        return listItem;
+      }),
+    },
+  ]),
+);
+
+usePageSeoMeta(pageTitle, pageDescription);
 
 const breadCrumbsList = computed(() => [
-  { link: '/', title: t('action.goToHomePage') },
-  { link: '', title: t('mainMenu.projects') },
-])
+  { link: "/", title: t("action.goToHomePage") },
+  { link: "", title: t("mainMenu.projects") },
+]);
 
 watchEffect(() => {
-  if (breadCrumbsList.value.length > 0) useBreadcrumbSchema(breadCrumbsList.value)
-})
+  if (breadCrumbsList.value.length > 0)
+    useBreadcrumbSchema(breadCrumbsList.value);
+});
 
-defineOgImage('CustomTemplate', {
-  cacheKey: 'noto-tc-v2',
-  title: pageTitle.value + ' - ' + t('website.name'),
-  description: pageDescription.value,
-})
+defineOgImage(
+  "CustomTemplate",
+  {
+    title: pageTitle.value + " - " + t("website.name"),
+    description: pageDescription.value,
+  },
+  {
+    cacheKey: OG_IMAGE_CACHE_KEY,
+  },
+);
 </script>
 
 <style scoped>

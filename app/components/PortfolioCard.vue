@@ -15,9 +15,9 @@
 
 <script setup lang="ts">
 defineProps<{
-  clickable: boolean
-  to?: string | object
-  title?: string
-  external?: boolean
-}>()
+  clickable: boolean;
+  to?: string | object;
+  title?: string;
+  external?: boolean;
+}>();
 </script>

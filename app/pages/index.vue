@@ -125,18 +125,22 @@
 </template>
 
 <script setup lang="ts">
-const { locale, t } = useI18n()
-const pageTitle = computed(() => t('words.home'))
-const pageDescription = computed(() => t('intro.des3'))
+import { OG_IMAGE_CACHE_KEY } from "~~/app/constants/ogImage";
 
-usePageSeoMeta(pageTitle, pageDescription)
+const { locale, t } = useI18n();
+const pageTitle = computed(() => t("words.home"));
+const pageDescription = computed(() => t("intro.des3"));
 
-useSchemaOrg(computed(() => [
-  {
-    '@type': 'ProfilePage',
-    description: t('intro.des3'),
-  },
-]))
+usePageSeoMeta(pageTitle, pageDescription);
+
+useSchemaOrg(
+  computed(() => [
+    {
+      "@type": "ProfilePage",
+      description: t("intro.des3"),
+    },
+  ]),
+);
 
 const experienceList = computed(() => [
   {
@@ -169,7 +173,7 @@ let audioIo: IntersectionObserver | null = null;
 const videoRef = ref<HTMLVideoElement | null>(null);
 const videoLoaded = ref(false);
 
-const getVideoSrc = () => "/video/portfolio-by-notebooklm.mp4"
+const getVideoSrc = () => "/video/portfolio-by-notebooklm.mp4";
 
 let videoIo: IntersectionObserver | null = null;
 
@@ -185,7 +189,7 @@ onMounted(() => {
         audioLoaded.value = true;
       }
     },
-    { threshold: 0.1 }
+    { threshold: 0.1 },
   );
 
   if (audioRef.value) audioIo.observe(audioRef.value);
@@ -208,7 +212,7 @@ onMounted(() => {
       videoRef.value.load(); // 尊重 preload="none"
       videoLoaded.value = true;
     },
-    { threshold: 0.1 }
+    { threshold: 0.1 },
   );
   videoIo.observe(videoRef.value);
 });
@@ -229,14 +233,19 @@ watch(
       audioRef.value.load();
       if (wasPlaying) audioRef.value.play().catch(() => {});
     }
-  }
+  },
 );
 
-defineOgImage('CustomTemplate', {
-  cacheKey: 'noto-tc-v2',
-  title: pageTitle.value + ' - ' + t('website.name'),
-  description: pageDescription.value,
-})
+defineOgImage(
+  "CustomTemplate",
+  {
+    title: pageTitle.value + " - " + t("website.name"),
+    description: pageDescription.value,
+  },
+  {
+    cacheKey: OG_IMAGE_CACHE_KEY,
+  },
+);
 </script>
 
 <style scoped>

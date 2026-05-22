@@ -182,46 +182,54 @@
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n()
-const localePath = useLocalePath()
+import { OG_IMAGE_CACHE_KEY } from "~~/app/constants/ogImage";
 
-const pageTitle = computed(() => t('mainMenu.sitemap'))
-const pageDescription = computed(() => t('des.sitemap'))
+const { t } = useI18n();
+const localePath = useLocalePath();
 
-usePageSeoMeta(pageTitle, pageDescription)
+const pageTitle = computed(() => t("mainMenu.sitemap"));
+const pageDescription = computed(() => t("des.sitemap"));
+
+usePageSeoMeta(pageTitle, pageDescription);
 
 const breadCrumbsList = computed(() => [
-  { link: '/', title: t('action.goToHomePage') },
-  { link: '', title: t('mainMenu.sitemap') },
-])
+  { link: "/", title: t("action.goToHomePage") },
+  { link: "", title: t("mainMenu.sitemap") },
+]);
 
-const checkScrollable = ref<HTMLElement | null>(null)
-const tabIndex = ref<number | undefined>(undefined)
+const checkScrollable = ref<HTMLElement | null>(null);
+const tabIndex = ref<number | undefined>(undefined);
 const checkTabAble = () => {
-  const el = checkScrollable.value
+  const el = checkScrollable.value;
   if (el && el.scrollWidth > 0 && el.scrollWidth > el.clientWidth) {
-    tabIndex.value = 0
+    tabIndex.value = 0;
   } else {
-    tabIndex.value = undefined
+    tabIndex.value = undefined;
   }
-}
+};
 onMounted(() => {
-  checkTabAble()
-  window.addEventListener('resize', checkTabAble)
-})
+  checkTabAble();
+  window.addEventListener("resize", checkTabAble);
+});
 onUnmounted(() => {
-  window.removeEventListener('resize', checkTabAble)
-})
+  window.removeEventListener("resize", checkTabAble);
+});
 
 watchEffect(() => {
-  if (breadCrumbsList.value.length > 0) useBreadcrumbSchema(breadCrumbsList.value)
-})
+  if (breadCrumbsList.value.length > 0)
+    useBreadcrumbSchema(breadCrumbsList.value);
+});
 
-defineOgImage('CustomTemplate', {
-  cacheKey: 'noto-tc-v2',
-  title: pageTitle.value + ' - ' + t('website.name'),
-  description: pageDescription.value,
-})
+defineOgImage(
+  "CustomTemplate",
+  {
+    title: pageTitle.value + " - " + t("website.name"),
+    description: pageDescription.value,
+  },
+  {
+    cacheKey: OG_IMAGE_CACHE_KEY,
+  },
+);
 </script>
 
 <style scoped>

@@ -17,13 +17,13 @@
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n()
+const { t } = useI18n();
 
 defineProps<{
-  error: { statusCode: number; statusMessage?: string; message?: string }
-}>()
+  error: { statusCode: number; statusMessage?: string; message?: string };
+}>();
 
 onBeforeUnmount(() => {
-  clearError({ redirect: '/' })
-})
+  clearError({ redirect: "/" });
+});
 </script>

@@ -38,7 +38,9 @@
           v-if="groupedList.length > 0"
           :class="[
             'group-list',
-            sortorder === 'desc' ? 'group-list--top-space' : 'group-list--bottom-space',
+            sortorder === 'desc'
+              ? 'group-list--top-space'
+              : 'group-list--bottom-space',
           ]"
           aria-live="polite"
         >
@@ -50,57 +52,93 @@
           >
             <ul class="portfolio-list">
               <li
-                v-for="(product, idx) in group.items"
-                :key="product.id"
+                v-for="(productItem, idx) in group.items"
+                :key="productItem.id"
                 class="portfolio-item animation-fade-out"
               >
                 <PortfolioCard
-                  :clickable="product.clickable"
-                  :to="product.clickable ? { path: localePath(`/products/${encodeURIComponent(product.slug)}`) } : undefined"
-                  :title="product.name[$i18n.locale]"
-                  @click="product.clickable && onOpenProduct(product.slug)"
+                  :clickable="productItem.clickable"
+                  :to="
+                    productItem.clickable
+                      ? {
+                          path: localePath(
+                            `/products/${encodeURIComponent(productItem.slug)}`,
+                          ),
+                        }
+                      : undefined
+                  "
+                  :title="productItem.name[$i18n.locale]"
+                  @click="
+                    productItem.clickable && onOpenProduct(productItem.slug)
+                  "
                 >
                   <h3 class="portfolio-title">
-                    {{ product.name[$i18n.locale] }}
+                    {{ productItem.name[$i18n.locale] }}
                   </h3>
                   <div class="portfolio-content">
                     <img
-                      v-if="product.heroImage[$i18n.locale]?.[0]?.src"
-                      :src="product.heroImage[$i18n.locale][0]!.src"
+                      v-if="productItem.heroImage[$i18n.locale]?.[0]?.src"
+                      :src="productItem.heroImage[$i18n.locale][0]!.src"
                       alt=""
                       class="portfolio-img"
                       :fetchpriority="idx === 0 ? 'high' : undefined"
                     />
-                    <div v-if="product.intro[$i18n.locale]" class="portfolio-intro">
-                      <p>{{ product.intro[$i18n.locale] }}</p>
+                    <div
+                      v-if="productItem.intro[$i18n.locale]"
+                      class="portfolio-intro"
+                    >
+                      <p>{{ productItem.intro[$i18n.locale] }}</p>
                     </div>
                   </div>
                   <div class="portfolio-footer">
-                    <span class="visually-hidden">{{ $t("words.relatedTags") }}：</span>
+                    <span class="visually-hidden"
+                      >{{ $t("words.relatedTags") }}：</span
+                    >
                     <span class="tag">
-                      <span class="visually-hidden">{{ $t("words.startToEnd") }}：</span>
-                      {{ formatYearRange(product.yearRange) }}
+                      <span class="visually-hidden"
+                        >{{ $t("words.startToEnd") }}：</span
+                      >
+                      {{ formatYearRange(productItem.yearRange) }}
                     </span>
                     <span
-                      v-if="product.platform.includes('web') || product.platform.includes('app')"
+                      v-if="
+                        productItem.platform.includes('web') ||
+                        productItem.platform.includes('app')
+                      "
                       class="visually-hidden"
-                    >{{ $t("words.platformType") }}：</span>
-                    <span v-if="product.platform.includes('web')" class="tag">Web</span>
-                    <span v-if="product.platform.includes('app')" class="tag">App</span>
-                    <span v-if="product.roles[$i18n.locale].length > 0" class="visually-hidden">
+                      >{{ $t("words.platformType") }}：</span
+                    >
+                    <span
+                      v-if="productItem.platform.includes('web')"
+                      class="tag"
+                      >Web</span
+                    >
+                    <span
+                      v-if="productItem.platform.includes('app')"
+                      class="tag"
+                      >App</span
+                    >
+                    <span
+                      v-if="productItem.roles[$i18n.locale].length > 0"
+                      class="visually-hidden"
+                    >
                       {{ $t("words.roles") }}：
                     </span>
                     <span
-                      v-for="(item, index) in product.roles[$i18n.locale]"
+                      v-for="(item, index) in productItem.roles[$i18n.locale]"
                       :key="index"
                       class="tag"
-                    >{{ item }}</span>
+                      >{{ item }}</span
+                    >
                   </div>
                 </PortfolioCard>
               </li>
             </ul>
             <div
-              :class="['group-year', sortorder === 'desc' ? 'group-year--bottom' : 'group-year--top']"
+              :class="[
+                'group-year',
+                sortorder === 'desc' ? 'group-year--bottom' : 'group-year--top',
+              ]"
             >
               {{ group.year }}
             </div>
@@ -111,7 +149,11 @@
 
       <template v-if="route.params.name && isModal">
         <dialog ref="lightBox" @cancel.prevent="closeProduct">
-          <button type="button" class="btn btn--close-dialog" @click="closeProduct">
+          <button
+            type="button"
+            class="btn btn--close-dialog"
+            @click="closeProduct"
+          >
             {{ t("action.closeDialog") }}
           </button>
           <NuxtPage />
@@ -125,76 +167,86 @@
 </template>
 
 <script setup lang="ts">
-import productsData from '~~/data/productsData'
+import { OG_IMAGE_CACHE_KEY } from "~~/app/constants/ogImage";
+import productsData from "~~/data/productsData";
 
-const { t, locale } = useI18n()
-const router = useRouter()
-const route = useRoute()
-const localePath = useLocalePath()
-const lightBox = ref<HTMLDialogElement | null>(null)
-const runtimeConfig = useRuntimeConfig()
-const orgUrl = useOrgUrl()
+const { t, locale } = useI18n();
+const router = useRouter();
+const route = useRoute();
+const localePath = useLocalePath();
+const lightBox = ref<HTMLDialogElement | null>(null);
+const runtimeConfig = useRuntimeConfig();
+const orgUrl = useOrgUrl();
+const clickableProducts = productsData.filter((work) => work.clickable);
 
-const pageTitle = computed(() => t('words.products'))
-const pageDescription = computed(() => t('words.careerWorks'))
+const pageTitle = computed(() => t("words.products"));
+const pageDescription = computed(() => t("words.careerWorks"));
 
-definePageMeta({ scrollToTop: false })
+definePageMeta({ scrollToTop: false });
 
 // 燈箱狀態（不寫進 URL，直接用 app state）
-const productModalOpen = useState('productModalOpen', () => false)
-const savedScrollY = useState('savedScrollY', () => 0)
+const productModalOpen = useState("productModalOpen", () => false);
+const savedScrollY = useState("savedScrollY", () => 0);
 
-const isModal = computed(() => Boolean(route.params.name) && productModalOpen.value)
+const isModal = computed(
+  () => Boolean(route.params.name) && productModalOpen.value,
+);
 
-const { sortorder, selectedRole, selectedPlatform, uniqueRoles, groupedList, formatYearRange } =
-  usePortfolioFilter(productsData)
+const {
+  sortorder,
+  selectedRole,
+  selectedPlatform,
+  uniqueRoles,
+  groupedList,
+  formatYearRange,
+} = usePortfolioFilter(productsData);
 
 const onOpenProduct = (slug: string) => {
-  savedScrollY.value = window.scrollY
-  productModalOpen.value = true
-  router.push({ path: localePath(`/products/${encodeURIComponent(slug)}`) })
-}
+  savedScrollY.value = window.scrollY;
+  productModalOpen.value = true;
+  router.push({ path: localePath(`/products/${encodeURIComponent(slug)}`) });
+};
 
 const closeProduct = () => {
-  if (!lightBox.value) return
-  lightBox.value.close()
+  if (!lightBox.value) return;
+  lightBox.value.close();
   setTimeout(async () => {
-    productModalOpen.value = false
+    productModalOpen.value = false;
     await router.replace({
-      path: localePath('/products'),
+      path: localePath("/products"),
       query: {
         role: selectedRole.value || undefined,
         platform: selectedPlatform.value || undefined,
         sortorder: sortorder.value || undefined,
       },
-    })
-    window.scrollTo(0, savedScrollY.value)
-  }, 300)
-}
+    });
+    window.scrollTo(0, savedScrollY.value);
+  }, 300);
+};
 
 // 瀏覽器上一頁關閉燈箱時，重置 state
 watch(
   () => route.params.name,
   (name) => {
     if (!name) {
-      productModalOpen.value = false
-      lightBox.value?.close()
+      productModalOpen.value = false;
+      lightBox.value?.close();
     }
-  }
-)
+  },
+);
 
 watch(isModal, async (modal) => {
   if (modal) {
-    await nextTick()
-    lightBox.value?.showModal()
+    await nextTick();
+    lightBox.value?.showModal();
   }
-})
+});
 
 onMounted(() => {
   if (isModal.value) {
-    lightBox.value?.showModal()
+    lightBox.value?.showModal();
   }
-})
+});
 
 // Schema.org：只在列表頁輸出，詳細頁由 [name].vue 負責
 useSchemaOrg(
@@ -203,71 +255,82 @@ useSchemaOrg(
       ? []
       : [
           {
-            '@type': 'CollectionPage',
-            '@id': `${runtimeConfig.public.baseUrl}${route.path}#collection`,
-            name: t('words.portfolio'),
+            "@type": "CollectionPage",
+            "@id": `${runtimeConfig.public.baseUrl}${route.path}#collection`,
+            name: t("words.portfolio"),
             description: pageDescription.value,
             url: `${runtimeConfig.public.baseUrl}${route.path}`,
             mainEntity: {
-              '@type': 'ItemList',
-              '@id': `${runtimeConfig.public.baseUrl}${route.path}#productsList`,
-              numberOfItems: productsData.length,
-              itemListElement: productsData.map((work, index) => ({
-                '@type': 'ListItem',
+              "@type": "ItemList",
+              "@id": `${runtimeConfig.public.baseUrl}${route.path}#productsList`,
+              numberOfItems: clickableProducts.length,
+              itemListElement: clickableProducts.map((work, index) => ({
+                "@type": "ListItem",
                 position: index + 1,
                 url: `${orgUrl.value}/products/${work.slug}`,
                 item: {
-                  '@type': 'CreativeWork',
-                  '@id': `${orgUrl.value}/products/${work.slug}#creativework`,
+                  "@type": "CreativeWork",
+                  "@id": `${orgUrl.value}/products/${work.slug}#creativework`,
                   name: work.name[locale.value],
-                  description: work.intro[locale.value] || '',
+                  description: work.intro[locale.value] || "",
                   image: `${runtimeConfig.public.baseUrl}${work.schemaImage[locale.value][0]?.src}`,
-                  creator: { '@type': 'Person', name: 'Neil', url: orgUrl.value },
+                  creator: {
+                    "@type": "Person",
+                    name: "Neil",
+                    url: orgUrl.value,
+                  },
                   datePublished: work.yearRange.start,
                   dateModified: work.yearRange.end ?? new Date().getFullYear(),
                   url: `${orgUrl.value}/products/${work.slug}`,
                   inLanguage: locale.value,
-                  keywords: work.roles[locale.value].join(', '),
+                  keywords: work.roles[locale.value].join(", "),
                 },
               })),
             },
           },
-        ]
-  )
-)
+        ],
+  ),
+);
 
-usePageSeoMeta(pageTitle, pageDescription)
+usePageSeoMeta(pageTitle, pageDescription);
 
 const slug = computed(() => {
-  const name = route.params.name
-  return name ? decodeURIComponent(Array.isArray(name) ? (name[0] ?? '') : name) : ''
-})
-const product = computed(() => productsData.find((p) => p.slug === slug.value))
+  const name = route.params.name;
+  return name
+    ? decodeURIComponent(Array.isArray(name) ? (name[0] ?? "") : name)
+    : "";
+});
+const product = computed(() => productsData.find((p) => p.slug === slug.value));
 
 const breadcrumbs = computed(() => {
   if (slug.value && product.value) {
     return [
-      { link: '/', title: String(t('action.goToHomePage')) },
-      { link: '/products', title: String(t('mainMenu.products')) },
+      { link: "/", title: String(t("action.goToHomePage")) },
+      { link: "/products", title: String(t("mainMenu.products")) },
       { title: String(product.value.name[locale.value] || slug.value) },
-    ]
+    ];
   }
   return [
-    { link: '/', title: String(t('action.goToHomePage')) },
-    { title: String(t('mainMenu.products')) },
-  ]
-})
+    { link: "/", title: String(t("action.goToHomePage")) },
+    { title: String(t("mainMenu.products")) },
+  ];
+});
 
 watchEffect(() => {
-  if (breadcrumbs.value.length > 0) useBreadcrumbSchema(breadcrumbs.value)
-})
+  if (breadcrumbs.value.length > 0) useBreadcrumbSchema(breadcrumbs.value);
+});
 
 if (!route.params.name) {
-  defineOgImage('CustomTemplate', {
-    cacheKey: 'noto-tc-v2',
-    title: pageTitle.value + ' - ' + t('website.name'),
-    description: pageDescription.value,
-  })
+  defineOgImage(
+    "CustomTemplate",
+    {
+      title: pageTitle.value + " - " + t("website.name"),
+      description: pageDescription.value,
+    },
+    {
+      cacheKey: OG_IMAGE_CACHE_KEY,
+    },
+  );
 }
 </script>
 

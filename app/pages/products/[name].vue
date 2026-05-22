@@ -129,10 +129,7 @@
       <div v-if="product.videos">
         <div v-for="(item, index) in product.videos[$i18n.locale]" :key="index">
           <video :title="item.title" controls>
-            <source
-              :src="`${item.src}`"
-              type="video/mp4"
-            />
+            <source :src="`${item.src}`" type="video/mp4" />
             您的瀏覽器沒有支援 / Your browser does not support the video tag.
           </video>
         </div>
@@ -190,69 +187,76 @@
 </template>
 
 <script setup lang="ts">
-import productsData from '~~/data/productsData'
+import productsData from "~~/data/productsData";
 
-const { t, locale } = useI18n()
-const localePath = useLocalePath()
-const runtimeConfig = useRuntimeConfig()
-const route = useRoute()
+const { t, locale } = useI18n();
+const localePath = useLocalePath();
+const runtimeConfig = useRuntimeConfig();
+const route = useRoute();
 
 const product = computed(() =>
-  productsData.find((p) => p.slug === decodeURIComponent(route.params.name as string))
-)
+  productsData.find(
+    (p) => p.slug === decodeURIComponent(route.params.name as string),
+  ),
+);
 
 const pageTitle = computed(() =>
-  product.value ? product.value.name[locale.value] : t('error.notFound')
-)
+  product.value ? product.value.name[locale.value] : t("error.notFound"),
+);
 const pageDescription = computed(() =>
-  product.value ? product.value.intro[locale.value] : ''
-)
+  product.value ? product.value.intro[locale.value] : "",
+);
 const ogImageUrl = computed(() =>
   product.value
-    ? runtimeConfig.public.baseUrl + product.value.schemaImage[locale.value][0]?.src
-    : ''
-)
+    ? runtimeConfig.public.baseUrl +
+      product.value.schemaImage[locale.value][0]?.src
+    : "",
+);
 
 useHead(
   computed(() => ({
-    link: [{ rel: 'canonical', href: runtimeConfig.public.baseUrl + route.path }],
+    link: [
+      { rel: "canonical", href: runtimeConfig.public.baseUrl + route.path },
+    ],
     meta: [
       {
-        hid: 'keywords',
-        name: 'keywords',
-        content: product.value ? product.value.keywords[locale.value].join(', ') : '',
+        hid: "keywords",
+        name: "keywords",
+        content: product.value
+          ? product.value.keywords[locale.value].join(", ")
+          : "",
       },
     ],
-  }))
-)
+  })),
+);
 
-usePageSeoMeta(pageTitle, pageDescription)
+usePageSeoMeta(pageTitle, pageDescription);
 
 useSeoMeta({
   ogImage: () => ogImageUrl.value,
   twitterImage: () => ogImageUrl.value,
-  twitterCard: 'summary_large_image',
-})
+  twitterCard: "summary_large_image",
+});
 
 useSchemaOrg(
   computed(() => [
     {
-      '@type': 'CreativeWork',
+      "@type": "CreativeWork",
       name: pageTitle.value,
       description: pageDescription.value,
       image: product.value
-        ? runtimeConfig.public.baseUrl + product.value.schemaImage[locale.value][0]?.src
-        : '',
+        ? runtimeConfig.public.baseUrl +
+          product.value.schemaImage[locale.value][0]?.src
+        : "",
       url: runtimeConfig.public.baseUrl + route.path,
-      author: { '@type': 'Person', name: 'Neil Lin' },
+      author: { "@type": "Person", name: "Neil Lin" },
       datePublished: product.value?.yearRange.start,
       dateModified: product.value?.yearRange.end ?? new Date().getFullYear(),
       inLanguage: locale.value,
-      keywords: product.value?.keywords[locale.value].join(', ') ?? '',
+      keywords: product.value?.keywords[locale.value].join(", ") ?? "",
     },
-  ])
-)
-
+  ]),
+);
 </script>
 
 <style scoped>
