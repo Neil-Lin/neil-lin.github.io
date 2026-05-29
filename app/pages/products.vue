@@ -207,21 +207,36 @@ const onOpenProduct = (slug: string) => {
   router.push({ path: localePath(`/products/${encodeURIComponent(slug)}`) });
 };
 
-const closeProduct = () => {
+const restoreScrollPosition = async (top: number) => {
+  await nextTick();
+  requestAnimationFrame(() => {
+    const htmlScrollBehavior = document.documentElement.style.scrollBehavior;
+    const bodyScrollBehavior = document.body.style.scrollBehavior;
+
+    document.documentElement.style.scrollBehavior = "auto";
+    document.body.style.scrollBehavior = "auto";
+    window.scrollTo(0, top);
+    document.documentElement.style.scrollBehavior = htmlScrollBehavior;
+    document.body.style.scrollBehavior = bodyScrollBehavior;
+  });
+};
+
+const closeProduct = async () => {
   if (!lightBox.value) return;
+  const scrollY = savedScrollY.value;
+
   lightBox.value.close();
-  setTimeout(async () => {
-    productModalOpen.value = false;
-    await router.replace({
-      path: localePath("/products"),
-      query: {
-        role: selectedRole.value || undefined,
-        platform: selectedPlatform.value || undefined,
-        sortorder: sortorder.value || undefined,
-      },
-    });
-    window.scrollTo(0, savedScrollY.value);
-  }, 300);
+  await router.replace({
+    path: localePath("/products"),
+    query: {
+      role: selectedRole.value || undefined,
+      platform: selectedPlatform.value || undefined,
+      sortorder: sortorder.value || undefined,
+    },
+  });
+
+  productModalOpen.value = false;
+  await restoreScrollPosition(scrollY);
 };
 
 // 瀏覽器上一頁關閉燈箱時，重置 state
