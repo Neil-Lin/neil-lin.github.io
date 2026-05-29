@@ -56,11 +56,15 @@ const { data: mediumData } = useFetch<
 >("/api/medium-posts", { default: () => [] });
 const mediumPosts = computed(() => mediumData.value ?? []);
 
-const vocusPosts = vocusPostsRaw.map((p) => ({
+const vocusPostsFallback = vocusPostsRaw.slice(0, 10).map((p) => ({
   title: p.title,
   url: p.url,
   description: p.abstract,
 }));
+const { data: vocusData } = useFetch<
+  { title: string; url: string; description: string }[]
+>("/api/vocus-posts", { default: () => vocusPostsFallback });
+const vocusPosts = computed(() => vocusData.value ?? vocusPostsFallback);
 
 const breadCrumbsList = computed(() => [
   { link: "/", title: t("action.goToHomePage") },
@@ -93,15 +97,17 @@ useSchemaOrg(
           ? ["https://neil-lin.medium.com/"]
           : ["https://vocus.cc/user/@neil-lin"],
     },
-    ...(locale.value === "en" ? mediumPosts.value : vocusPosts).map((post) => ({
-      "@type": "BlogPosting",
-      headline: post.title,
-      description: post.description,
-      url: post.url,
-      isPartOf: { "@id": `${orgUrl.value}/blog#blog` },
-      author: { "@id": `${orgUrl.value}/#person` },
-      publisher: { "@id": `${orgUrl.value}/#person` },
-    })),
+    ...(locale.value === "en" ? mediumPosts.value : vocusPosts.value).map(
+      (post) => ({
+        "@type": "BlogPosting",
+        headline: post.title,
+        description: post.description,
+        url: post.url,
+        isPartOf: { "@id": `${orgUrl.value}/blog#blog` },
+        author: { "@id": `${orgUrl.value}/#person` },
+        publisher: { "@id": `${orgUrl.value}/#person` },
+      }),
+    ),
   ]),
 );
 
