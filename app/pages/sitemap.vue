@@ -182,8 +182,6 @@
 </template>
 
 <script setup lang="ts">
-import { OG_IMAGE_CACHE_KEY } from "~~/app/constants/ogImage";
-
 const { t } = useI18n();
 const localePath = useLocalePath();
 
@@ -220,16 +218,10 @@ watchEffect(() => {
     useBreadcrumbSchema(breadCrumbsList.value);
 });
 
-defineOgImage(
-  "CustomTemplate",
-  {
-    title: pageTitle.value + " - " + t("website.name"),
-    description: pageDescription.value,
-  },
-  {
-    cacheKey: OG_IMAGE_CACHE_KEY,
-  },
-);
+defineOgImage("CustomTemplate", {
+  title: pageTitle.value + " - " + t("website.name"),
+  description: pageDescription.value,
+});
 </script>
 
 <style scoped>

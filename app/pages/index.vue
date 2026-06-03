@@ -125,8 +125,6 @@
 </template>
 
 <script setup lang="ts">
-import { OG_IMAGE_CACHE_KEY } from "~~/app/constants/ogImage";
-
 const { locale, t } = useI18n();
 const pageTitle = computed(() => t("words.home"));
 const pageDescription = computed(() => t("intro.des3"));
@@ -236,16 +234,10 @@ watch(
   },
 );
 
-defineOgImage(
-  "CustomTemplate",
-  {
-    title: pageTitle.value + " - " + t("website.name"),
-    description: pageDescription.value,
-  },
-  {
-    cacheKey: OG_IMAGE_CACHE_KEY,
-  },
-);
+defineOgImage("CustomTemplate", {
+  title: pageTitle.value + " - " + t("website.name"),
+  description: pageDescription.value,
+});
 </script>
 
 <style scoped>

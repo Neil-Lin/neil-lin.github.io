@@ -167,7 +167,6 @@
 </template>
 
 <script setup lang="ts">
-import { OG_IMAGE_CACHE_KEY } from "~~/app/constants/ogImage";
 import productsData from "~~/data/productsData";
 
 const { t, locale } = useI18n();
@@ -336,16 +335,10 @@ watchEffect(() => {
 });
 
 if (!route.params.name) {
-  defineOgImage(
-    "CustomTemplate",
-    {
-      title: pageTitle.value + " - " + t("website.name"),
-      description: pageDescription.value,
-    },
-    {
-      cacheKey: OG_IMAGE_CACHE_KEY,
-    },
-  );
+  defineOgImage("CustomTemplate", {
+    title: pageTitle.value + " - " + t("website.name"),
+    description: pageDescription.value,
+  });
 }
 </script>
 
