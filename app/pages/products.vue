@@ -180,6 +180,8 @@ const clickableProducts = productsData.filter((work) => work.clickable);
 
 const pageTitle = computed(() => t("words.products"));
 const pageDescription = computed(() => t("words.careerWorks"));
+const getProductDateModified = (updatedAt?: string, fallbackYear?: number) =>
+  updatedAt ?? fallbackYear ?? new Date().getFullYear();
 
 definePageMeta({ scrollToTop: false });
 
@@ -294,7 +296,10 @@ useSchemaOrg(
                     url: orgUrl.value,
                   },
                   datePublished: work.yearRange.start,
-                  dateModified: work.yearRange.end ?? new Date().getFullYear(),
+                  dateModified: getProductDateModified(
+                    work.updatedAt,
+                    work.yearRange.end ?? work.yearRange.start,
+                  ),
                   url: `${orgUrl.value}/products/${work.slug}`,
                   inLanguage: locale.value,
                   keywords: work.roles[locale.value].join(", "),

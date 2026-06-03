@@ -29,6 +29,8 @@ export default defineSitemapEventHandler(async () => {
   const clickableProducts = productsData.filter((p) => p.clickable);
   const config = useRuntimeConfig();
   const lastmod = new Date(config.public.buildDate as string).toISOString();
+  const getLastmod = (updatedAt?: string) =>
+    new Date(updatedAt ?? (config.public.buildDate as string)).toISOString();
   const staticRoutes: SitemapEntry[] = [
     "/",
     "/products",
@@ -78,9 +80,7 @@ export default defineSitemapEventHandler(async () => {
 
     return {
       loc: `/products/${p.slug}`,
-      lastmod: p.updatedAt
-        ? new Date(config.public.buildDate as string).toISOString()
-        : undefined,
+      lastmod: getLastmod(p.updatedAt),
       _i18nTransform: true,
       images,
       videos,

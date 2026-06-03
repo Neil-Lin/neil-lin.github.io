@@ -811,7 +811,7 @@ export const projectsData: Project[] = [
   },
   {
     id: 29,
-    slug: "dpp",
+    slug: "gctf",
     clickable: true,
     link: "https://gctftw.org/",
     heroImage: {

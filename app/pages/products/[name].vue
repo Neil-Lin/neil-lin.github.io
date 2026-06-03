@@ -225,6 +225,13 @@ const ogImageUrl = computed(() =>
       product.value.schemaImage[locale.value][0]?.src
     : "",
 );
+const dateModified = computed(() =>
+  product.value
+    ? (product.value.updatedAt ??
+      product.value.yearRange.end ??
+      product.value.yearRange.start)
+    : undefined,
+);
 
 useHead(
   computed(() => ({
@@ -264,7 +271,7 @@ useSchemaOrg(
       url: runtimeConfig.public.baseUrl + route.path,
       author: { "@type": "Person", name: "Neil Lin" },
       datePublished: product.value?.yearRange.start,
-      dateModified: product.value?.yearRange.end ?? new Date().getFullYear(),
+      dateModified: dateModified.value,
       inLanguage: locale.value,
       keywords: product.value?.keywords[locale.value].join(", ") ?? "",
     },

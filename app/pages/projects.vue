@@ -144,8 +144,8 @@
 import projectsData from "~~/data/projectsData";
 
 const { t, locale } = useI18n();
-const route = useRoute();
 const runtimeConfig = useRuntimeConfig();
+const orgUrl = useOrgUrl();
 
 const pageTitle = computed(() => t("words.projects"));
 const pageDescription = computed(() => t("words.careerWorks"));
@@ -164,57 +164,60 @@ const {
 useSchemaOrg(
   computed(() => [
     {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "@id": `${runtimeConfig.public.baseUrl}${route.path}#projectsList`,
-      name: t("words.portfolio"),
+      "@type": "CollectionPage",
+      "@id": `${orgUrl.value}/projects#webpage`,
+      name: pageTitle.value,
       description: pageDescription.value,
-      url: `${runtimeConfig.public.baseUrl}${route.path}`,
-      numberOfItems: projectsData.length,
-      itemListElement: projectsData.map((work, index) => {
-        const hasExternal = Boolean(work.link) && work.clickable !== false;
-        const imageSrc = work.heroImage?.[locale.value]?.[0]?.src
-          ? `${runtimeConfig.public.baseUrl}${work.heroImage[locale.value][0]!.src}`
-          : undefined;
+      url: `${orgUrl.value}/projects`,
+      inLanguage: locale.value,
+      isPartOf: { "@id": `${orgUrl.value}/#website` },
+      mainEntity: {
+        "@type": "ItemList",
+        "@id": `${orgUrl.value}/projects#projectsList`,
+        name: pageTitle.value,
+        numberOfItems: projectsData.length,
+        itemListElement: projectsData.map((work, index) => {
+          const hasExternal = Boolean(work.link) && work.clickable !== false;
+          const imageSrc = work.heroImage?.[locale.value]?.[0]?.src
+            ? `${runtimeConfig.public.baseUrl}${work.heroImage[locale.value][0]!.src}`
+            : undefined;
 
-        const creativeWork: Record<string, unknown> = {
-          "@type": "CreativeWork",
-          "@id": `${runtimeConfig.public.baseUrl}${route.path}#${work.slug}`,
-          name: work.name?.[locale.value] ?? work.name?.["zh-Hant-TW"] ?? "",
-          description: work.intro?.[locale.value] || "",
-          ...(imageSrc ? { image: imageSrc } : {}),
-          creator: {
-            "@type": "Person",
-            name: "Neil",
-            url: runtimeConfig.public.baseUrl,
-          },
-          datePublished: work.yearRange?.start,
-          dateModified: work.yearRange?.end ?? new Date().getFullYear(),
-          inLanguage: locale.value,
-          keywords: Array.isArray(work.roles?.[locale.value])
-            ? work.roles[locale.value].join(", ")
-            : "",
-          audience: {
-            "@type": "EducationalAudience",
-            educationalRole: "Designer, Developer",
-          },
-        };
+          const creativeWork: Record<string, unknown> = {
+            "@type": "CreativeWork",
+            "@id": `${orgUrl.value}/projects#${work.slug}-creativework`,
+            identifier: work.slug,
+            name: work.name?.[locale.value] ?? work.name?.["zh-Hant-TW"] ?? "",
+            description: work.intro?.[locale.value] || "",
+            ...(imageSrc ? { image: imageSrc } : {}),
+            creator: { "@id": `${orgUrl.value}/#person` },
+            datePublished: work.yearRange?.start,
+            dateModified: work.yearRange?.end ?? work.yearRange?.start,
+            inLanguage: locale.value,
+            keywords: Array.isArray(work.roles?.[locale.value])
+              ? work.roles[locale.value].join(", ")
+              : "",
+            audience: {
+              "@type": "EducationalAudience",
+              educationalRole: "Designer, Developer",
+            },
+          };
 
-        if (hasExternal && work.link) {
-          creativeWork.url = work.link;
-        } else {
-          creativeWork.creativeWorkStatus = "Archived";
-        }
+          if (hasExternal && work.link) {
+            creativeWork.url = work.link;
+          } else {
+            creativeWork.creativeWorkStatus = "Archived";
+          }
 
-        const listItem: Record<string, unknown> = {
-          "@type": "ListItem",
-          position: index + 1,
-          item: creativeWork,
-        };
-        if (hasExternal && work.link) listItem.url = work.link;
+          const listItem: Record<string, unknown> = {
+            "@type": "ListItem",
+            position: index + 1,
+            item: creativeWork,
+          };
+          if (hasExternal && work.link) listItem.url = work.link;
 
-        return listItem;
-      }),
+          return listItem;
+        }),
+      },
     },
   ]),
 );
