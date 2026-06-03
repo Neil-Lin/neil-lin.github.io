@@ -1,6 +1,5 @@
 [build.processing.html]
   # Disable Netlify's automatic trailing-slash redirect for directory-style URLs
-  # (e.g. blog/index.html). Without this, Netlify redirects /blog → /blog/,
-  # which conflicts with the /*/ → /:splat rule in _redirects and causes
-  # an infinite redirect loop.
+  # (e.g. blog/index.html). Keep this disabled because Nuxt already emits
+  # canonical URLs without trailing slashes.
   pretty_urls = false
