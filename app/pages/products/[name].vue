@@ -172,31 +172,44 @@
       </div>
     </section>
   </div>
-  <div v-else>
-    <h2>{{ t("error.notFoundTitle") }}</h2>
-    <p>
-      {{ t("error.notFound") }}
-    </p>
-    <nuxt-link
-      :to="localePath('/products')"
-      :title="`${t('error.backToPrudoctList')}`"
-    >
-      {{ t("error.backToPrudoctList") }}
-    </nuxt-link>
-  </div>
 </template>
 
 <script setup lang="ts">
 import productsData from "~~/data/productsData";
 
 const { t, locale } = useI18n();
-const localePath = useLocalePath();
 const runtimeConfig = useRuntimeConfig();
 const route = useRoute();
 
+function getProductSlug(value: unknown): string {
+  const slug = Array.isArray(value) ? value[0] : value;
+  if (typeof slug !== "string") {
+    return "";
+  }
+
+  try {
+    return decodeURIComponent(slug);
+  } catch {
+    return slug;
+  }
+}
+
+function isClickableProductSlug(value: unknown): boolean {
+  const slug = getProductSlug(value);
+  return productsData.some((p) => p.clickable === true && p.slug === slug);
+}
+
+definePageMeta({
+  validate: (route) =>
+    isClickableProductSlug(route.params.name) || {
+      statusCode: 404,
+      statusMessage: "Product not found",
+    },
+});
+
 const product = computed(() =>
   productsData.find(
-    (p) => p.slug === decodeURIComponent(route.params.name as string),
+    (p) => p.clickable === true && p.slug === getProductSlug(route.params.name),
   ),
 );
 

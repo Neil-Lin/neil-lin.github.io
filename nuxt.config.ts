@@ -219,8 +219,9 @@ export default defineNuxtConfig({
   },
 
   robots: {
+    header: false,
     robotsTxt: true,
-    sitemap: `${siteUrl}/sitemap.xml`,
+    sitemap: `${siteUrl}/sitemap_index.xml`,
   },
 
   site: {
@@ -231,6 +232,7 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
+    excludeAppSources: true,
     sources: ["/api/__sitemap__/urls"],
   },
 

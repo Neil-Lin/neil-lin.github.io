@@ -1,5 +1,5 @@
 # Netlify headers configuration
 
 /*
-  Link: </sitemap.xml>; rel="sitemap", </llms.txt>; rel="describedby"
+  Link: <https://neillin.com/sitemap_index.xml>; rel="sitemap", <https://neillin.com/llms.txt>; rel="describedby"
   Vary: Accept

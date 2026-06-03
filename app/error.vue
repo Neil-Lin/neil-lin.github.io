@@ -19,9 +19,16 @@
 <script setup lang="ts">
 const { t } = useI18n();
 
-defineProps<{
+const props = defineProps<{
   error: { statusCode: number; statusMessage?: string; message?: string };
 }>();
+
+useSeoMeta({
+  robots: () =>
+    props.error.statusCode >= 400
+      ? "noindex, follow"
+      : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+});
 
 onBeforeUnmount(() => {
   clearError({ redirect: "/" });

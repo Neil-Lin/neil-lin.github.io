@@ -28,8 +28,22 @@ export default defineSitemapEventHandler(async () => {
 
   const clickableProducts = productsData.filter((p) => p.clickable);
   const config = useRuntimeConfig();
+  const lastmod = new Date(config.public.buildDate as string).toISOString();
+  const staticRoutes: SitemapEntry[] = [
+    "/",
+    "/products",
+    "/projects",
+    "/blog",
+    "/sitemap",
+  ].map((loc) => ({
+    loc,
+    lastmod,
+    _i18nTransform: true,
+    images: [],
+    videos: [],
+  }));
 
-  return clickableProducts.map((p): SitemapEntry => {
+  const productRoutes = clickableProducts.map((p): SitemapEntry => {
     const images: SitemapImage[] = [];
     if (p.images?.["zh-Hant-TW"]) {
       p.images["zh-Hant-TW"].forEach((img, index) => {
@@ -72,4 +86,6 @@ export default defineSitemapEventHandler(async () => {
       videos,
     };
   });
+
+  return [...staticRoutes, ...productRoutes];
 });

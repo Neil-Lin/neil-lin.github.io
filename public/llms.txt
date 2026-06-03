@@ -20,6 +20,6 @@ Neil Lin is a product designer and front-end developer focused on web accessibil
 
 ## Technical
 
-- Sitemap: https://neillin.com/sitemap.xml
+- Sitemap: https://neillin.com/sitemap_index.xml
 - Robots: https://neillin.com/robots.txt
 - This site supports content negotiation: send `Accept: text/markdown` to receive page content as Markdown.
