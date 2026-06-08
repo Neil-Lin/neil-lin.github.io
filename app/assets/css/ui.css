@@ -26,6 +26,10 @@ body {
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
+  @media (prefers-color-scheme: dark) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
