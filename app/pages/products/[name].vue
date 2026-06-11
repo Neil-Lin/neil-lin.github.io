@@ -175,7 +175,7 @@
 </template>
 
 <script setup lang="ts">
-import productsData from "~~/data/productsData";
+import { productsData } from "~~/data/productsData";
 
 const { t, locale } = useI18n();
 const runtimeConfig = useRuntimeConfig();
@@ -240,7 +240,6 @@ useHead(
     ],
     meta: [
       {
-        hid: "keywords",
         name: "keywords",
         content: product.value
           ? product.value.keywords[locale.value].join(", ")

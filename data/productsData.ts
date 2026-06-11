@@ -2198,5 +2198,3 @@ export const productsData: Product[] = [
     updatedAt: "2026-04-11T00:00:01.000Z",
   },
 ];
-
-export default productsData;

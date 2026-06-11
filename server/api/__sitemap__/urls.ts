@@ -23,7 +23,7 @@ interface SitemapEntry {
 }
 
 export default defineSitemapEventHandler(async () => {
-  const { default: productsData }: { default: Product[] } =
+  const { productsData }: { productsData: Product[] } =
     await import("~~/data/productsData");
 
   const clickableProducts = productsData.filter((p) => p.clickable);

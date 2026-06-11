@@ -1,4 +1,34 @@
-export default [
+export const vocusPosts = [
+  {
+    title: "全球網頁無障礙制度設計：各國法規、公私部門執行工具與驅動力比較",
+    abstract:
+      "本文深入剖析臺灣、美國、英國、澳洲、韓國、日本、印度、歐盟（德、法、西、葡、奧、比、荷）及瑞士共十六個法域的網頁無障礙制度設計，探討各國透過何種「力量」實踐無障礙。透過「公部門/民間」與「六種制度工具」的雙軸分析，揭示各國政策差異。",
+    url: "https://vocus.cc/article/6a26f712fd89780001c869bd",
+  },
+  {
+    title: "無障礙測試不該被職業分工綁住",
+    abstract:
+      "這幾年，無障礙不再是少數專家的話題，以前談到網站無障礙，是法規、稽核、檢測報告，或是某個專案最後才會被打開的 checklist，但現在不一樣了",
+    url: "https://vocus.cc/article/6a1af9bdfd8978000124783c",
+  },
+  {
+    title: "Forbes Accessibility 200",
+    abstract:
+      "前幾天才知道 Forbes Accessibility 200 這個名單。 因為有點好奇，就往下多查了一些資料，順手做了一個擴充版，加上一些比較方便瀏覽和查找的資訊。 這不是官方資料集，也不是 Forbes 授權或背書的內容。只是我自己基於研究和參考目的整理的版本。",
+    url: "https://vocus.cc/article/6a18040cfd897800012b12d8",
+  },
+  {
+    title: "無障礙網頁的服務對象在改變了嗎？",
+    abstract:
+      "前不久，Anthropic 工程師 Thariq 在「人類已不再手改程式」的前提下，提到 HTML 比 Markdown 更適合跟 AI 互動這件事。 我就在想：如果 AI 讀取的是優質的無障礙網頁，它是不是會更容易「理解」這個網站，進而和人類互動，產出更好的結果？",
+    url: "https://vocus.cc/article/6a041623fd89780001671d23",
+  },
+  {
+    title: "裹著 AI 糖衣的無障礙網頁服務?",
+    abstract:
+      "本文探討了某一款宣稱能透過 AI 提升網頁無障礙的技術上的應用，從最初的興奮到失望，再到對未來的反思。",
+    url: "https://vocus.cc/article/69fdb7c8fd897800019ccc51",
+  },
   {
     title: "2026 年 4 月 關於無障礙網頁發展的心得",
     abstract:

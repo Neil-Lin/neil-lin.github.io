@@ -1,4 +1,4 @@
-import vocusPostsFallback from "~~/data/vocusPosts";
+import { vocusPosts as vocusPostsFallback } from "~~/data/vocusPosts";
 
 interface VocusArticle {
   _id: string;
@@ -38,39 +38,42 @@ const fallbackPosts = vocusPostsFallback.slice(0, 10).map(
   }),
 );
 
-export default defineEventHandler(async (): Promise<BlogPost[]> => {
-  try {
-    const data = await $fetch<VocusContentsResponse>(
-      "https://api.vocus.cc/api/contents",
-      {
-        query: {
-          num: 10,
-          page: 1,
-          salonId: VOCUS_SALON_ID,
+export default defineCachedEventHandler(
+  async (): Promise<BlogPost[]> => {
+    try {
+      const data = await $fetch<VocusContentsResponse>(
+        "https://api.vocus.cc/api/contents",
+        {
+          query: {
+            num: 10,
+            page: 1,
+            salonId: VOCUS_SALON_ID,
+          },
         },
-      },
-    );
+      );
 
-    const posts = data.contents
-      .filter((content) => content.type === "article" && content.article)
-      .map((content): BlogPost | null => {
-        const article = content.article;
-        if (!article) return null;
+      const posts = data.contents
+        .filter((content) => content.type === "article" && content.article)
+        .map((content): BlogPost | null => {
+          const article = content.article;
+          if (!article) return null;
 
-        const articleId = article._id || content.contentId;
-        if (!articleId || !article.title) return null;
+          const articleId = article._id || content.contentId;
+          if (!articleId || !article.title) return null;
 
-        return {
-          title: article.title,
-          url: `${VOCUS_ARTICLE_URL}${articleId}`,
-          description: (article.abstract ?? "").trim(),
-        };
-      })
-      .filter((post): post is BlogPost => post !== null)
-      .slice(0, 10);
+          return {
+            title: article.title,
+            url: `${VOCUS_ARTICLE_URL}${articleId}`,
+            description: (article.abstract ?? "").trim(),
+          };
+        })
+        .filter((post): post is BlogPost => post !== null)
+        .slice(0, 10);
 
-    return posts.length > 0 ? posts : fallbackPosts;
-  } catch {
-    return fallbackPosts;
-  }
-});
+      return posts.length > 0 ? posts : fallbackPosts;
+    } catch {
+      return fallbackPosts;
+    }
+  },
+  { maxAge: 3600 },
+);

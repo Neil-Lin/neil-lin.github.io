@@ -59,7 +59,6 @@ export default defineNuxtConfig({
     "nuxt-gtag",
     "@vite-pwa/nuxt",
     "@nuxtjs/i18n",
-    "@nuxtjs/html-validator",
     "@nuxtjs/seo",
     "nuxt-clarity-analytics",
     "@nuxt/fonts",

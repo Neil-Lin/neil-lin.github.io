@@ -44,7 +44,7 @@
             <caption id="caption">
               <nuxt-link
                 to="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey"
-                :title="`${$t('action.goTo')} ${$t('des.a11yrefrerence')} ${$t('action.openWindow')}`"
+                :title="`${$t('action.goTo')} ${$t('des.a11yReference')} ${$t('action.openWindow')}`"
                 target="_blank"
               >
                 <span>{{ $t("page.sitemap.tableCaption") }}</span>
@@ -213,10 +213,7 @@ onUnmounted(() => {
   window.removeEventListener("resize", checkTabAble);
 });
 
-watchEffect(() => {
-  if (breadCrumbsList.value.length > 0)
-    useBreadcrumbSchema(breadCrumbsList.value);
-});
+useBreadcrumbSchema(breadCrumbsList);
 
 defineOgImage("CustomTemplate", {
   title: pageTitle.value + " - " + t("website.name"),

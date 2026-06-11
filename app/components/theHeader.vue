@@ -20,7 +20,7 @@
             <img src="@/assets/images/avatar.webp" alt="" />
             <div class="slogan intro">
               <ClientOnly fallback-tag="span">
-                <span>{{ formatAMPM(new Date()) }}</span>
+                <span>{{ getGreeting(new Date()) }}</span>
               </ClientOnly>
               <span>{{ $t("intro.greet") }}</span>
             </div>
@@ -59,17 +59,17 @@ const { t } = useI18n();
 const route = useRoute();
 const localePath = useLocalePath();
 
-const formatAMPM = (date: Date) => {
+const getGreeting = (date: Date) => {
   const hours = date.getHours();
-  let ampm;
+  let greeting;
   if (hours < 12 && hours > 5) {
-    ampm = t("action.morning");
+    greeting = t("action.morning");
   } else if (hours >= 12 && hours < 20) {
-    ampm = t("action.afternoon");
+    greeting = t("action.afternoon");
   } else {
-    ampm = t("action.evening");
+    greeting = t("action.evening");
   }
-  return ampm;
+  return greeting;
 };
 
 const mainMenuList = computed(() => [
@@ -100,14 +100,14 @@ const headerClass = computed(() => {
   }
 });
 
+const { scrollDistance } = useDetectScrollY();
 const isScrolled = ref(false);
 let lastScrollPosition = 0; // 儲存最後的滾動位置
 const scrollUpThreshold = 10; // 向上滾動的閾值
 
-const handleScroll = () => {
+watch(scrollDistance, (currentScrollPosition) => {
   const headerHeight =
     document.querySelector("header")?.getBoundingClientRect().height || 0;
-  const currentScrollPosition = window.scrollY;
 
   if (currentScrollPosition > headerHeight) {
     // 若滾動超過 header 高度且向下滾動，isScrolled 設為 true
@@ -124,14 +124,6 @@ const handleScroll = () => {
 
   // 更新最後的滾動位置
   lastScrollPosition = currentScrollPosition;
-};
-
-onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
-});
-
-onUnmounted(() => {
-  window.removeEventListener("scroll", handleScroll);
 });
 </script>
 

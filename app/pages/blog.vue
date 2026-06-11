@@ -8,7 +8,7 @@
       <div v-if="locale === 'en'">
         <br />
         <BlogPostList
-          :posts="mediumPosts"
+          :posts="posts"
           empty-text="There are no posts available."
         />
         <br />
@@ -23,7 +23,7 @@
       </div>
       <div v-else>
         <br />
-        <BlogPostList :posts="vocusPosts" empty-text="目前沒有文章" />
+        <BlogPostList :posts="posts" empty-text="目前沒有文章" />
         <br />
         <nuxt-link
           to="https://vocus.cc/user/@neil-lin"
@@ -39,8 +39,6 @@
 </template>
 
 <script setup lang="ts">
-import vocusPostsRaw from "~~/data/vocusPosts";
-
 const { t, locale } = useI18n();
 const route = useRoute();
 const orgUrl = useOrgUrl();
@@ -50,20 +48,18 @@ const pageDescription = computed(() => t("des.blog"));
 
 usePageSeoMeta(pageTitle, pageDescription);
 
-const { data: mediumData } = useFetch<
-  { title: string; url: string; description: string }[]
->("/api/medium-posts", { default: () => [] });
-const mediumPosts = computed(() => mediumData.value ?? []);
+type BlogPost = { title: string; url: string; description: string };
 
-const vocusPostsFallback = vocusPostsRaw.slice(0, 10).map((p) => ({
-  title: p.title,
-  url: p.url,
-  description: p.abstract,
-}));
-const { data: vocusData } = useFetch<
-  { title: string; url: string; description: string }[]
->("/api/vocus-posts", { default: () => vocusPostsFallback });
-const vocusPosts = computed(() => vocusData.value ?? vocusPostsFallback);
+// 只抓目前語系需要的來源，避免兩個外部 API 都打。
+// 方格子的失敗 fallback 由 server/api/vocus-posts.ts 內部處理，這裡不需要再備援。
+const { data: posts } = await useAsyncData<BlogPost[]>(
+  "blog-posts",
+  () =>
+    $fetch<BlogPost[]>(
+      locale.value === "en" ? "/api/medium-posts" : "/api/vocus-posts",
+    ),
+  { watch: [locale], default: () => [] },
+);
 
 const breadCrumbsList = computed(() => [
   { link: "/", title: t("action.goToHomePage") },
@@ -96,24 +92,19 @@ useSchemaOrg(
           ? ["https://neil-lin.medium.com/"]
           : ["https://vocus.cc/user/@neil-lin"],
     },
-    ...(locale.value === "en" ? mediumPosts.value : vocusPosts.value).map(
-      (post) => ({
-        "@type": "BlogPosting",
-        headline: post.title,
-        description: post.description,
-        url: post.url,
-        isPartOf: { "@id": `${orgUrl.value}/blog#blog` },
-        author: { "@id": `${orgUrl.value}/#person` },
-        publisher: { "@id": `${orgUrl.value}/#person` },
-      }),
-    ),
+    ...posts.value.map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      description: post.description,
+      url: post.url,
+      isPartOf: { "@id": `${orgUrl.value}/blog#blog` },
+      author: { "@id": `${orgUrl.value}/#person` },
+      publisher: { "@id": `${orgUrl.value}/#person` },
+    })),
   ]),
 );
 
-watchEffect(() => {
-  if (breadCrumbsList.value.length > 0)
-    useBreadcrumbSchema(breadCrumbsList.value);
-});
+useBreadcrumbSchema(breadCrumbsList);
 
 defineOgImage("CustomTemplate", {
   title: pageTitle.value + " - " + t("website.name"),

@@ -64,10 +64,9 @@ export default {
     passA11yTWBadge: "通過AA無障礙網頁檢測",
   },
   des: {
-    noData: "目前沒有資料。",
     sitemap: "提供網站導覽的網站區塊、快捷鍵和網站地圖",
     about: "暸解  Neil 的網頁設計技能",
-    a11yrefrerence: "mozilla 開發頁面參考 accesskey",
+    a11yReference: "mozilla 開發頁面參考 accesskey",
     ithomeA11y:
       "iT 邦幫忙 2022 iThome 鐵人賽自我挑戰組，無障礙網頁設計大叔日記系列",
     blog: "Neil 的方格子部落格文章",
@@ -79,9 +78,6 @@ export default {
     products: "產品",
     projects: "專案",
     blog: "部落格",
-  },
-  subMenu: {
-    subMenu: "次要選單",
   },
   action: {
     goToHomePage: "回首頁",
@@ -162,6 +158,5 @@ export default {
     notFoundTitle: "沒有找到此頁面",
     notFound:
       "很抱歉，我們找不到您輸入的網址頁面，請您嘗試看看從選單選取您想觀看的頁面。",
-    backToPrudoctList: "回作品集列表",
   },
 };

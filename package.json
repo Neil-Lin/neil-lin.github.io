@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "3.3.2",
+  "version": "3.4.0",
   "description": "Neil's Portfolio",
   "author": "Neil Lin",
   "private": true,
@@ -27,7 +27,6 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.15.2",
-    "@nuxtjs/html-validator": "^2.1.0",
     "@nuxtjs/i18n": "^10.4.0",
     "@vite-pwa/nuxt": "^1.1.1",
     "eslint": "^10.4.0",

@@ -9,7 +9,6 @@
         <i18n-t keypath="page.about.p2" tag="p" scope="global">
           <template #link>
             <nuxt-link
-              ref="noreferrer noopener"
               to="https://github.com/Neil-Lin/neil-lin.github.io"
               :title="$t('action.goTo') + 'Github' + $t('action.openWindow')"
               target="_blank"

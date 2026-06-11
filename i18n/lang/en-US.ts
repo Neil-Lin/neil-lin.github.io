@@ -64,10 +64,9 @@ export default {
     passA11yTWBadge: "A11y AA level",
   },
   des: {
-    noData: "There is no data now.",
     sitemap: "sitemap and shortcut",
     about: "Neil's Skill",
-    a11yrefrerence: "mozilla accesskey document",
+    a11yReference: "mozilla accesskey document",
     ithomeA11y: "iThome blog",
     blog: "Articles from Medium",
   },
@@ -78,9 +77,6 @@ export default {
     products: "products",
     projects: "projects",
     blog: "blog",
-  },
-  subMenu: {
-    subMenu: "submenu",
   },
   action: {
     goToHomePage: "home page",
@@ -161,6 +157,5 @@ export default {
     notFoundTitle: "Not Found",
     notFound:
       "Sorry, we can't find the page you're looking for. Please try selecting the page you want to view from the menu.",
-    backToPrudoctList: "Back to List",
   },
 };
