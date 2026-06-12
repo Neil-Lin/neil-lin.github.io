@@ -30,7 +30,7 @@ const route = useRoute();
 const switchLocalePath = useSwitchLocalePath();
 
 async function onLocaleChanged(event: Event) {
-  const target = event.target as HTMLInputElement;
+  const target = event.target as HTMLSelectElement;
   const newPath = switchLocalePath(target.value as "zh-Hant-TW" | "en");
   await navigateTo({ path: newPath, query: route.query });
 }

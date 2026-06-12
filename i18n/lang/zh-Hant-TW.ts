@@ -1,7 +1,6 @@
 export default {
   words: {
     home: "首頁",
-    avatar: "大頭照",
     language: "語言",
     a11y: "無障礙網頁",
     designManagement: "設計管理",
@@ -9,20 +8,10 @@ export default {
     ui: "UI",
     ux: "UX",
     webLayout: "切版",
-    menu: "選單",
-    openSourceGuideline: "開源軟體指南",
-    modaA11y: "無障礙網路空間服務網",
-    relatedLink: "相關連結",
     website: "網站",
-    output: "產出",
-    learn: "學習領域知識",
-    observe: "觀察類似產品介面",
-    process: "過程",
     tools: "工具",
     roles: "角色",
     experience: "經驗",
-    target: "目標",
-    summary: "概要",
     intro: "簡介",
     programming: "程式",
     promote: "推動",
@@ -34,8 +23,6 @@ export default {
     versionAbove: "版本以上",
     versionBelow: "版本以下",
     or: "或",
-    source: "參考來源",
-    tag: "標籤",
     portfolio: "作品集",
     projects: "專案",
     products: "產品",
@@ -44,7 +31,6 @@ export default {
     sort: "排序",
     newToOld: "新到舊",
     oldToNew: "舊到新",
-    pm: "專案管理",
     platform: "平臺",
     all: "全部",
     today: "今天",
@@ -65,7 +51,6 @@ export default {
   },
   des: {
     sitemap: "提供網站導覽的網站區塊、快捷鍵和網站地圖",
-    about: "暸解  Neil 的網頁設計技能",
     a11yReference: "mozilla 開發頁面參考 accesskey",
     ithomeA11y:
       "iT 邦幫忙 2022 iThome 鐵人賽自我挑戰組，無障礙網頁設計大叔日記系列",
@@ -74,7 +59,6 @@ export default {
   mainMenu: {
     mainMenu: "主要選單",
     sitemap: "網站導覽",
-    about: "關於我",
     products: "產品",
     projects: "專案",
     blog: "部落格",
@@ -83,7 +67,6 @@ export default {
     goToHomePage: "回首頁",
     goTo: "前往 ",
     openWindow: "(另開視窗)",
-    closeMenu: "關閉選單",
     closeDialog: "關閉視窗",
     scrollHorizontalToSeeMore: "橫向捲動顯示更多資訊",
     backToTop: "回頁面頂端",
@@ -155,7 +138,6 @@ export default {
   error: {
     title: "網頁發生了某些錯誤",
     errorCode: "錯誤代碼",
-    notFoundTitle: "沒有找到此頁面",
     notFound:
       "很抱歉，我們找不到您輸入的網址頁面，請您嘗試看看從選單選取您想觀看的頁面。",
   },

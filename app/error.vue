@@ -18,6 +18,7 @@
 
 <script setup lang="ts">
 const { t } = useI18n();
+const localePath = useLocalePath();
 
 const props = defineProps<{
   error: { statusCode: number; statusMessage?: string; message?: string };
@@ -31,6 +32,7 @@ useSeoMeta({
 });
 
 onBeforeUnmount(() => {
-  clearError({ redirect: "/" });
+  // 依目前語系導回對應首頁（英文頁錯誤不再被導回中文首頁）
+  clearError({ redirect: localePath("/") });
 });
 </script>
