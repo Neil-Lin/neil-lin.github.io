@@ -242,7 +242,10 @@ const breadcrumbs = computed(() => {
   ];
 });
 
-useBreadcrumbSchema(breadcrumbs);
+// Schema：列表頁由此輸出；詳情頁（含燈箱）的 BreadcrumbList 由 [name].vue 負責
+useBreadcrumbSchema(
+  computed(() => (route.params.name ? [] : breadcrumbs.value)),
+);
 
 if (!route.params.name) {
   defineOgImage("CustomTemplate", {

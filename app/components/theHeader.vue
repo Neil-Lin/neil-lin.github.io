@@ -30,7 +30,7 @@
       </div>
       <div class="right">
         <div class="intro">
-          <p>{{ $t("intro.des1") }}</p>
+          <p>{{ $t("intro.des1", { years: careerYears }) }}</p>
           <br />
         </div>
         <nav :aria-label="$t('mainMenu.mainMenu')" class="main-menu">
@@ -55,9 +55,12 @@
 </template>
 
 <script setup lang="ts">
+import { CAREER_START_YEAR, yearsSince } from "~~/data/career";
+
 const { t } = useI18n();
 const route = useRoute();
 const localePath = useLocalePath();
+const careerYears = yearsSince(CAREER_START_YEAR);
 
 const getGreeting = (date: Date) => {
   const hours = date.getHours();

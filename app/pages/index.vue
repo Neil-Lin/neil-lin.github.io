@@ -124,6 +124,8 @@
 </template>
 
 <script setup lang="ts">
+import { MANAGER_START_YEAR, yearsSince } from "~~/data/career";
+
 const { locale, t } = useI18n();
 const pageTitle = computed(() => t("words.home"));
 const pageDescription = computed(() => t("intro.des3"));
@@ -143,7 +145,7 @@ const experienceList = computed(() => [
   {
     title: t("jobTitle.manager"),
     current: true,
-    years: "2",
+    years: String(yearsSince(MANAGER_START_YEAR)),
   },
   {
     title: t("jobTitle.supervisor"),

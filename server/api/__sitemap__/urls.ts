@@ -27,10 +27,15 @@ export default defineSitemapEventHandler(async () => {
     await import("~~/data/productsData");
 
   const clickableProducts = productsData.filter((p) => p.clickable);
-  const config = useRuntimeConfig();
-  const lastmod = new Date(config.public.buildDate as string).toISOString();
-  const getLastmod = (updatedAt?: string) =>
-    new Date(updatedAt ?? (config.public.buildDate as string)).toISOString();
+
+  // lastmod 只在有真實內容更新依據時輸出（updatedAt）。
+  // 不再用 build date 充數：每次部署都變動的 lastmod 會讓 Google 不信任這個欄位。
+  const productUpdatedDates = clickableProducts
+    .map((p) => p.updatedAt)
+    .filter((d): d is string => Boolean(d))
+    .sort();
+  const productsLastmod = productUpdatedDates.at(-1);
+
   const staticRoutes: SitemapEntry[] = [
     "/",
     "/products",
@@ -39,7 +44,9 @@ export default defineSitemapEventHandler(async () => {
     "/sitemap",
   ].map((loc) => ({
     loc,
-    lastmod,
+    ...(loc === "/products" && productsLastmod
+      ? { lastmod: new Date(productsLastmod).toISOString() }
+      : {}),
     _i18nTransform: true,
     images: [],
     videos: [],
@@ -80,7 +87,7 @@ export default defineSitemapEventHandler(async () => {
 
     return {
       loc: `/products/${p.slug}`,
-      lastmod: getLastmod(p.updatedAt),
+      ...(p.updatedAt ? { lastmod: new Date(p.updatedAt).toISOString() } : {}),
       _i18nTransform: true,
       images,
       videos,

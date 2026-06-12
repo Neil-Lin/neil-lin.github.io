@@ -128,7 +128,7 @@
       </div>
       <div v-if="product.videos">
         <div v-for="(item, index) in product.videos[$i18n.locale]" :key="index">
-          <video :title="item.title" controls>
+          <video :title="item.title" controls preload="metadata">
             <source :src="`${item.src}`" type="video/mp4" />
             您的瀏覽器沒有支援 / Your browser does not support the video tag.
           </video>
@@ -139,7 +139,12 @@
           v-for="(item, index) in product.images[$i18n.locale]"
           :key="index"
         >
-          <img :src="`${item.src}`" :alt="item.figcaption" />
+          <img
+            :src="`${item.src}`"
+            :alt="item.figcaption"
+            loading="lazy"
+            decoding="async"
+          />
           <figcaption>
             {{ item.figcaption }}
           </figcaption>
@@ -274,6 +279,15 @@ useSchemaOrg(
       inLanguage: locale.value,
       keywords: product.value?.keywords[locale.value].join(", ") ?? "",
     },
+  ]),
+);
+
+// 詳情頁的 BreadcrumbList 由本頁負責（列表頁的由 products.vue 輸出）
+useBreadcrumbSchema(
+  computed(() => [
+    { link: "/", title: String(t("action.goToHomePage")) },
+    { link: "/products", title: String(t("mainMenu.products")) },
+    { title: String(product.value?.name[locale.value] ?? "") },
   ]),
 );
 </script>

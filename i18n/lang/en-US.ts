@@ -93,7 +93,7 @@ export default {
   },
   intro: {
     greet: "I'm Neil. 👋",
-    des1: "UI/UX Frontend Designer with 11 years of experience in web and app design and development. In recent years, I have been dedicated to accessible web design.",
+    des1: "UI/UX Frontend Designer with {years} years of experience in web and app design and development. In recent years, I have been dedicated to accessible web design.",
     des2: "My design philosophy has always followed the principles of Win-Win and achieving a balanced outcome. ",
     des3: 'I specialize in UI, UX, Vue/Nuxt front-end development, digital accessibility, data visualization, and design management. Currently, my main focus is on implementing the "Design for All" concept of universal design in web design.',
   },

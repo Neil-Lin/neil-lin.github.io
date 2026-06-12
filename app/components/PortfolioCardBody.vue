@@ -7,6 +7,8 @@
       :alt="imageAlt ?? ''"
       class="portfolio-img"
       :fetchpriority="fetchpriority"
+      :loading="fetchpriority === 'high' ? undefined : 'lazy'"
+      decoding="async"
     />
     <div v-if="intro" class="portfolio-intro">
       <p>{{ intro }}</p>

@@ -28,7 +28,11 @@ npm run preview    # 本地預覽建置結果
 ## 專案結構
 
 - `app/` — Nuxt 4 srcDir（pages、components、composables、layouts、assets）
-- `data/` — 內容資料（products / projects / vocus 文章 fallback，純 TS、具型別、一律 named export）
+- `data/` — 內容資料（純 TS、具型別、一律 named export）
+  - `data/products/` — 一檔一作品，由 `data/productsData.ts` 聚合
+  - `data/career.ts` — 年資起算年份（文案中的年資自動計算，不會過期）
+- `scripts/checkData.ts` — 內容資料驗證（slug 重複、媒體路徑存在性），由
+  `nuxt.config.ts` 載入時自動執行，資料有誤時 build 直接失敗
 - `i18n/` — 雙語字典（`zh-Hant-TW` 預設、`en`）
 - `server/api/` — Medium / 方格子 文章 API（含 1 小時快取）與自訂 sitemap 來源
 - `netlify/edge-functions/` — `Accept: text/markdown` 內容協商（給 LLM 爬蟲）

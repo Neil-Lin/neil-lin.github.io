@@ -1,6 +1,10 @@
 import enUS from "./i18n/lang/en-US";
 import zhHantTW from "./i18n/lang/zh-Hant-TW";
 import { productsData } from "./data/productsData";
+import { validateContentData } from "./scripts/checkData";
+
+// 內容資料驗證：路徑不存在或 slug 重複時直接讓 build 失敗
+validateContentData();
 
 const fallbackBaseUrl =
   process.env.NODE_ENV === "production"
