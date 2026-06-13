@@ -51,14 +51,12 @@ usePageSeoMeta(pageTitle, pageDescription);
 type BlogPost = { title: string; url: string; description: string };
 
 // 只抓目前語系需要的來源，避免兩個外部 API 都打。
+// 用 reactive URL：切換語言時 URL 改變 → useFetch 自動重抓，且兩語系各自獨立快取
+// （避免共用 key 導致切語言時回傳上一語系的快取結果）。
 // 方格子的失敗 fallback 由 server/api/vocus-posts.ts 內部處理，這裡不需要再備援。
-const { data: posts } = await useAsyncData<BlogPost[]>(
-  "blog-posts",
-  () =>
-    $fetch<BlogPost[]>(
-      locale.value === "en" ? "/api/medium-posts" : "/api/vocus-posts",
-    ),
-  { watch: [locale], default: () => [] },
+const { data: posts } = await useFetch<BlogPost[]>(
+  () => (locale.value === "en" ? "/api/medium-posts" : "/api/vocus-posts"),
+  { default: () => [] },
 );
 
 const breadCrumbsList = computed(() => [
