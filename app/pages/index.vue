@@ -132,11 +132,16 @@ const pageDescription = computed(() => t("intro.des3"));
 
 usePageSeoMeta(pageTitle, pageDescription);
 
+const orgUrl = useOrgUrl();
+
 useSchemaOrg(
   computed(() => [
     {
       "@type": "ProfilePage",
       description: t("intro.des3"),
+      // mainEntity 指向 layout 定義的 Person 節點（同一 @graph，靠 @id 解析）
+      // ProfilePage rich result 規範要求此欄位
+      mainEntity: { "@id": `${orgUrl.value}/#person` },
     },
   ]),
 );

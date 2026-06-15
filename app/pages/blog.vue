@@ -74,6 +74,7 @@ useSchemaOrg(
       url: orgUrl.value + route.path,
       inLanguage: locale.value === "zh-Hant-TW" ? "zh-Hant-TW" : "en",
       isPartOf: { "@id": `${orgUrl.value}/#website` },
+      mainEntity: { "@id": `${orgUrl.value}/blog#blog` },
       potentialAction: [
         { "@type": "ReadAction", target: [orgUrl.value + route.path] },
       ],
