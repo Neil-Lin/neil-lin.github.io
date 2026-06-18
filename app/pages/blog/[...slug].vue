@@ -7,10 +7,14 @@
         <h2>{{ article.title }}</h2>
         <div class="article-meta">
           <time :datetime="article.date">{{ formatDate(article.date) }}</time>
-          <span v-for="tag in article.tags" :key="tag" class="tag">{{
-            tag
-          }}</span>
+          <br>
+          <div class="tags">
+            <span v-for="tag in article.tags" :key="tag" class="tag">{{
+              tag
+            }}</span>
+          </div>
         </div>
+        <br>
         <ContentRenderer :value="article" class="article-body" />
 
         <nav v-if="related.length" class="related" aria-labelledby="related-h">
@@ -184,53 +188,3 @@ const breadCrumbsList = computed(() => [
 ]);
 useBreadcrumbSchema(breadCrumbsList);
 </script>
-
-<style scoped>
-.article {
-  max-width: 48rem;
-  margin: 0 auto;
-}
-.article-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  align-items: center;
-  margin: 1rem 0 2rem;
-  font-size: 0.875rem;
-  color: oklch(var(--footer-color));
-}
-.article-body {
-  :deep(h2),
-  :deep(h3) {
-    margin: 2rem 0 1rem;
-  }
-  :deep(p) {
-    margin-bottom: 1rem;
-    line-height: 1.8;
-  }
-  :deep(ul),
-  :deep(ol) {
-    list-style: revert;
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  :deep(pre) {
-    padding: 1rem;
-    border-radius: 0.75rem;
-    overflow-x: auto;
-    margin-bottom: 1rem;
-  }
-  :deep(a) {
-    text-wrap: pretty;
-  }
-}
-.related {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px dashed oklch(var(--border-color));
-  ul {
-    list-style: revert;
-    padding-left: 1.5rem;
-  }
-}
-</style>
