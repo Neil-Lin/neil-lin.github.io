@@ -1,3 +1,4 @@
+import { queryCollection } from "@nuxt/content/server";
 import type { Product } from "~~/data/types";
 
 interface SitemapImage {
@@ -22,7 +23,7 @@ interface SitemapEntry {
   videos: SitemapVideo[];
 }
 
-export default defineSitemapEventHandler(async () => {
+export default defineSitemapEventHandler(async (e) => {
   const { productsData }: { productsData: Product[] } =
     await import("~~/data/productsData");
 
@@ -94,5 +95,32 @@ export default defineSitemapEventHandler(async () => {
     };
   });
 
-  return [...staticRoutes, ...productRoutes];
+  // 部落格文章：模型 B（各語言獨立、可能單語言），逐篇直接輸出實際網址，
+  // 不用 _i18nTransform（避免產生不存在的跨語言鏡像）。lastmod 用 frontmatter。
+  const buildBlogRoutes = async (
+    collection: "blog_zh" | "blog_en",
+    prefix: string,
+  ): Promise<SitemapEntry[]> => {
+    const docs = await queryCollection(e, collection)
+      .where("draft", "=", false)
+      .all();
+    return docs.map((doc): SitemapEntry => {
+      const slug = doc.stem.split("/").pop();
+      const lastmodSrc = doc.updatedAt ?? doc.date;
+      return {
+        loc: `${prefix}/${slug}`,
+        ...(lastmodSrc ? { lastmod: new Date(lastmodSrc).toISOString() } : {}),
+        _i18nTransform: false,
+        images: [],
+        videos: [],
+      };
+    });
+  };
+
+  const blogRoutes = [
+    ...(await buildBlogRoutes("blog_zh", "/blog")),
+    ...(await buildBlogRoutes("blog_en", "/en/blog")),
+  ];
+
+  return [...staticRoutes, ...productRoutes, ...blogRoutes];
 });

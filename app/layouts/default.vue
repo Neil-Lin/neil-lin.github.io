@@ -62,12 +62,15 @@
 const { t } = useI18n();
 const head = useLocaleHead();
 const orgUrl = useOrgUrl();
+const route = useRoute();
 
 useHead(
   computed(() => ({
     titleTemplate: (pageTitle) =>
       pageTitle ? `${pageTitle} - ${t("website.name")}` : t("website.name"),
-    link: [...(head.value.link || [])],
+    // 文章頁（customHreflang）自管 canonical/hreflang，略過全站自動產生的版本，
+    // 避免單語言文章被標上指向 404 的 alternate
+    link: route.meta.customHreflang ? [] : [...(head.value.link || [])],
     meta: [...(head.value.meta || [])],
   })),
 );

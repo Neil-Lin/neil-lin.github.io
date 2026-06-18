@@ -2,9 +2,12 @@ import enUS from "./i18n/lang/en-US";
 import zhHantTW from "./i18n/lang/zh-Hant-TW";
 import { productsData } from "./data/productsData";
 import { validateContentData } from "./scripts/checkData";
+import { getBlogRoutes } from "./scripts/blogRoutes";
 
 // 內容資料驗證：路徑不存在或 slug 重複時直接讓 build 失敗
 validateContentData();
+
+const blogRoutes = getBlogRoutes();
 
 const fallbackBaseUrl =
   process.env.NODE_ENV === "production"
@@ -54,7 +57,10 @@ export default defineNuxtConfig({
         "/en/projects",
         "/en/blog",
         "/en/sitemap",
+        "/rss.xml",
+        "/en/rss.xml",
         ...dynamicRoutes,
+        ...blogRoutes,
       ],
     },
   },
@@ -66,7 +72,31 @@ export default defineNuxtConfig({
     "@nuxtjs/seo",
     "nuxt-clarity-analytics",
     "@nuxt/fonts",
+    "@nuxt/content",
   ],
+
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          theme: { default: "github-light", "github-dark": "github-dark" },
+          langs: [
+            "vue",
+            "ts",
+            "js",
+            "json",
+            "html",
+            "css",
+            "scss",
+            "bash",
+            "md",
+            "yaml",
+            "diff",
+          ],
+        },
+      },
+    },
+  },
 
   gtag: {
     id: process.env.NUXT_PUBLIC_GTAG_ID,

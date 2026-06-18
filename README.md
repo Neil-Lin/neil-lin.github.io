@@ -34,9 +34,23 @@ npm run preview    # 本地預覽建置結果
 - `scripts/checkData.ts` — 內容資料驗證（slug 重複、媒體路徑存在性），由
   `nuxt.config.ts` 載入時自動執行，資料有誤時 build 直接失敗
 - `i18n/` — 雙語字典（`zh-Hant-TW` 預設、`en`）
-- `server/api/` — Medium / 方格子 文章 API（含 1 小時快取）與自訂 sitemap 來源
+- `content/` — 自建部落格文章（Nuxt Content），見下方「部落格」
+- `server/api/__sitemap__/` — 自訂 sitemap 來源（產品 + 文章，lastmod 取自真實更新時間）
+- `server/routes/` — RSS feed（`/rss.xml`、`/en/rss.xml`）
 - `netlify/edge-functions/` — `Accept: text/markdown` 內容協商（給 LLM 爬蟲）
 - `public/f0c3fd55914c4ba9b6021d25692e138a.txt` — IndexNow 金鑰檔，**勿刪**
+
+## 部落格（Nuxt Content）
+
+文章自建於本站（不再連外部平台）。採「模型 B」：中英文各自獨立，不必互為翻譯。
+
+- **新增文章**：在 `content/zh/blog/` 或 `content/en/blog/` 放 `.md`，檔名即 slug。
+- **Frontmatter**：`title`、`description`、`date`（必填）；`updatedAt`、`tags`、`ogImage`、`translationKey`、`draft`（選填）。schema 由 `content.config.ts` 用 zod 驗證。
+- **中英對照版**：只有當兩篇互為翻譯時，才在兩邊填**相同的 `translationKey`**——這會啟用 hreflang 互指與語言切換鈕的精確對應。
+- **單語言文章**：不填 `translationKey` 即可。會輸出 self-canonical、**不發 hreflang**；切換語言時導向另一語言的 blog 首頁（Option A，邏輯在 `composables/useLocaleSwitchTarget.ts`）。
+- **draft**：`draft: true` 開發看得到、build 時排除（不預渲染、不進 sitemap）。
+- 文章路由、SEO、`BlogPosting` schema、OG 圖、相關文章、Shiki 程式碼highlight 皆自動處理。
+- 需要原生模組 `better-sqlite3`（Content 建置期用）。
 
 ## ⚠️ 重要警告：絕對不要加尾斜線轉址
 

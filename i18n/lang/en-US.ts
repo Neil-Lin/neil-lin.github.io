@@ -108,8 +108,8 @@ export default {
       p4: "※ When the project tabs on this website cannot be clicked using a mouse, you can navigate the information using the following keyboard shortcuts.{n}{n} {keyLeftRight} or {keyUpDown}: Move the tab order by pressing the left/right or up/down arrow keys.{n}{n}{keyTab}: After hovering over the tab, you can use the {keyTab} key to jump to the content and browse the data. When encountering radio buttons, please use the {keyLeftRight} or {keyUpDown} keys to move through the options in the desired order.{n}{n} {keyShiftTab}: Pressing {keyShiftTab} allows you to navigate back to the previous data entry. When you return to the tab items, you can continue using the {keyLeftRight} or {keyUpDown} keys to move through the tab order.",
     },
     blog: {
-      hint: "Get the 10 latest articles",
-      forward: "Go to Medium profile",
+      hint: "Notes on frontend, design, and accessibility.",
+      related: "Related posts",
     },
     detail: {
       summary: "summary",

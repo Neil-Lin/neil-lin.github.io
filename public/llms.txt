@@ -10,7 +10,7 @@ Neil Lin is a product designer and front-end developer focused on web accessibil
 
 - [Products](/products): Case studies of product design work including accessibility audits, design systems, and UI/UX
 - [Projects](/projects): Side projects and open-source contributions
-- [Blog](/blog): Articles on design, accessibility, and web development
+- [Blog](/blog): Self-hosted articles on frontend, design, and accessibility (RSS: /rss.xml; English: /en/rss.xml)
 - [Sitemap](/sitemap): Full site index
 
 ## Localization

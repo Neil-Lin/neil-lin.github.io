@@ -26,12 +26,11 @@ type LocaleItem = { code: "zh-Hant-TW" | "en"; name: string };
 const { locale, locales } = useI18n();
 const supportedLocales = locales.value as LocaleItem[];
 
-const route = useRoute();
-const switchLocalePath = useSwitchLocalePath();
+const { resolve } = useLocaleSwitch();
 
 async function onLocaleChanged(event: Event) {
   const target = event.target as HTMLSelectElement;
-  const newPath = switchLocalePath(target.value as "zh-Hant-TW" | "en");
-  await navigateTo({ path: newPath, query: route.query });
+  const code = target.value as "zh-Hant-TW" | "en";
+  await navigateTo({ path: resolve(code) });
 }
 </script>

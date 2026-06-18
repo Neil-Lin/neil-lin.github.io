@@ -12,7 +12,7 @@
       <template v-if="supportedLocales.length != 0">
         <span v-for="loc in supportedLocales" :key="loc.code">
           <nuxt-link
-            :to="switchLocalePath(loc.code)"
+            :to="resolve(loc.code)"
             :title="$t('action.switch') + loc.name"
           >
             <span class="visually-hidden">{{ $t("action.switch") }}</span>
@@ -52,7 +52,7 @@
 </template>
 
 <script setup lang="ts">
-const switchLocalePath = useSwitchLocalePath();
+const { resolve } = useLocaleSwitch();
 const { t, locales, locale } = useI18n();
 
 type LocaleItem = { code: "zh-Hant-TW" | "en"; name: string };
