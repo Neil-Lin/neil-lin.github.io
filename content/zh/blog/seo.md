@@ -123,12 +123,12 @@ media="screen and (min-device-width:481px) and (max-device-width:1024px) and (or
 - Html盡量符合語意，例如文章使用```<article>```，章節使用```<section>```。
 - 如果可以，可增加影音類型有助提升 SEO。
 - 可以增加輔助標示的要加上去。例如：
-```
+```html
 <img alt="測試圖"/>
 <a href="#" title="連結">連結文字</a>
 ```
 - 語言
-```
+```html
 <html lang="en">
 ```
 
