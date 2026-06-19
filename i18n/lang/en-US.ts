@@ -53,7 +53,7 @@ export default {
     sitemap: "sitemap and shortcut",
     a11yReference: "mozilla accesskey document",
     ithomeA11y: "iThome blog",
-    blog: "Articles from Medium",
+    blog: "Neil's blog: notes on frontend, design, and accessibility",
   },
   mainMenu: {
     mainMenu: "menu",

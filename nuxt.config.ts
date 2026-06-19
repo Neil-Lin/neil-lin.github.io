@@ -46,6 +46,9 @@ export default defineNuxtConfig({
   nitro: {
     trailingSlash: false,
     prerender: {
+      // 所有路由都由下方 routes 決定論式列出（含部落格文章），
+      // 關閉 crawlLinks：文章內若有壞連結也不會連累整個 build 失敗
+      crawlLinks: false,
       routes: [
         "/",
         "/products",
@@ -96,6 +99,11 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+
+  // 連結檢查只警告、不中斷 build：文章內單一壞連結不該擋住整個部署
+  linkChecker: {
+    failOnError: false,
   },
 
   gtag: {

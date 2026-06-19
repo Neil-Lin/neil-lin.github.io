@@ -12,7 +12,12 @@ const escapeXml = (s: string) =>
 export async function buildBlogRss(
   event: H3Event,
   collection: "blog_zh" | "blog_en",
-  opts: { pathPrefix: string; title: string; description: string },
+  opts: {
+    pathPrefix: string;
+    title: string;
+    description: string;
+    language: string;
+  },
 ) {
   const config = useRuntimeConfig();
   const base = config.public.baseUrl as string;
@@ -21,6 +26,11 @@ export async function buildBlogRss(
     .where("draft", "=", false)
     .order("date", "DESC")
     .all();
+
+  const latest = docs[0];
+  const lastBuildDate = new Date(
+    latest?.updatedAt ?? latest?.date ?? Date.now(),
+  ).toUTCString();
 
   const feedUrl = `${base}${opts.pathPrefix}/rss.xml`;
   const items = docs
@@ -44,6 +54,8 @@ export async function buildBlogRss(
     <title>${escapeXml(opts.title)}</title>
     <link>${base}${opts.pathPrefix}/blog</link>
     <description>${escapeXml(opts.description)}</description>
+    <language>${opts.language}</language>
+    <lastBuildDate>${lastBuildDate}</lastBuildDate>
     <atom:link href="${feedUrl}" rel="self" type="application/rss+xml" />
 ${items}
   </channel>

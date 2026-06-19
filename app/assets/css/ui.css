@@ -220,6 +220,14 @@ article {
   }
 }
 
+figure {
+  text-align: center;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
 figcaption {
   display: block;
   text-align: center;
@@ -230,6 +238,21 @@ figcaption {
   color: oklch(var(--wrapper-color));
 }
 
+pre {
+  padding: 1rem;
+  background: oklch(var(--pre-bg));
+  code {
+    span {
+      --shiki-default-bg: transparent;
+      --shiki-default: oklch(var(--pre-text-color))!important;
+    }
+  }
+}
+
+code {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
 
 button,
 [class~="btn"] {

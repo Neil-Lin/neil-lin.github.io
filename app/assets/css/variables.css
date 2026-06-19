@@ -55,6 +55,11 @@
   --router-active-bg: var(--color-black);
 
   --input-bg: var(--color-white);
+
+  --pre-bg: var(--color-black);
+  /* 程式碼區塊底色固定為黑，文字需為亮色（淺色模式用 inherit 會變深字＝看不見） */
+  --pre-text-color: var(--color-white);
+
   /* 
   --noscript-color: var(--wrapper-color);
   --noscript-bg: var(--wrapper-bg);
@@ -90,5 +95,8 @@
     --router-active-bg: var(--color-black);
 
     --input-bg: var(--color-deep-black);
+
+    --pre-bg: var(--color-black);
+    --pre-text-color: var(--color-white);
   }
 }
