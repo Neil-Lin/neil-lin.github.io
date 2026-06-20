@@ -240,6 +240,7 @@ figcaption {
 
 pre {
   padding: 1rem;
+  margin-bottom: 1rem;
   background: oklch(var(--pre-bg));
   code {
     span {

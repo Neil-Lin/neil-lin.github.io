@@ -11,6 +11,8 @@ tags:
 draft: false
 ---
 
+### 前言
+
 前幾天收到 Prototypr.io 電子報，發表了一款線上問卷新服務。來寫寫快速使用後的心得。
 
 [Ballpark 官網](https://ballparkhq.com/ "另開新視窗"){target="_blank"}
@@ -28,7 +30,7 @@ draft: false
 
 嘿！這實在是太香了，以下娓娓道來有夠香的原因：
 
-### Beta 版
+### Beta 版
 
 [價格](https://ballparkhq.com/pricing "另開新視窗"){target="_blank"}
 
@@ -54,6 +56,7 @@ draft: false
 目前 Prototype 可以接受 Figma 與 Marvel，除了 Prototype 之外，也可以加入影音。
 
 ### 編輯簡單，專注在思考如何發問
+
 也許是因為還在 Beta 版以及目前目標使用者很明確，所以沒有像其他發展已久的問卷系統有多樣化的功能，但我個人特別喜歡這種單純，可以讓我專注在思考問題、選擇適合的題型以及加強問卷與 Prototype 之間的聯繫。
 
 ::figure
@@ -64,6 +67,7 @@ draft: false
 ::
 
 ### 答題前的設定
+
 根據不同的題型，會有不同的設定，例如 Prototype 題型，會有是否使用攝影機、麥克風以及螢幕錄影。而每個題型都有的就會有增加影片導覽以及必填設定。如果是比較需要理解的題目，這個前置作業就會變得很重要，例如降低使用者焦躁的心情等等，非常實用的功能！
 
 ::figure
@@ -134,6 +138,7 @@ draft: false
 ::
 
 ### Roadmap
+
 國外服務看了好幾個都會把 Roadmap 給展示出來讓大家知道，覺得真的是很棒的一件事，暸解他們未來的規劃方向，可以給使用者更多資訊來判斷自己需不需要這項服務，例如近期可能就會開發測試線上網站的功能。
 
 [產品路線圖](https://portal.productboard.com/ballpark/1-ballpark/tabs/1-short-term-1-6-months "另開新視窗"){target="_blank"}
