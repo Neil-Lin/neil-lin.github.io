@@ -6,8 +6,8 @@ tags:
   - 無障礙網頁設計
   - 無障礙
   - icon
-  - fontawesome
-  - emoji
+  - FontAwesome
+  - Emoji
 draft: false
 ---
 
@@ -80,7 +80,7 @@ draft: false
 </button>
 ```
 
-然後因為 freego 掃描時會去掃 ```html<svg>```，會發現沒有 title，然後 svg 的 title 又要放在第一個子項目，所以又要改成：
+然後因為 freego 掃描時會去掃 ```<svg>```，會發現沒有 title，然後 svg 的 title 又要放在第一個子項目，所以又要改成：
 
 ```html
 <!-- 文字在畫面上隱藏，但在報讀軟體中會讀出來 -->
@@ -136,7 +136,7 @@ draft: false
 
 ### 2. 切版維護時 icon 不夠用，就會自建或拿別套 icon 來使用。
 
-這是很難避免的一種情形，例如客製化的軟體、不講武德的客戶或是專有名詞但又想要有個 icon ，面臨到這種問題時，比較在乎的可能就會自己模擬 icon 風格，畫完送進去類似 icoMoon( [連結](https://icomoon.io/ "另開新視窗"){target="_blank"} ) 的工具產出 iconfont，再引入到檔案。
+這是很難避免的一種情形，例如客製化的軟體、不講武德的客戶或是專有名詞但又想要有個 icon ，面臨到這種問題時，比較在乎的可能就會自己模擬 icon 風格，畫完送進去類似 icoMoon([連結](https://icomoon.io/ "另開新視窗"){target="_blank"}) 的工具產出 iconfont，再引入到檔案。
 而不在乎、趕時間、或是原本使用 fontawesome 但本身 UI Framework 也有提供 icon的情況，就會直接去拿另一套 icon 來引入，就會造成風格混亂。
 
 以上兩個問題，還只是從最源頭的問題發現的，接下來還有實作上的問題，
@@ -152,7 +152,7 @@ draft: false
 
 要進到這裡來，你還得先經過註冊帳號的一系列流程，最後才能拿到手應用。再來，應用時，又有分 Html 、Vue 或是 React。
 
-以 Vue 為例，可能還要先跟團隊決定是要用 component 形式的寫法，或是一樣使用平常比較習慣的寫法 ```html<i class=”xxx”></i>```，然後寫程式的期間，後者還會碰到有時候沒轉成 svg 的情形（因為 watch 只有一開始偵測到才變成 svg）。
+以 Vue 為例，可能還要先跟團隊決定是要用 component 形式的寫法，或是一樣使用平常比較習慣的寫法 ```<i class=”xxx”></i>```，然後寫程式的期間，後者還會碰到有時候沒轉成 svg 的情形（因為 watch 只有一開始偵測到才變成 svg）。
 
 再來，import 的時候，可能還要專門弄一個 plugin 檔案（Nuxt 專案的話），接著，又可能會碰到 typescript 的問題跟其他問題，因為層層依賴，所以會有各式各樣的 bug 等著。
 
@@ -166,7 +166,7 @@ draft: false
 
 我踩過了這些坑，痛到不行。
 
-所以後來團隊在開發 Piman ( [連結](https://bpio.gitbook.io/piman/ "另開新視窗"){target="_blank"} ) 無障礙 UI 框架和延伸的專案時，我們盡量直接使用 Emoji，為什麼呢？
+所以後來團隊在開發 Piman ([連結](https://bpio.gitbook.io/piman/ "另開新視窗"){target="_blank"}) 無障礙 UI 框架和延伸的專案時，我們盡量直接使用 Emoji，為什麼呢？
 
 - 符合使用者當下使用的作業系統、服務：emoji 會隨著不同環境而改變，這是最自然的方式。[查詢 emoji 是否可用](https://emojipedia.org/caniemoji/ "另開新視窗"){target="_blank"}
 - 沒有依賴關係：因為是 Unicode。

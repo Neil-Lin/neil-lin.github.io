@@ -6,12 +6,10 @@ updatedAt: 2024-07-23
 tags:
   - 無障礙網頁設計
   - 無障礙
-  - a11y
-  - accessibility
+  - A11Y
+  - Accessibility
 draft: false
 ---
-
-### 更新
 
 2024/07/23：  
 製作了公司內[教育訓練文件](https://bpio.gitbook.io/docs/edu-a11y "另開新視窗"){target="_blank"}，覺得自己整理的蠻用心的，所以分享出來。

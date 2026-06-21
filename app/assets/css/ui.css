@@ -250,6 +250,12 @@ pre {
   }
 }
 
+blockquote {
+  border-left: 0.25rem solid oklch(var(--border-color));
+  padding: 1rem 1rem 0.125rem;
+  margin-bottom: 1rem;
+}
+
 code {
   white-space: pre-wrap;
   word-break: break-word;

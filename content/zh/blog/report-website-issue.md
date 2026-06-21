@@ -10,13 +10,16 @@ tags:
 draft: false
 ---
 
+2026/06/21 更新：已更名為 Accesserty Signal，所以更新連結，圖片不更新，以符合創建文章時的情境。
+
+--
+
 ### 前言
 
 大概七年前看到同事有做了一個瀏覽器擴充程式，當時的我也是躍躍欲試，沒想到就這樣過了七年，直接變成大叔了。
 
 這次在想 2023 鐵人賽的題目，突然想起了這件事，於是就快速地學習了一下，暸解從 0 到 1 的過程，打鐵趁熱寫篇文章記錄一下。
 
-2026/06/21更新：以更名為 Accesserty Signal，所以更新連結，圖片不更新，以符合創建文章時的情境。
 [擴充程式連結](https://chromewebstore.google.com/detail/accesserty-signal/jabgpbgdmhdmibhogmcjfinnkcngcelc?hl=zh-TW&pli=1 "另開新視窗"){target="_blank"}
 
 ::figure
@@ -56,11 +59,11 @@ draft: false
 - Chrome 市場占比高、安裝意願也高，所以只鎖定 Chrome。有需要之後再做 Safari、Firefox、Edge。Edge也可以裝 Chrome 的擴充程式，所以選 Chrome CP值很高啊～！
 - 不會寫後端但需要將得到的資訊儲存，然後也因為只鎖定 Chrome，所以只想用 google 的產品：google sheet。
 - 要將資料直接存到 google sheet 還是要寫很多程式，所以想到可以跟 google sheet 溝通的 google form，它可以跟 google sheet 連結。
-- 實驗如果使用 html 的 ```html <form>``` ，能不能將資料塞進 google form，於是找到了這篇文章[連結](https://spreadsheet.dev/submit-responses-to-google-form-apps-script "另開新視窗"){target="_blank"}
+- 實驗如果使用 html 的 ```<form>``` ，能不能將資料塞進 google form，於是找到了這篇文章([連結](https://spreadsheet.dev/submit-responses-to-google-form-apps-script "另開新視窗"){target="_blank"})
 - 寫一點點 javascript 提升UX，應該不是難事，不知道就問 AI
 
 ### 學習 Chrome 擴充程式
-確定以上都能實作後，就開始學 Chrome 擴充程式要怎麼做，於是直接去翻最新的書[連結](https://learning.oreilly.com/library/view/building-browser-extensions/9781484287255/ "另開新視窗"){target="_blank"}：，或是一些參考連結（以下連結請注意內文提到的開發版本）：
+確定以上都能實作後，就開始學 Chrome 擴充程式要怎麼做，於是直接去翻最新的書([連結](https://learning.oreilly.com/library/view/building-browser-extensions/9781484287255/ "另開新視窗"){target="_blank"})：，或是一些參考連結（以下連結請注意內文提到的開發版本）：
 
 - [你知道這是什麼嗎？ Chrome Extension MV3 With Vite](https://ithelp.ithome.com.tw/users/20139636/ironman/4982 "另開新視窗"){target="_blank"}
 - [Chrome Extension 開發與實作](https://ithelp.ithome.com.tw/users/20079450/ironman/1149 "另開新視窗"){target="_blank"}
@@ -98,7 +101,7 @@ draft: false
 ### 上架與發佈
 確定都沒什麼問題之後，就要到 Chrome Web Store Developer 註冊與上架
 
-- 跟著文件指示註冊[連結](https://developer.chrome.com/docs/webstore/register/ "另開新視窗"){target="_blank"}
+- 跟著文件指示註冊([連結](https://developer.chrome.com/docs/webstore/register/ "另開新視窗"){target="_blank"})
 - 註冊完後需要付款 5 美元開通
 - 進到開發者 Dashboard 畫面
 

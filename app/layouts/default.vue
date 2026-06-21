@@ -91,11 +91,6 @@ useSchemaOrg(
       name: "Neil Lin",
       url: orgUrl.value,
       jobTitle: t("jobTitle.uiux"),
-      sameAs: [
-        "https://github.com/Neil-Lin",
-        "https://neil-lin.medium.com/",
-        "https://vocus.cc/user/@neil-lin",
-      ],
     },
   ]),
 );

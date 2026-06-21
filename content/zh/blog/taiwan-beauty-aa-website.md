@@ -6,8 +6,8 @@ updatedAt: 2025-08-20
 tags:
   - 無障礙網頁設計
   - 無障礙
-  - a11y
-  - accessibility
+  - A11Y
+  - Accessibility
 draft: false
 ---
 
