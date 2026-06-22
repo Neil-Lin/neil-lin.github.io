@@ -7,14 +7,14 @@
         <h2>{{ article.title }}</h2>
         <div class="article-meta">
           <time :datetime="article.date">{{ formatDate(article.date) }}</time>
-          <br>
+          <br />
           <div class="tags">
             <span v-for="tag in article.tags" :key="tag" class="tag">{{
               tag
             }}</span>
           </div>
         </div>
-        <br>
+        <br />
         <ContentRenderer :value="article" class="article-body" />
 
         <nav v-if="related.length" class="related" aria-labelledby="related-h">
@@ -72,14 +72,20 @@ if (!article.value) {
   });
 }
 
-// 對照版（只在 frontmatter 有 translationKey 時才查）
+// 對照版：優先用 frontmatter translationKey；否則以「同 slug」為慣例
+// （中英相同檔名即視為同一篇的兩個語言版本，自動連 hreflang 與語言切換）
 const { data: counterpart } = await useAsyncData(
   () => `article-alt-${contentPath.value}`,
   async () => {
     const key = article.value?.translationKey;
-    if (!key) return null;
+    if (key) {
+      return await queryCollection(otherCollection.value)
+        .where("translationKey", "=", key)
+        .first();
+    }
+    const otherLang = locale.value === "en" ? "zh" : "en";
     return await queryCollection(otherCollection.value)
-      .where("translationKey", "=", key)
+      .path(`/${otherLang}/blog/${slug.value}`)
       .first();
   },
   { watch: [contentPath] },

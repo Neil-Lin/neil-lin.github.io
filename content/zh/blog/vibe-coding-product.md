@@ -1,6 +1,6 @@
 ---
 title: 用普通 Prompt 來 Vibe 一個解決自己工作痛點的產品
-description: 我為什麼決定在搜尋結果中顯示無障礙指標
+description: "用最普通的 Prompt「Vibe coding」做出一個解決團隊規格書協作痛點的小產品，記錄從釐清真正需求到實際做出來的過程。"
 date: 2026-04-23
 tags:
   - 文件

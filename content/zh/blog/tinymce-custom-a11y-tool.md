@@ -1,6 +1,6 @@
 ---
 title: 建立所見即所得編輯器的無障礙檢測工具，以 TinyMCE 為例
-description: 一個小程式，幫助撰文者製作符合無障礙網頁規範的文章
+description: "以 TinyMCE 為例，為所見即所得（WYSIWYG）編輯器打造無障礙檢測工具，幫助撰稿者在自由編輯的同時，讓文章內容也符合無障礙網頁規範。"
 date: 2025-01-01
 updatedAt: 2025-05-26
 tags:

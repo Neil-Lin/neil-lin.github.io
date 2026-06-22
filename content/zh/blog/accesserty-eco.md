@@ -1,6 +1,6 @@
 ---
 title: 打造 Accesserty — 從搜尋到開發的無障礙網頁之體驗
-description: 一位獨立開發者如何用 AI 和同理心建立完整無障礙工具鏈
+description: "分享我花約一個月打造的品牌 Accesserty：一套從搜尋體驗到開發測試的無障礙工具生態，用溫和而理性的方式，讓無障礙網頁被看見、被理解、被改善。"
 date: 2025-05-23
 updatedAt: 2026-01-13
 tags:
@@ -98,10 +98,10 @@ draft: false
 
 - Accesserty Signal — 讓 Google 搜尋結果顯示網頁可及性狀態  
 [簡介](https://accesserty.com/signal/ "另開新視窗"){target="_blank"}  
-[下載 Chrome 擴充程式]( "另開新視窗"){target="_blank"}  
+[下載 Chrome 擴充程式](https://chromewebstore.google.com/detail/accesserty-signal/jabgpbgdmhdmibhogmcjfinnkcngcelc "另開新視窗"){target="_blank"}  
 - Accesserty DevCheck — 模擬無障礙情境與自動檢查問題（如色盲模擬、Axe-core devtool 等）  
 [簡介](https://accesserty.com/devcheck/ "另開新視窗"){target="_blank"}  
-[下載 Chrome 擴充程式]( "另開新視窗"){target="_blank"}  
+[下載 Chrome 擴充程式](https://chromewebstore.google.com/detail/accesserty-devcheck/ompbhahmipenipgiiiehbkiibkonoeec "另開新視窗"){target="_blank"}  
 - Accesserty UI Kit — 提供通過可及性設計的 Web Component 元件  
 [簡介](https://accesserty.com/uikit "另開新視窗"){target="_blank"}  
 [Github](https://github.com/Accesserty/UI-Kit "另開新視窗"){target="_blank"}  

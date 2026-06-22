@@ -1,6 +1,6 @@
 ---
 title: 我真的需要一個生成式 AI 工具來產生整份網頁設計稿嗎？
-description: Framer AI 使用後的簡易心得
+description: "試用 Framer AI 產生整份網頁設計稿後的心得：生成式 AI 在靈感、知識與素材上很方便，但要它直接產出一整份設計稿，真的是我需要的嗎？"
 date: 2023-06-16
 tags:
   - 網頁設計

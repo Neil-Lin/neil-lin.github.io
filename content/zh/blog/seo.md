@@ -1,6 +1,6 @@
 ---
 title: SEO 整理
-description: SEO 學習整理
+description: "SEO（搜尋引擎最佳化）學習筆記總整理：從 HTML meta、載入速度、網站安全、提交索引、robots.txt 到 UX 與實用工具的完整重點。"
 date: 2020-01-16
 tags:
   - SEO
