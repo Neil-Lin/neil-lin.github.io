@@ -1,7 +1,7 @@
 ---
 title: Building Accesserty — An Accessibility Experience from Search to Development
 description: A small product ecosystem I built in about a month, aimed at improving the accessible web experience.
-date: 2026-05-23
+date: 2025-05-23
 tags:
   - Accessibility
   - Chrome Extension
@@ -22,7 +22,7 @@ I experimented with assigning LLMs different “roles” — product manager, fr
 
 ### Identifying the Problems
 
-**1. After searching, users still don’t know which link to click**
+#### 1. After searching, users still don’t know which link to click
 
 Search engines consider SEO, performance, and content, but that doesn’t mean the top results are easy to use — especially for people who rely on keyboard navigation or screen readers.
 
@@ -33,8 +33,7 @@ What if I could see how accessible a site is — right from the search result li
 
 It would save time, reduce frustration, and help everyone make more informed choices.
 
-
-**2. Users often have no way to report issues**
+#### 2. Users often have no way to report issues
 
 Even if a user encounters a serious accessibility problem, it’s often unclear how to report it — or if it will even be taken seriously.
 

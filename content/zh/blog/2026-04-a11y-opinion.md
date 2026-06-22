@@ -19,7 +19,7 @@ draft: false
 
 另外還有一個現象，我所在的環境近年雖然設計師和社群網紅開始有意識到數位無障礙並且有在推廣，但普遍還停留在解決常見問題，對於整體無障礙知識認識還不夠深，所以大環境還是在「能用工具通過規範就好」階段，並沒有任何巨大變化。這意味著企業還是在「得過且過」的階段，因為還沒辦法在落實無障礙的過程中帶來明顯利益，現在較多都是「被罰錢的恐懼」或是為了 ESG 驅動去做。
 
-a11yjobs 這篇文章 中有一段話能跟我的想法不謀而合：
+[a11yjobs](https://www.a11yjobs.com/ "另開新視窗"){target="_blank"} 這篇文章 中有一段話能跟我的想法不謀而合：
 
 >"Much of the hiring activity is concentrated in a narrow band of roles, driven by compliance pressures rather than genuine organizational buy-in. Companies are hiring because they have to — not always because they want to build lasting accessibility practices."
 

@@ -88,8 +88,8 @@ DevCheck 是一個 Chrome Extension，只要安裝後點擊圖示，就能開啟
 
 ### 試試看 Accesserty DevCheck
 
-[介紹](https://accesserty.com/devcheck "另開新視窗"){target="_blank"}  
-[擴充程式](https://chromewebstore.google.com/detail/accesserty-devcheck/ompbhahmipenipgiiiehbkiibkonoeec "另開新視窗"){target="_blank"}
+- [介紹](https://accesserty.com/devcheck "另開新視窗"){target="_blank"}  
+- [擴充程式](https://chromewebstore.google.com/detail/accesserty-devcheck/ompbhahmipenipgiiiehbkiibkonoeec "另開新視窗"){target="_blank"}
 
 你不需要學會所有 WCAG 條文，也不需要改變整個流程，
 

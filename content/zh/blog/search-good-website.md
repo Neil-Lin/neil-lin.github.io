@@ -88,4 +88,4 @@ Accesserty Signal 的分數只是參考性的測量，不是評價。
 
 或你曾經因為網頁看起來太煩而關掉它—— 那你其實已經體驗到「體驗的不可見性」了。
 
-[Accesserty](https://accesserty.com/){target="_blank"} 是我嘗試在這之中，讓這個差距變得可見、可說明、可改善的一步。
+[Accesserty](https://accesserty.com/ "另開新視窗"){target="_blank"} 是我嘗試在這之中，讓這個差距變得可見、可說明、可改善的一步。
