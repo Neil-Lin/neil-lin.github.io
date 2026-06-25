@@ -28,10 +28,17 @@
     <Meta name="twitter:title" :content="$t('website.name')" />
     <Meta name="twitter:description" :content="$t('intro.des2')" />
     <Meta name="mobile-web-app-capable" content="yes" />
+    <Meta name="apple-mobile-web-app-capable" content="yes" />
     <Meta name="apple-touch-fullscreen" content="yes" />
     <Meta name="apple-mobile-web-app-title" :content="$t('website.name')" />
     <Meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 瀏覽器 / PWA 工具列顏色：網站主色紫 -->
+    <Meta name="theme-color" content="#6042a0" />
     <Link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <!-- iOS 主畫面 app 圖示（無此標籤 iOS 會用網頁截圖當圖示） -->
+    <Link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+    <Link rel="apple-touch-icon" sizes="167x167" href="/favicon-167.png" />
+    <Link rel="apple-touch-icon" sizes="152x152" href="/favicon-152.png" />
 
     <!-- https://github.com/nuxt/nuxt/issues/19752 -->
     <!-- Nuxt3  I don't think there's anything Nuxt can action related to this issue -->
