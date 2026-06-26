@@ -442,6 +442,9 @@ export default defineNuxtConfig({
   sitemap: {
     excludeAppSources: true,
     sources: ["/api/__sitemap__/urls"],
+    // 讓 sitemap index 的子 sitemap 帶 <lastmod>，每次部署更新；
+    // 給 Google「sitemap 變了，請重讀」的訊號（這是它判斷是否重抓的依據）
+    autoLastmod: true,
   },
 
   ogImage: {
