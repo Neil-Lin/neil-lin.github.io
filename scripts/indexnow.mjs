@@ -6,7 +6,8 @@ const KEY = "f0c3fd55914c4ba9b6021d25692e138a";
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 const SITEMAP_INDEX = `https://${HOST}/sitemap_index.xml`;
 
-const locs = (xml) => [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+const locs = (xml) =>
+  [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 
 const fetchText = async (url) => {
   const r = await fetch(url);

@@ -119,6 +119,33 @@
           </div>
         </div>
       </div>
+      <section
+        v-if="latestPosts.length"
+        class="card animation-fade-out news"
+        aria-labelledby="latest-heading"
+      >
+        <h3 id="latest-heading">{{ t("words.latestPosts") }}</h3>
+        <ul class="news-list">
+          <li v-for="post in latestPosts" :key="post.slug">
+            <nuxt-link
+              :to="localePath(`/blog/${post.slug}`)"
+              :title="`${$t('action.goTo')} ${post.title}`"
+            >
+              {{ post.title }}
+            </nuxt-link>
+            <time :datetime="post.date" class="news-date">
+              {{ formatDate(post.date) }}
+            </time>
+          </li>
+        </ul>
+        <nuxt-link
+          :to="localePath('/blog')"
+          :title="`${$t('action.goTo')} ${$t('mainMenu.blog')}`"
+          class="news-more"
+        >
+          {{ t("words.viewAllPosts") }} →
+        </nuxt-link>
+      </section>
     </div>
   </main>
 </template>
@@ -127,12 +154,39 @@
 import { MANAGER_START_YEAR, yearsSince } from "~~/data/career";
 
 const { locale, t } = useI18n();
+const localePath = useLocalePath();
 const pageTitle = computed(() => t("words.home"));
 const pageDescription = computed(() => t("intro.des3"));
 
 usePageSeoMeta(pageTitle, pageDescription);
 
 const orgUrl = useOrgUrl();
+
+// 首頁列出最新文章：給「Google 唯一會爬的頁」一條直達文章的內部連結
+const { data: latestRaw } = await useAsyncData(
+  () => `home-latest-${locale.value}`,
+  () =>
+    queryCollection(locale.value === "en" ? "blog_en" : "blog_zh")
+      .where("draft", "=", false)
+      .order("date", "DESC")
+      .limit(6)
+      .select("title", "stem", "date")
+      .all(),
+  { watch: [locale], default: () => [] },
+);
+const latestPosts = computed(() =>
+  (latestRaw.value ?? []).map((r) => ({
+    slug: r.stem.split("/").pop() as string,
+    title: r.title,
+    date: r.date,
+  })),
+);
+const formatDate = (d: string) =>
+  new Date(d).toLocaleDateString(locale.value === "en" ? "en-GB" : "zh-TW", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
 
 useSchemaOrg(
   computed(() => [
@@ -258,13 +312,15 @@ defineOgImage("CustomTemplate", {
   grid-template:
     "l1 l1 r1 r2"
     "l1 l1 r3 r4"
-    "l5 l5 l5 l5";
+    "l5 l5 l5 l5"
+    "l6 l6 l6 l6";
   @media screen and (width <= 1280px) {
     grid-template:
       "l1 l1 l1 l1"
       "r1 r1 r2 r2"
       "r3 r3 r4 r4"
-      "l5 l5 l5 l5";
+      "l5 l5 l5 l5"
+      "l6 l6 l6 l6";
   }
   @media screen and (width <= 768px) {
     grid-template:
@@ -273,8 +329,35 @@ defineOgImage("CustomTemplate", {
       "r2"
       "r3"
       "r4"
-      "l5";
+      "l5"
+      "l6";
   }
+}
+
+.news {
+  grid-area: l6;
+}
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1rem;
+    justify-content: space-between;
+  }
+}
+.news-date {
+  color: oklch(var(--wrapper-color));
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+.news-more {
+  display: inline-block;
+  margin-top: 1.5rem;
 }
 
 #ak-container {

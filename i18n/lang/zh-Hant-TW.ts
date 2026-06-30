@@ -1,5 +1,7 @@
 export default {
   words: {
+    latestPosts: "最新文章",
+    viewAllPosts: "查看全部文章",
     home: "首頁",
     language: "語言",
     a11y: "無障礙網頁",

@@ -1,5 +1,7 @@
 export default {
   words: {
+    latestPosts: "Latest posts",
+    viewAllPosts: "View all posts",
     home: "Home",
     language: "Language",
     a11y: "Accessibility",
