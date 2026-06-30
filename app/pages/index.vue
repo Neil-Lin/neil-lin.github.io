@@ -71,6 +71,34 @@
           </li>
         </ul>
       </div>
+      <div
+        v-if="latestPosts.length"
+        class="card animation-fade-out news"
+        aria-labelledby="latest-heading"
+      >
+        <h3 id="latest-heading">{{ t("words.latestPosts") }}</h3>
+        <ul class="news-list">
+          <li v-for="post in latestPosts" :key="post.slug">
+            <nuxt-link
+              :to="localePath(`/blog/${post.slug}`)"
+              :title="`${$t('action.goTo')} ${post.title}`"
+            >
+              {{ post.title }}
+            </nuxt-link>
+            <time :datetime="post.date" class="news-date">
+              {{ formatDate(post.date) }}
+            </time>
+          </li>
+        </ul>
+        <br />
+        <nuxt-link
+          :to="localePath('/blog')"
+          :title="`${$t('action.goTo')} ${$t('mainMenu.blog')}`"
+          class="btn"
+        >
+          {{ t("words.viewAllPosts") }} →
+        </nuxt-link>
+      </div>
       <div class="card animation-fade-out media">
         <div class="media-container">
           <div>
@@ -119,33 +147,6 @@
           </div>
         </div>
       </div>
-      <section
-        v-if="latestPosts.length"
-        class="card animation-fade-out news"
-        aria-labelledby="latest-heading"
-      >
-        <h3 id="latest-heading">{{ t("words.latestPosts") }}</h3>
-        <ul class="news-list">
-          <li v-for="post in latestPosts" :key="post.slug">
-            <nuxt-link
-              :to="localePath(`/blog/${post.slug}`)"
-              :title="`${$t('action.goTo')} ${post.title}`"
-            >
-              {{ post.title }}
-            </nuxt-link>
-            <time :datetime="post.date" class="news-date">
-              {{ formatDate(post.date) }}
-            </time>
-          </li>
-        </ul>
-        <nuxt-link
-          :to="localePath('/blog')"
-          :title="`${$t('action.goTo')} ${$t('mainMenu.blog')}`"
-          class="news-more"
-        >
-          {{ t("words.viewAllPosts") }} →
-        </nuxt-link>
-      </section>
     </div>
   </main>
 </template>
