@@ -335,32 +335,6 @@ defineOgImage("CustomTemplate", {
   }
 }
 
-.news {
-  grid-area: l6;
-}
-.news-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-top: 1rem;
-  li {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.5rem 1rem;
-    justify-content: space-between;
-  }
-}
-.news-date {
-  color: oklch(var(--wrapper-color));
-  font-size: 0.875rem;
-  white-space: nowrap;
-}
-.news-more {
-  display: inline-block;
-  margin-top: 1.5rem;
-}
-
 #ak-container {
   position: absolute;
   top: 0;
@@ -434,7 +408,7 @@ defineOgImage("CustomTemplate", {
 
 .media {
   position: relative;
-  grid-area: l5;
+  grid-area: l6;
   .media-container {
     display: flex;
     gap: 3rem;
@@ -460,5 +434,31 @@ ol {
   color: oklch(var(--wrapper-color));
   list-style: inherit;
   padding-left: 20px;
+}
+
+.news {
+  grid-area: l5;
+}
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1rem;
+    justify-content: space-between;
+  }
+}
+.news-date {
+  color: oklch(var(--wrapper-color));
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+.news-more {
+  display: inline-block;
+  margin-top: 1.5rem;
 }
 </style>
